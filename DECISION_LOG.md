@@ -2,6 +2,45 @@
 
 One entry per material strategic decision. Newest first.
 
+## 2026-07-11 — Cycle 4: numeric decisions set, over-maintenance and netting gaps closed
+Petri set five numeric/scope decisions and directed that Gate 3 not begin until the two
+surviving Cycle 3 Red Team gaps were closed:
+
+1. **Event 6 excluded permanently from the near-term payment-KPI set.** Strategic asset-life/
+   lifecycle value moves to the advisory/transformation fee engine instead of gainshare,
+   unless a future independently-governed baseline methodology is developed.
+2. **Materiality threshold set:** €100,000 verified value per event OR 0.25% of Annual
+   Contract Value, whichever is higher — applies to Event 3/4 payment attribution and VVB
+   case review.
+3. **Risk corridor modelling assumptions set:** ±5% deadband; 20% annual gainshare cap / 10%
+   annual painshare cap (deliberate 2:1 asymmetric ratio, reflecting "primarily" not "fully"
+   provider control); per-event cap 50% of the applicable annual cap; zero painshare floor;
+   no cross-year carry-forward; 24-month clawback window. Explicitly modelling assumptions,
+   not universal contractual standards.
+4. **SLA modelling defaults set:** 48-hour permit/customer approval cycle; 24-hour production
+   access following an agreed intervention window. Architecture rule confirmed:
+   contract-specific baseline → agreed SLA → attribution exclusion where the customer
+   dependency exceeds the SLA.
+5. **Cycle 4 design work completed before any Gate 3 modelling:**
+   - Over-maintenance/KPI-gaming control (Maintenance Intensity Index + Risk Reduction
+     Efficiency, three-condition Red Flag Trigger, symmetric under-maintenance detection) —
+     `07_KPI_ATTRIBUTION/overmaintenance_control.md`.
+   - Intervention netting mechanism (observation window, causally-connected-equipment
+     monitoring, net-value calculation, payment held pending window closure or VVB
+     acceptance) — `07_KPI_ATTRIBUTION/intervention_netting.md`.
+   - Event 4 decision tree revised to v3, incorporating the materiality gate, netting
+     interaction, SLA-driven exclusion, and over-maintenance context —
+     `07_KPI_ATTRIBUTION/event4_decision_tree_v3.md`.
+   - New Event 9 (Turnaround Execution Efficiency) designed from the outset with an
+     independent (jointly-selected) benchmark requirement, directly applying the lesson from
+     Event 6's conflict-of-interest failure — `07_KPI_ATTRIBUTION/event9_turnaround_execution_efficiency.md`.
+6. **Gate 3 readiness verdict: PASS WITH CONDITIONS** — see
+   `07_KPI_ATTRIBUTION/gate3_readiness_assessment.md`. Six remaining gaps logged (causal-
+   connection map, independent TA benchmark provider not yet named, uncalibrated MII/RRE
+   bands, unconfirmed netting observation window length, two unconfirmed materiality-
+   extension interpretations, and the entirely undesigned advisory/transformation fee
+   structure for strategic asset value).
+
 ## 2026-07-11 — Cycle 3: Gate 2 assessed PASS WITH CONDITIONS
 Ran a full Checker/Red Team stress test of the attribution architecture per Petri's Cycle 3
 instructions: per-event 12-point structured challenge, Customer CFO attack, Operations

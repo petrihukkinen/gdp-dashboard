@@ -4,8 +4,8 @@
 |---|---|---|---|
 | 0 | Source Integrity | AMOR source material analyzed; Petri experience separated from facts; evidence register established | **CLOSED** (2026-07-11) — Q1 resolved: AMOR 2020 did not execute, see `EVIDENCE_REGISTER.md` B4 |
 | 1 | Customer Problem | ≥3 material value pools with credible measurement logic | **DRAFTED, corrected** — see `04_CUSTOMER_PROBLEM/`, `05_VALUE_POOLS/`; controllability tagging corrected 2026-07-11 per Petri (Pool 1 "primarily," not "fully," provider-controlled) |
-| 2 | Controllability | Attribution Matrix completed | **PASS WITH CONDITIONS (Cycle 3)** — full Checker/Red Team stress test complete, see `07_KPI_ATTRIBUTION/gate2_assessment.md`. Five numbered conditions remain before full closure (numeric SLA/materiality thresholds, Event 1 job-complexity catalog, risk corridor percentages, Event 6 resolution, two logged design gaps). |
-| 3 | Commercial Viability | Revenue logic, risk caps, value validation defined; survives CFO + Red Team | NOT STARTED — revised architecture recommendation drafted this cycle (destination: Selective Outcome-Based Platform; entry: Asset Performance Partnership; see `03_STRATEGIC_THESIS/business_model_options.md`), not yet stress-tested to gate standard |
+| 2 | Controllability | Attribution Matrix completed | **SUBSTANTIVELY CLOSED (Cycle 4)** — Petri set all outstanding numeric thresholds (materiality, risk corridor, SLAs); Event 6 permanently excluded; over-maintenance control and intervention netting designed and stress-tested. Only the Event 1 job-complexity catalog remains open — see `07_KPI_ATTRIBUTION/gate2_assessment.md`. |
+| 3 | Commercial Viability | Revenue logic, risk caps, value validation defined; survives CFO + Red Team | **READY TO START (PASS WITH CONDITIONS on entry, per `07_KPI_ATTRIBUTION/gate3_readiness_assessment.md`)** — architecture recommendation (destination: Selective Outcome-Based Platform; entry: Asset Performance Partnership; see `03_STRATEGIC_THESIS/business_model_options.md`) plus a stress-tested attribution/payment-eligibility foundation now exist. Six parallel-track gaps remain open (causal-connection map, Event 9 benchmark provider, uncalibrated control bands, netting window length, two materiality-extension confirmations, undesigned advisory/transformation fee structure) but do not block starting. |
 | 4 | Operating Model | Governance, RACI, Asset Performance Office architecture | NOT STARTED |
 | 5 | Scale | Standard core vs. configurable modules separated | NOT STARTED |
 | 6 | Executive Narrative | Strategy explainable in 10 minutes, no technical detail | NOT STARTED |
@@ -63,19 +63,41 @@
 4. Event 6 (lifecycle Capex deferral) provisionally excluded from the near-term
    payment-KPI shortlist due to an unresolved structural conflict of interest.
 
-## Proposed Cycle 4
-1. Design the two unresolved gaps from Cycle 3: an intervention-netting mechanism, and a
-   customer review/veto right over maintenance-plan spend increases (over-maintenance
-   control) plus a standing "KPI gaming pattern review" for the Value Validation Board.
-2. Design a genuine TA execution-efficiency atomic event (distinct from Event 5's scope
-   reduction) — gap surfaced by Red Team Scenario 4.
-3. Resolve Event 6: design an independent, non-provider baseline-setting mechanism, or
-   confirm it stays excluded from the payment-KPI set for the foreseeable future.
-4. Begin Gate 3 commercial modelling using the corrected, stress-tested attribution
-   architecture as its foundation — not before, since a commercial model without a
-   Red-Team-hardened attribution base is not fundable.
-5. Size what a Control Tower fee/margin actually looks like commercially — flagged, not yet
-   done, in `03_STRATEGIC_THESIS/control_tower_economics.md`.
-6. Numeric decisions required from Petri/commercial team before Gate 2 fully closes: SLA
-   thresholds, materiality threshold, risk corridor percentages (see
-   `07_KPI_ATTRIBUTION/gate2_assessment.md`, conditions 1-3).
+## Cycle 4 (this session) — completed
+1. Petri set all outstanding numeric decisions: materiality threshold (€100,000 / 0.25%
+   ACV), risk corridor figures (±5% deadband, 20%/10% asymmetric gainshare/painshare caps,
+   50% per-event cap, zero floor, no carry-forward, 24-month clawback), SLA modelling
+   defaults (48h permit, 24h production access), and confirmed Event 6's permanent exclusion
+   from the payment-KPI set.
+2. Designed and stress-tested the over-maintenance/KPI-gaming control
+   (`07_KPI_ATTRIBUTION/overmaintenance_control.md`) and the intervention netting mechanism
+   (`07_KPI_ATTRIBUTION/intervention_netting.md`) — the two surviving Cycle 3 Red Team gaps.
+3. Revised the Event 4 decision tree to v3, incorporating the materiality gate, netting
+   interaction, SLA-driven exclusion, and over-maintenance context
+   (`07_KPI_ATTRIBUTION/event4_decision_tree_v3.md`).
+4. Designed new Event 9 (Turnaround Execution Efficiency), distinct from Event 5, built from
+   the outset with an independent joint-benchmark requirement to avoid Event 6's
+   conflict-of-interest failure mode (`07_KPI_ATTRIBUTION/event9_turnaround_execution_efficiency.md`).
+5. Consolidated payment eligibility around the three monetisation engines (productivity/
+   verified cost saving, reliability/performance fee, strategic asset/advisory fee) —
+   `07_KPI_ATTRIBUTION/payment_eligibility_logic.md`.
+6. Ran 5 additional Red Team scenarios (11-15) against the new mechanisms —
+   `07_KPI_ATTRIBUTION/cycle4_red_team_scenarios.md`. 3 resolved cleanly, 2 exposed further
+   (logged, not fixed) gaps.
+7. Formal verdict: **Gate 3 readiness — PASS WITH CONDITIONS** —
+   `07_KPI_ATTRIBUTION/gate3_readiness_assessment.md`.
+
+## Proposed Cycle 5
+1. Begin Gate 3 commercial modelling proper (Base Fee levels, Phase 0-4 staging, Control
+   Tower fee/margin sizing per `03_STRATEGIC_THESIS/control_tower_economics.md`) using the
+   Cycle 4 architecture as its foundation.
+2. Design the advisory/transformation fee structure for strategic asset value (replacing
+   Event 6) as an early Gate 3 workstream, not an afterthought — it now carries that entire
+   monetisation engine alone.
+3. In parallel, close the six remaining Cycle 4 gaps: causal-connection map, Event 9
+   independent benchmark provider selection, MII/RRE band calibration, netting observation
+   window confirmation, and the two proposed materiality-extension interpretations (Event 1
+   periodic claims; sub-threshold secondary/netted issues) — all require Petri/commercial
+   confirmation, not further architecture work.
+4. Build the job-complexity-normalized catalog for Event 1 — the one item still blocking
+   full Gate 2 closure.

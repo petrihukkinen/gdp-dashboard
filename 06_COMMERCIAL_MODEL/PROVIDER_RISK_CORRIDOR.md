@@ -1,8 +1,8 @@
-# Provider Risk Corridor — Cycle 3
+# Provider Risk Corridor — Cycle 3 design, Cycle 4 numbers decided by Petri
 
-Role: service provider CFO. Status: Level C proposal — structure is a design recommendation;
-specific percentages are illustrative ranges for Petri/commercial team to set, not decided
-figures. Do not quote the example numbers below as commitments.
+Role: service provider CFO. Status: structure designed in Cycle 3; **Petri set the actual
+modelling figures in Cycle 4 (2026-07-11)** — these are Gate 3/Cycle 4 **modelling
+assumptions**, not final contractual terms, and are explicitly labeled as such below.
 
 ## Provider CFO questions, answered against this architecture
 
@@ -60,21 +60,25 @@ need should be explicitly modelled, not assumed away.
 **What reserves are needed?** Same — flagged for Gate 3, sized against the Annual Maximum
 Exposure figure once set.
 
-## Proposed risk corridor structure
+## Risk corridor structure — Cycle 4 modelling assumptions (Petri, 2026-07-11)
 
-| Element | Design | Illustrative range (NOT decided) |
+| Element | Design | Cycle 4 modelling value |
 |---|---|---|
-| **Deadband** | Performance within ±X% of baseline triggers no payment either direction — filters noise from signal | e.g. first 5% deviation, either direction |
-| **Threshold** | Gainshare starts only once the deadband is cleared on the favorable side; painshare (Event 4 only) starts only once cleared on the unfavorable side | Tied to deadband |
-| **Cap** | Gainshare capped as a % of Base Fee per year; painshare capped materially **lower** than the gainshare cap — asymmetric, reflecting "primarily" not "fully" provider control | e.g. gainshare cap 30-40% of Base Fee/yr; painshare cap 5-15% of Base Fee/yr |
-| **Collar** | Combined cap + floor: painshare floor at zero (provider fee never negative even at worst-case attribution); gainshare capped at the upside limit | — |
-| **Annual Maximum Exposure** | A single hard number bounding total painshare liability for the year, regardless of how many Event 4 adjudications occur | To be set by Petri/commercial team |
-| **Event-Level Maximum Exposure** | No single Event 4 adjudication may exceed a set fraction of the annual cap — prevents one catastrophic event from consuming the full year's exposure alone | e.g. no single event >50% of the annual cap |
-| **Aggregate Exposure** | Sum of all painshare events in a year is hard-capped at the Annual Maximum regardless of event count | — |
-| **Carry-forward** | Unused gainshare-eligible value does NOT bank forward into future years (avoids incentive to time-shift claims); painshare shortfalls in one year are NOT clawed back against future gainshare without explicit multi-year agreement — years stay largely independent to limit compounding disputes | — |
-| **Clawback** | Any event found within an 18-24 month review window to rest on incomplete/incorrect data, or where Event 6's mandatory clawback trigger fires, must be reversed with repayment | Window: 18-24 months, illustrative |
+| **Deadband** | Performance within ±X% of baseline triggers no payment either direction | **±5%** |
+| **Threshold** | Gainshare starts once the deadband is cleared favorably; painshare (Event 4 only) starts once cleared unfavorably | Tied to deadband |
+| **Annual gainshare cap** | Cap on total gainshare as a % of annual Base Fee | **20% of annual Base Fee** |
+| **Annual painshare cap** | Cap on total painshare as a % of annual Base Fee | **10% of annual Base Fee** — deliberate **2:1 asymmetric ratio**, reflecting that the relevant outcomes are primarily provider-controlled, with defined customer dependencies, but not fully provider-controlled |
+| **Per-event cap** | No single adjudication may exceed a fraction of the applicable annual cap | **50% of the applicable annual cap** (gainshare or painshare) |
+| **Painshare floor** | Provider's fee can never go negative | **Zero — Base Fee cannot become negative** |
+| **Carry-forward** | Whether unused capacity/shortfall banks across years | **None — no cross-year carry-forward** |
+| **Clawback window** | Period within which a paid claim can be reversed if later found unsound | **24 months** |
 
-## What is NOT yet resolved
-The actual numeric values above are commercial decisions, not architecture work — logged as
-a required Petri decision in the Cycle 3 final output. Working capital and reserve sizing
-are Gate 3 financial-modelling tasks, not addressed here.
+These are **modelling assumptions for Cycle 4/Gate 3, not universal AMOR contractual
+standards** — Petri's explicit framing. Real contracts may set different figures per
+customer/site.
+
+## What is still open
+Working capital and reserve sizing against these now-fixed caps are Gate 3 financial-
+modelling tasks, not addressed here. The 24-month clawback window interacts with
+`07_KPI_ATTRIBUTION/intervention_netting.md`'s payment-sequencing delay — both extend how
+long value claims stay provisional, a cumulative effect not yet modelled together.

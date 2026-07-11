@@ -21,25 +21,22 @@ The architecture is structurally sound and materially stronger than the Cycle 2 
 survives 8 of 10 Red Team dispute scenarios cleanly and correctly avoids every form of
 aggregate-OEE payment metric. It is not yet contract-ready.
 
-## Conditions to close Gate 2 fully
+## Conditions to close Gate 2 fully — STATUS AFTER CYCLE 4
 
-1. **Set numeric thresholds:** permit-cycle-time SLA, production-access-delay SLA, and the
-   "material" de minimis threshold (`CONTRACT_LANGUAGE_RISK.md`) — commercial decisions for
-   Petri/commercial team, not architecture work.
-2. **Build the job-complexity-normalized catalog** required for Event 1
-   (`event_stress_test.md`) — needed before Event 1 is genuinely objective.
-3. **Set risk corridor percentages** (deadband, caps, annual maximum exposure) —
-   `06_COMMERCIAL_MODEL/PROVIDER_RISK_CORRIDOR.md` gives a structure and illustrative ranges
-   only.
-4. **Resolve or suspend Event 6:** lifecycle Capex deferral has a structural conflict of
-   interest (provider-set baseline) that this cycle's work does not fully solve. Recommend
-   provisionally **excluding it from any near-term payment-KPI shortlist** until an
-   independent baseline-setting mechanism exists.
-5. **Two unresolved design gaps carried forward, not fixed this cycle:** (a) an intervention
-   that fixes one failure mode while creating another has no netting mechanism; (b)
-   over-maintenance as KPI-protection has no direct control. Both are logged in
-   `RISK_REGISTER.md` as open risks requiring Cycle 4 design work, not closed here.
+1. ~~Set numeric thresholds~~ — **RESOLVED (Petri, Cycle 4):** materiality €100,000/0.25%
+   ACV; SLA defaults 48h permit / 24h production access. See `DECISION_LOG.md`.
+2. **Still open:** the job-complexity-normalized catalog for Event 1 has not been built.
+3. ~~Set risk corridor percentages~~ — **RESOLVED (Petri, Cycle 4):** see
+   `06_COMMERCIAL_MODEL/PROVIDER_RISK_CORRIDOR.md`.
+4. ~~Resolve or suspend Event 6~~ — **RESOLVED (Petri, Cycle 4):** permanently excluded from
+   the payment-KPI set; strategic asset value moved to the advisory/transformation engine.
+5. ~~Two unresolved design gaps~~ — **RESOLVED at a design level, Cycle 4:** the
+   over-maintenance control and intervention netting mechanism are now built and stress-
+   tested — see `overmaintenance_control.md`, `intervention_netting.md`. Each carries its own
+   sub-prerequisites (baseline calibration, causal-connection map) that remain open — see
+   `gate3_readiness_assessment.md`.
 
-Gate 2 should not be declared fully closed until conditions 1-4 are resolved. Condition 5's
-gaps do not block a PASS WITH CONDITIONS verdict but must be resolved before Gate 3
-commercial modelling treats Event 4 (painshare) as safe to finalize commercially.
+**Updated overall status: Gate 2 substantively closed.** Condition 2 (Event 1 catalog) is
+the one item on this list still fully open; it does not block Gate 3 from starting, since
+Event 1 can operate at KPI-Fee level without it — only its escalation to performance-fee
+status needs the catalog resolved first.
