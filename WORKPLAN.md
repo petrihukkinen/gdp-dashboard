@@ -4,7 +4,7 @@
 |---|---|---|---|
 | 0 | Source Integrity | AMOR source material analyzed; Petri experience separated from facts; evidence register established | **CLOSED** (2026-07-11) — Q1 resolved: AMOR 2020 did not execute, see `EVIDENCE_REGISTER.md` B4 |
 | 1 | Customer Problem | ≥3 material value pools with credible measurement logic | **DRAFTED, corrected** — see `04_CUSTOMER_PROBLEM/`, `05_VALUE_POOLS/`; controllability tagging corrected 2026-07-11 per Petri (Pool 1 "primarily," not "fully," provider-controlled) |
-| 2 | Controllability | Attribution Matrix completed | **IN PROGRESS (Cycle 2)** — first-pass atomic value-event architecture drafted, see `07_KPI_ATTRIBUTION/attribution_architecture.md`. Not yet Checker/Red-Team-hardened to gate-closing standard. |
+| 2 | Controllability | Attribution Matrix completed | **PASS WITH CONDITIONS (Cycle 3)** — full Checker/Red Team stress test complete, see `07_KPI_ATTRIBUTION/gate2_assessment.md`. Five numbered conditions remain before full closure (numeric SLA/materiality thresholds, Event 1 job-complexity catalog, risk corridor percentages, Event 6 resolution, two logged design gaps). |
 | 3 | Commercial Viability | Revenue logic, risk caps, value validation defined; survives CFO + Red Team | NOT STARTED — revised architecture recommendation drafted this cycle (destination: Selective Outcome-Based Platform; entry: Asset Performance Partnership; see `03_STRATEGIC_THESIS/business_model_options.md`), not yet stress-tested to gate standard |
 | 4 | Operating Model | Governance, RACI, Asset Performance Office architecture | NOT STARTED |
 | 5 | Scale | Standard core vs. configurable modules separated | NOT STARTED |
@@ -48,14 +48,34 @@
    including a worked example of the adopted Identified Value × Controllability ×
    Realization Probability × Time-to-Impact = Committable Value formula.
 
-## Proposed Cycle 3
-1. Checker + full Red Team pass on `07_KPI_ATTRIBUTION/attribution_architecture.md` — this
-   cycle's version is a Maker-only first pass (see its addendum).
-2. Design the Value Validation Board's actual adjudication process (needed for attribution
-   Events 3-6 and for Gate 4 Operating Model work).
-3. Build the customer-dependency carve-out clause template flagged in `RISK_REGISTER.md`.
-4. Begin Gate 3 commercial modelling using the corrected, event-level attribution
-   architecture as its foundation — not before, since a commercial model without attribution
-   is not fundable.
+## Cycle 3 (this session) — completed
+1. Full Checker/Red Team stress test of the attribution architecture: per-event 12-point
+   structured challenge (`07_KPI_ATTRIBUTION/event_stress_test.md`), Customer CFO attack,
+   Operations Executive attack, Contract Lawyer attack (all in `07_KPI_ATTRIBUTION/`),
+   Provider CFO risk-corridor design (`06_COMMERCIAL_MODEL/PROVIDER_RISK_CORRIDOR.md`), a
+   double-counting map, a counterfactual evidence protocol, a minimum-viable Value
+   Validation Board design (`08_OPERATING_MODEL/VALUE_VALIDATION_BOARD_MVP.md`), and 10 Red
+   Team dispute scenarios.
+2. Formal Gate 2 verdict: **PASS WITH CONDITIONS** — see `07_KPI_ATTRIBUTION/gate2_assessment.md`.
+3. Two new, unresolved design gaps surfaced and logged (not fixed): repair-creates-new-risk
+   netting, and over-maintenance-as-KPI-protection ("KPI gaming"). Both added to
+   `RISK_REGISTER.md`.
+4. Event 6 (lifecycle Capex deferral) provisionally excluded from the near-term
+   payment-KPI shortlist due to an unresolved structural conflict of interest.
+
+## Proposed Cycle 4
+1. Design the two unresolved gaps from Cycle 3: an intervention-netting mechanism, and a
+   customer review/veto right over maintenance-plan spend increases (over-maintenance
+   control) plus a standing "KPI gaming pattern review" for the Value Validation Board.
+2. Design a genuine TA execution-efficiency atomic event (distinct from Event 5's scope
+   reduction) — gap surfaced by Red Team Scenario 4.
+3. Resolve Event 6: design an independent, non-provider baseline-setting mechanism, or
+   confirm it stays excluded from the payment-KPI set for the foreseeable future.
+4. Begin Gate 3 commercial modelling using the corrected, stress-tested attribution
+   architecture as its foundation — not before, since a commercial model without a
+   Red-Team-hardened attribution base is not fundable.
 5. Size what a Control Tower fee/margin actually looks like commercially — flagged, not yet
    done, in `03_STRATEGIC_THESIS/control_tower_economics.md`.
+6. Numeric decisions required from Petri/commercial team before Gate 2 fully closes: SLA
+   thresholds, materiality threshold, risk corridor percentages (see
+   `07_KPI_ATTRIBUTION/gate2_assessment.md`, conditions 1-3).

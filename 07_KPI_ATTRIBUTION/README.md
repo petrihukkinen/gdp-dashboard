@@ -1,7 +1,16 @@
 # 07_KPI_ATTRIBUTION
 
-Gate 2 work. See `attribution_architecture.md` for the Cycle 2 first-pass Performance
-Attribution Architecture — built from atomic, loss-event-level value events and provider
-controllability, explicitly not from total plant OEE, per Petri's direct instruction
-(2026-07-11). Status: Maker pass only, not yet fully Checker/Red-Team-hardened to close
-Gate 2 — see the addendum at the end of that document.
+Gate 2 work. Read in this order:
+1. `attribution_architecture.md` — Cycle 2 original design (atomic value events, not total
+   OEE).
+2. `event_stress_test.md` — Cycle 3 per-event Checker/Red Team stress test with KEEP/MODIFY/
+   DOWNGRADE/REMOVE verdicts. **This supersedes the payment-eligibility calls in document 1.**
+3. `CUSTOMER_CFO_ATTACK.md`, `OPERATIONS_ATTACK.md`, `CONTRACT_LANGUAGE_RISK.md` — role-based
+   attacks on the architecture.
+4. `DOUBLE_COUNTING_MAP.md`, `COUNTERFACTUAL_PROTOCOL.md`, `ATTRIBUTION_DISPUTE_SCENARIOS.md`
+   — cross-cutting controls and 10 stress-tested dispute scenarios.
+5. `gate2_assessment.md` — formal Gate 2 verdict: **PASS WITH CONDITIONS**.
+
+Related: `06_COMMERCIAL_MODEL/PROVIDER_RISK_CORRIDOR.md` (painshare caps/collars) and
+`08_OPERATING_MODEL/VALUE_VALIDATION_BOARD_MVP.md` (adjudication governance) were built
+alongside this Gate 2 work and are cross-referenced throughout.

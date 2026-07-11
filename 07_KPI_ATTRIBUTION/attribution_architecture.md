@@ -1,8 +1,14 @@
 # Performance Attribution Architecture — Cycle 2 Draft (Gate 2)
 
-Status: MAKER pass only. Not yet Checker- or Red-Team-reviewed to the standard required to
-close Gate 2 — see `03_STRATEGIC_THESIS/red_team_review.md` addendum at the bottom of this
-file for a first-pass stress test, but treat this whole document as a working draft.
+Status: **Superseded in part by Cycle 3.** This document is the original Maker pass. The
+full Checker/Red Team stress test has since been completed — see
+`07_KPI_ATTRIBUTION/event_stress_test.md` (per-event 12-point review with KEEP/MODIFY/
+DOWNGRADE/REMOVE verdicts) and `07_KPI_ATTRIBUTION/gate2_assessment.md` (formal Gate 2
+verdict: PASS WITH CONDITIONS). Read this document for the original design rationale; read
+those two for the current, stress-tested status of each event. In summary: Event 2 is now
+KPI-fee-only (not gainshare as this draft's table implies), Event 6 is provisionally
+excluded from the near-term payment-KPI set, and Events 1, 3, 4 carry materially more
+detailed attribution rules than shown below.
 
 ## The design instruction (Petri, 2026-07-11)
 
