@@ -235,9 +235,12 @@ the "Accountability Premium" working hypothesis to avoid assuming a price premiu
    data-system fragmentation identified as the plausible primary drivers instead.
 4. Three operating models built (no winner selected); a Scale Curve analysis confirmed a
    real "pilot trap" — a first site will look structurally worse than portfolio economics.
-5. Quantified: single-pilot Control Tower cost ~7-8% of revenue vs. ~3.5% at portfolio
-   scale — confirming Cycle 10's "pessimistic" stress scenario was actually realistic for
-   day one. The thesis still shows a positive, smaller (~1.5x) advantage even then.
+5. Modelled: single-pilot Control Tower cost assumed ~7-8% of revenue vs. ~3.5% at
+   portfolio scale — two internal modelling methods (Cycle 10 top-down, Cycle 11 bottom-up)
+   independently converge on a similar figure, which is internal consistency, not external
+   validation (corrected per Cycle 12's epistemic audit, `MODEL_CLAIM_AUDIT.md`). Within the
+   model, this still shows a positive, smaller (~1.5x) advantage even at single-pilot cost —
+   real-world unit economics remain unvalidated.
 6. Customer Duplication Test identified as the single most make-or-break untested variable
    — the model risks being pure additive overhead if the customer doesn't reduce its own
    coordination work.

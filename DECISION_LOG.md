@@ -24,12 +24,15 @@ winner, and a Scale Curve analysis confirming a real "pilot trap": **a first, si
 pilot will look meaningfully worse than steady-state portfolio economics for real,
 structural reasons (unamortized central cost), not execution failure.**
 
-Quantified this: single-pilot Control Tower cost is realistically ~7-8% of revenue versus
-~3.5% at portfolio scale — independently confirming Cycle 10's "pessimistic" 8% stress
-scenario was actually close to the realistic day-one number, not a tail risk
-(`10_FINANCIAL_MODEL/CONTROL_TOWER_UNIT_ECONOMICS.md`). **The thesis still shows a positive,
-if much more modest (~1.5x, not 3x), advantage over conventional contracting even at
-realistic single-pilot cost — it does not break even at zero.**
+Quantified this within the conceptual model: single-pilot Control Tower cost is assumed at
+~7-8% of revenue versus ~3.5% at portfolio scale — a figure arrived at independently by two
+different internal modelling methods (Cycle 10's top-down stress test and Cycle 11's
+bottom-up zero-based org design), which is internal consistency between this project's own
+models, not external validation
+(`10_FINANCIAL_MODEL/CONTROL_TOWER_UNIT_ECONOMICS.md`). **Within the model, this still shows
+a positive, more modest (~1.5x, not 3x) advantage over conventional contracting even at the
+single-pilot cost assumption — but real-world unit economics remain entirely unvalidated.
+Corrected per Cycle 12's epistemic audit — see `MODEL_CLAIM_AUDIT.md`.**
 
 Tested the Customer Duplication Test explicitly (`08_OPERATING_MODEL/CUSTOMER_DUPLICATION_TEST.md`)
 and found it is the single most make-or-break, currently untested variable for whether the
