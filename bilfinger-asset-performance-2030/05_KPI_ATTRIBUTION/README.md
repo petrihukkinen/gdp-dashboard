@@ -1,0 +1,3 @@
+# 05_KPI_ATTRIBUTION
+
+Placeholder — but the highest-priority folder for cycle two (see `../WORKPLAN.md` item 1). The attribution principle and the loss/gain-driver decomposition categories (maintenance-caused, equipment-reliability, operations-caused, feedstock, production-planning, utility, process-technology, force majeure, customer-delayed-decision, customer-controlled-Capex) are defined in `../STRATEGIC_THESIS.md` Section 6. This folder needs: a worked decision-tree example, the Value Validation Board's governance charter (composition, cadence, escalation/tie-break mechanism), and — critically — a real or realistic worked dispute example, ideally grounded in Petri's own Neste/AMOR experience (`../OPEN_QUESTIONS.md` #4).
