@@ -2,6 +2,52 @@
 
 One entry per material strategic decision. Newest first.
 
+## 2026-07-11 — Cycle 11: Control Tower unit economics tested from first principles, Gate 3B PASS WITH CONDITIONS
+Built a zero-based Control Tower organization design, testing 10 candidate roles against
+whether each is genuinely mandatory, dedicated, and incremental
+(`08_OPERATING_MODEL/ZERO_BASED_CONTROL_TOWER_ORG.md`). Finding: only two roles (Contract
+Director, Contractor Integration Lead) are genuinely mandatory, dedicated, site-specific
+incremental cost; everything else is existing work, shareable/centralizable, conditional on
+module activation, or event-driven.
+
+Classified all Control Tower work into existing/enhanced/transferred/new-bureaucracy
+categories (`WORK_CLASSIFICATION.md`) and built an incremental cost bridge
+(`INCREMENTAL_COST_BRIDGE.md`) showing much of what earlier cycles' governance sketches
+implied as new cost is actually already-existing conventional contract management.
+
+Rejected annual contract revenue as the primary Control Tower cost driver
+(`10_FINANCIAL_MODEL/CONTROL_TOWER_COST_DRIVER_TREE.md`) — number of contractors
+orchestrated and data-system fragmentation are the plausible primary drivers instead.
+
+Built three operating models (Site Heavy, Hybrid, Platform Heavy) without selecting a
+winner, and a Scale Curve analysis confirming a real "pilot trap": **a first, single-site
+pilot will look meaningfully worse than steady-state portfolio economics for real,
+structural reasons (unamortized central cost), not execution failure.**
+
+Quantified this: single-pilot Control Tower cost is realistically ~7-8% of revenue versus
+~3.5% at portfolio scale — independently confirming Cycle 10's "pessimistic" 8% stress
+scenario was actually close to the realistic day-one number, not a tail risk
+(`10_FINANCIAL_MODEL/CONTROL_TOWER_UNIT_ECONOMICS.md`). **The thesis still shows a positive,
+if much more modest (~1.5x, not 3x), advantage over conventional contracting even at
+realistic single-pilot cost — it does not break even at zero.**
+
+Tested the Customer Duplication Test explicitly (`08_OPERATING_MODEL/CUSTOMER_DUPLICATION_TEST.md`)
+and found it is the single most make-or-break, currently untested variable for whether the
+system-level economics case holds at all — if the customer retains its own full coordination
+organization, the model becomes pure additive overhead regardless of the provider's own
+numbers.
+
+Ran a Platform Reuse Test across 11 candidate capabilities and found most of the
+process/governance layer is genuinely reusable, but the two things that would make this an
+actual technical *platform* (contractor benchmarking data, data-model integration) are not
+reusable today — **verdict: CONFIGURABLE OPERATING MODEL, not yet a REAL PLATFORM.**
+
+Ran an Automation Test across 8 use cases and rejected any claim that AI/automation
+meaningfully changes the near-term cost picture — real but modest potential, entirely gated
+on data quality that doesn't yet exist.
+
+**Gate 3B (Control Tower Unit Economics Logic): PASS WITH CONDITIONS.**
+
 ## 2026-07-11 — Cycle 10: Accountability Economics thesis built, Gate 3A PASS WITH CONDITIONS
 Following the Strategic Reframe Challenge (Control Tower as operating system, not product),
 built the full economic and validation architecture for the "Accountability Economics"

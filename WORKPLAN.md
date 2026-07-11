@@ -225,16 +225,37 @@ the "Accountability Premium" working hypothesis to avoid assuming a price premiu
    data) require multi-site evidence this project cannot generate.
 9. **Gate 3A — Accountability Economics Logic: PASS WITH CONDITIONS.**
 
-## Proposed Cycle 11
-1. Conduct the actual external stakeholder interviews using the **revised Cycle 10**
-   protocols — the real next step, not further internal design work.
-2. Complete the Validation Scorecard against real responses once interviews occur,
-   prioritizing the scope-consolidation and duration-appetite questions as the single most
-   important test.
-3. Engage external legal counsel with the Cycle 8 drafting brief for the Event 4 liability
+## Cycle 11 (this session) — completed: Gate 3B
+1. Zero-based Control Tower organization design — only 2 of 10 candidate roles found
+   genuinely mandatory, dedicated, incremental cost.
+2. Work classified into existing/enhanced/transferred/new-bureaucracy categories; an
+   incremental cost bridge built showing much of the assumed "new" cost is already-existing
+   conventional contract management.
+3. Revenue rejected as the primary Control Tower cost driver; contractor count and
+   data-system fragmentation identified as the plausible primary drivers instead.
+4. Three operating models built (no winner selected); a Scale Curve analysis confirmed a
+   real "pilot trap" — a first site will look structurally worse than portfolio economics.
+5. Quantified: single-pilot Control Tower cost ~7-8% of revenue vs. ~3.5% at portfolio
+   scale — confirming Cycle 10's "pessimistic" stress scenario was actually realistic for
+   day one. The thesis still shows a positive, smaller (~1.5x) advantage even then.
+6. Customer Duplication Test identified as the single most make-or-break untested variable
+   — the model risks being pure additive overhead if the customer doesn't reduce its own
+   coordination work.
+7. Platform Reuse Test verdict: CONFIGURABLE OPERATING MODEL, not yet a REAL PLATFORM.
+8. Automation Test: real but modest potential, rejected as a near-term cost solution.
+9. **Gate 3B (Control Tower Unit Economics Logic): PASS WITH CONDITIONS.**
+
+## Proposed Cycle 12
+1. Conduct the actual external stakeholder interviews (Cycle 10 protocols) — still the real
+   next step; now also test the Customer Duplication Test's transfer/reduce/redeploy/retain
+   question directly, since Cycle 11 found it decisive.
+2. Price and evaluate any real first deal using single-pilot (Model A) economics, not
+   portfolio-scale assumptions — pitching Model B/C economics to a first customer would
+   overstate the achievable advantage.
+3. Seek real Control Tower delivery cost data wherever possible — still the least-evidenced,
+   most sensitive variable across Cycles 10-11.
+4. Engage external legal counsel with the Cycle 8 drafting brief for the Event 4 liability
    boundary.
-4. Investigate real Control Tower delivery cost data — the model's single most sensitive,
-   least-evidenced variable — through any means available short of fabrication.
-5. Only after real evidence exists: calibrate real numbers and revisit Cycle 5's Model B/C.
-6. Do not build the executive deck until Falsification Register items #1-5 and the Gate 3A
-   scope/duration hypothesis have at least PARTIALLY SUPPORTED ratings.
+5. Do not build the executive deck until the Falsification Register CRITICAL items, the
+   Gate 3A scope/duration hypothesis, and the Customer Duplication Test all have at least
+   PARTIALLY SUPPORTED ratings from real evidence.

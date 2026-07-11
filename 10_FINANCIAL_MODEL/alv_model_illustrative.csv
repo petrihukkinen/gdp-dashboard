@@ -4,3 +4,5 @@ accountability_base_case,180,5,0.70,0.14,0.08,0.05,0.05,0.03,0.02,0.12,0.20,8.5,
 accountability_renewal_fails,180,5,0.50,0.14,0.08,0.05,0.05,0.03,0.02,0.12,0.20,7.5,121
 accountability_pullthrough_fails,180,5,0.70,0.14,0.08,0.05,0.05,0.03,0.02,0.00,0.00,8.5,112
 accountability_controltower_cost_triples,180,5,0.70,0.14,0.08,0.05,0.05,0.08,0.02,0.12,0.20,8.5,72
+accountability_single_pilot_realistic,180,5,0.70,0.14,0.08,0.05,0.05,0.075,0.02,0.12,0.20,8.5,75
+accountability_portfolio_scale_realistic,180,5,0.70,0.14,0.08,0.05,0.05,0.02,0.02,0.12,0.20,8.5,157
