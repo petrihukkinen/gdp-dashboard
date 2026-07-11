@@ -2,6 +2,31 @@
 
 One entry per material strategic decision. Newest first.
 
+## 2026-07-11 — Cycle 5: Gate 3 commercial modelling, PASS WITH CONDITIONS
+Petri set five Cycle 5 modelling decisions (180-day netting window confirmed with 90-365 day
+event-specific flexibility; net-basis materiality interpretation for secondary/netting
+effects, explicitly not an exclusion mechanism for damage splitting; MII/RRE bands retained
+as ±15% modelling-only, not contractual, tested at ±10/15/20%; a mandatory pre-built Causal
+Connection Map required before Event 3 gainshare eligibility; Event 9's benchmark
+methodology/source to be pre-agreed at mobilisation, immutable without dual sign-off) and
+directed full Gate 3 commercial modelling of three archetypes.
+
+Three commercial models were built (Base Fee + KPI Fee; Base Fee + Atomic Value Share;
+Control Tower + Value Modules) against an explicitly-labeled illustrative site — full detail
+in `10_FINANCIAL_MODEL/`. Key findings:
+1. **No model dominates in a Normal Year** — Model A earns the provider more precisely
+   because it takes the least performance risk; Models B/C are designed to close the gap in
+   a high-value year but, at these illustrative settings, do not fully do so even then.
+2. **Catastrophic/multi-event Event 4 losses can leave the customer materially
+   under-compensated** relative to real documented loss (as low as 26.7% recovery in one
+   stress scenario) — the sharpest unresolved finding of this cycle.
+3. **Claim bundling and customer-side damage-splitting are open gaming vectors**, directly
+   tied to the still-unbuilt Causal Connection Map.
+4. **Checker caught and disclosed a Maker arithmetic inconsistency** in Model B's gainshare-
+   split application, which changed a substantive conclusion once corrected.
+5. **Gate 3 verdict: PASS WITH CONDITIONS** — `10_FINANCIAL_MODEL/gate3_verdict.md`. Five
+   remaining commercial gaps logged, none fatal, none silently resolved.
+
 ## 2026-07-11 — Cycle 4: numeric decisions set, over-maintenance and netting gaps closed
 Petri set five numeric/scope decisions and directed that Gate 3 not begin until the two
 surviving Cycle 3 Red Team gaps were closed:
