@@ -149,15 +149,40 @@
    an optional Turnaround Value Module for TA-intensive customers meeting a 5-condition
    readiness gate. Nothing else is monetized.**
 
-## Proposed Cycle 8
-1. Negotiate/design the standard liability/indemnity clause boundary for catastrophic
-   Event 4 losses (legal drafting, likely outside this project's direct scope but needs a
-   clear handoff point).
-2. Size real numbers to replace the illustrative ones now that the architecture is stable:
-   Event 1's Base Fee/gainshare split, the Turnaround Module's qualifying-TA threshold and
-   minimum term length, the Causal Connection Map decision (confirmed: not building it).
-3. Test the "complicated bonus scheme" honest answer with real stakeholder input — it was
-   developed analytically, not yet pressure-tested outside this project.
-4. Revisit Model B/C from Cycle 5 in light of Event 3's full removal — both models were
-   built assuming Event 3 (in some form) was part of the ledger; recalibrate or retire.
-5. Only after 1-4: resume Gate 3 pricing optimisation on the now-final architecture.
+## Cycle 8 (this session) — completed
+1. Attempted to kill Event 1, the last core payment event. **Verdict: RECLASSIFY, not kill.**
+   A 10-year persistence model proved the "perpetual share of a frozen baseline" design
+   indefensible (€4.48m over 8 years for one Year-2 action, illustrative); redesigned as a
+   time-limited savings share on a rolling-baseline-plus-cohort architecture.
+2. Confirmed savings-pool exhaustion is real and structural, not a flaw — addressed via
+   pricing/duration design (harvest proven gains into Base Fee over time), not a new event.
+3. Sized Event 1's administration cost for the first time (€30k-€1m/yr by scale); found a
+   commercially absurd 12-24% ratio for smaller customers in steady-state years; designed a
+   five-condition evidence-based eligibility gate in response.
+4. Concluded Event 1 must not be underwritten as guaranteed provider revenue.
+5. Narrowed the Cycle 7 differentiation claim — withdrew "for the life of the deal" and
+   "exceeds standard maintenance-contract terms" as unsupported; a real, narrower claim
+   survives.
+6. Tested and confirmed: Event 4, not Event 1, is what prevents AMOR from regressing to
+   "Better Managed Maintenance." **Final settled core: Base-Fee-funded Control Tower + Event
+   4 downside corridor, complete on its own. Contractor Productivity Value Module (Event 1)
+   and Turnaround Value Module (Events 5+9) are both optional and customer-specific.**
+7. Designed (not conducted) an external stakeholder validation test — 3 interview scripts,
+   pass/fail signals, and an explicit finding that would force Event 1's full kill.
+8. Wrote a commercial-to-legal drafting brief for the Event 4 catastrophic-loss/liability
+   boundary, for external counsel — no final legal language drafted.
+9. Retired the Cycle 6 X/Z architecture naming per Petri's decision — one core architecture,
+   optional modules, not a maturity ladder.
+
+## Proposed Cycle 9
+1. **Conduct the external stakeholder validation designed in Cycle 8** — the single most
+   important open gap in the entire project; everything since Cycle 1 has been internal
+   analytical reasoning, never tested against real customer or provider behavior.
+2. Engage external legal counsel with the Cycle 8 drafting brief for the Event 4 liability
+   boundary.
+3. Calibrate real numbers now that the architecture is structurally settled: Base Fee
+   levels, Event 1's eligibility thresholds and cohort-life length, Turnaround Module terms
+   — deferred from Cycle 5 through 8, now the last major open design surface.
+4. Revisit Cycle 5's Model B/C in light of Event 3's full removal and Event 1's
+   reclassification — both were built assuming a richer event ledger than now exists.
+5. Only after 1-4: resume Gate 3 pricing optimisation on the final, settled architecture.

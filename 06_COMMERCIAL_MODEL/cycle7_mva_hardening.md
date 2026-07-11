@@ -1,5 +1,13 @@
 # Cycle 7 — Minimum Viable Architecture Hardening
 
+**Cycle 8 update:** Event 1, treated below as the sole surviving core upside event, was
+subsequently tested for economic durability and **reclassified from core to an optional
+"Contractor Productivity Value Module"** — see `06_COMMERCIAL_MODEL/cycle8_event1_survivability.md`.
+The X/Z architecture naming used below is also retired per Petri's Cycle 8 decision — there
+is one core architecture (Base Fee-funded Control Tower + Event 4) plus optional modules, not
+two named architectures. Read this document for the Event 3 kill analysis, which remains
+valid; the Event 1/X-Z conclusions are superseded.
+
 ## Task 1 — Attacking Event 3-simplified: is it semantic repackaging?
 
 Cycle 6 killed original Event 3 (case-by-case dollar-value gainshare) and proposed a

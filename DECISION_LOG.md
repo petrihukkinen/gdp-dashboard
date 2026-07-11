@@ -2,6 +2,58 @@
 
 One entry per material strategic decision. Newest first.
 
+## 2026-07-11 — Cycle 8: Event 1 reclassified from core to optional module; final core architecture settled
+Attempted to kill the last surviving core payment event, per Petri's explicit instruction.
+Full detail in `06_COMMERCIAL_MODEL/cycle8_event1_survivability.md`.
+
+**Verdict: RECLASSIFY, not kill.** A 10-year persistence model showed the naive "perpetual
+share of a frozen baseline" design is commercially indefensible — an illustrative Scenario A
+computation showed €4,480,000 cumulative payment over 8 years for a few months of Year-2
+work, confirming the "perpetual rent" objection concretely. Tested perpetual / time-limited /
+declining / baseline-reset / hybrid share structures — **recommended a time-limited savings
+share on a rolling-baseline-plus-cohort architecture**, deliberately choosing simplicity
+(Cycle 6's operability lesson) over the theoretically fuller but reset-gaming-exposed hybrid
+option.
+
+**Savings-pool exhaustion confirmed as real and structural**, not a design flaw — any
+improvement-linked compensation model has this property. Response: price Base Fee to
+harvest proven Event 1 gains into permanent revenue over the contract's life rather than
+expecting Event 1 to remain productive indefinitely; no replacement payment event proposed.
+
+**Administration cost sized for the first time** (30k-1m€/yr across contractor-spend scales)
+and shown to reach a commercially absurd 12-24% ratio of verified value for smaller
+customers in steady-state years — direct evidence for a five-condition, evidence-based
+customer eligibility gate (minimum contractor spend, data quality, job-classification
+stability, net-substitution measurability, Finance validation capability).
+
+**Provider revenue concentration test concluded Event 1 must not be underwritten as
+guaranteed continuous revenue** in provider financial planning — it has a natural,
+finite opportunity arc.
+
+**Differentiation claim attacked and narrowed:** "for the life of the deal" is withdrawn
+(contradicted by the persistence findings); "exceeds normal maintenance-contract terms" is
+withdrawn (unsupported by any benchmark evidence in this project). A narrower, evidenced
+claim survives: bounded productivity-sharing plus capped downside accountability.
+
+**Control Tower without atomic upside tested directly and found to hold:** Event 4 — not
+Event 1 — is the mechanism that prevents AMOR from regressing to "Better Managed
+Maintenance" (the outcome Cycle 2 explicitly rejected). **Final settled position: AMOR's core
+is a Base-Fee-funded Control Tower + Event 4 downside corridor, complete and differentiated
+on its own. The Contractor Productivity Value Module (Event 1) and the Turnaround Value
+Module (Events 5+9) are both optional, additive, customer-specific — not required for AMOR
+to be honestly AMOR.**
+
+An external stakeholder validation test (3 interview scripts, pass/fail signals, a defined
+finding that would force Event 1's full kill) was designed but explicitly not conducted —
+no responses claimed or fabricated. A commercial-to-legal drafting brief for the
+catastrophic-Event-4-loss/liability boundary was written for external counsel, per Petri's
+instruction that this project defines the commercial boundary and drafting brief only, never
+final legal language.
+
+**The X/Z architecture naming from Cycle 6 is retired**, per Petri's explicit decision —
+there is one core architecture plus optional modules, not a maturity ladder between two
+named architectures.
+
 ## 2026-07-11 — Cycle 7: Event 3 killed entirely; core architecture reduced to Event 1 + Event 4
 Attacked Cycle 6's "Annual Reliability Event Reward" (Event 3's restructured successor)
 directly, per Petri's instruction not to protect Architecture Z if it turned out to be

@@ -1,17 +1,27 @@
 # Payment Eligibility Logic — Cycle 4 Consolidated
 
-**Superseded by Cycle 6 (`06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`) and Cycle 7
-(`06_COMMERCIAL_MODEL/cycle7_mva_hardening.md`):** Event 2 is REPORTING ONLY (no fee
-mechanism). **Event 3 — in its original case-by-case dollar-value design and in every
-restructured successor tested (flat reward, severity-banded reward, annual reward pool) — is
-killed entirely.** Reliability value is managed and reported (context/management KPIs), never
-individually monetized. Event 4 is reclassified from "payment event" to "downside corridor"
-in presentation and governance only — its decision tree is unchanged. Events 5 and 9 are
-reporting-only by default, available only via an optional, bundled Turnaround Value Module
-with a site-wide, minimum-term anti-selection rule. **The core commercial architecture is
-now Event 1 (upside) + Event 4 (downside corridor) — nothing else is monetized by default.**
-Read this document for the original Cycle 4 logic; read the Cycle 7 file for the current,
-final status.
+**Superseded by Cycle 6, 7, and 8** (`06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`,
+`cycle7_mva_hardening.md`, `cycle8_event1_survivability.md`). Event 2 is REPORTING ONLY.
+**Event 3 — original design and every restructured successor (flat reward, severity-banded
+reward, annual pool) — is killed entirely.** Reliability value is managed and reported
+(context/management KPIs), never individually monetized. Event 4 remains the downside
+corridor — decision tree unchanged, now the subject of a commercial-to-legal drafting brief
+(`cycle8_event1_survivability.md`, Task 11) separating performance economics from
+catastrophic-loss liability. Events 5 and 9 are reporting-only by default, available via an
+optional Turnaround Value Module with a site-wide, minimum-term anti-selection rule.
+
+**As of Cycle 8: Event 1 is also reclassified — from core payment event to an optional
+"Contractor Productivity Value Module,"** activated only for customers passing a five-
+condition eligibility gate, using a time-limited (not perpetual) savings-share design on a
+rolling-baseline-plus-cohort architecture, and explicitly not underwritten as guaranteed
+provider revenue.
+
+**The true, final core of AMOR is: Base-Fee-funded Control Tower + Event 4 downside
+corridor. This is complete and differentiated on its own — see
+`cycle8_event1_survivability.md`, Task 9. The Contractor Productivity Value Module and the
+Turnaround Value Module are both optional, additive, and customer-specific.** The X/Z
+naming from Cycle 6 is retired per Petri's Cycle 8 decision — there is one core architecture
+plus optional modules, not a maturity ladder.
 
 Organized around the three monetisation engines Petri named. No engine, and no event within
 it, aggregates into total OEE, annual availability, or absolute maintenance cost.
