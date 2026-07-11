@@ -2,6 +2,47 @@
 
 One entry per material strategic decision. Newest first.
 
+## 2026-07-11 — Cycle 9: external validation readiness built, no validation conducted
+Built the falsification infrastructure needed before real external testing, per Petri's
+instruction not to simulate or fabricate validation. Full detail in `18_INTERVIEW_QA/` and
+companion files.
+
+Identified and ranked 10 assumptions that could kill or materially damage the settled
+architecture (`18_INTERVIEW_QA/FALSIFICATION_REGISTER.md`) — 5 CRITICAL: customer WTP for
+orchestration as a distinct fee; Event 4's real differentiation from standard liability
+terms; customer willingness to cede real orchestration authority (flagged as *arguably
+contradicted* by AMOR 2020's own evidence — Neste retained significant control even under
+trust-based conditions); provider-organization internal resistance (untested); and whether
+Control Tower Economics is a systematized capability or relabeled contract management.
+
+Built three 30-minute, problem-first (not sales-first) interview protocols — customer CFO
+(12 questions), customer asset/maintenance/site director (10 questions), provider CFO/CEO
+(10 questions, explicitly testing who-sells/who-owns-the-customer/who-carries-risk/who-gets-
+revenue-and-margin-credit) — each question mapped to a specific falsification hypothesis
+with predefined positive/warning/kill signals.
+
+Attacked the Base-Fee-funded Control Tower packaging assumption directly — tested 5
+alternative commercial structures, selected none, flagged Option E (provider-funded Control
+Tower monetized only via modules) as very likely to fail Provider Executive validation
+before ever reaching a customer.
+
+Built the strongest case against Control Tower differentiation (`03_STRATEGIC_THESIS/
+DIFFERENTIATION_FALSIFICATION.md`) — verdict UNRESOLVED, tilting toward "good contract
+management with an unusually rigorous governance layer" absent multi-site evidence.
+
+Mapped Petri's direct experience against every major architecture element
+(`PETRI_ARCHITECTURE_EVIDENCE_MAP.md`) — found the two most load-bearing elements (Event 4's
+downside corridor, Control Tower Economics as a priced capability) are both **new
+hypotheses**, not proven by either ABB or Neste/AMOR experience.
+
+Wrote `CEO_CONVERSATION_BOUNDARIES.md` (5 claims too weak to state, 5 strong enough, 3
+validation-oriented questions for Petri to ask the CEO) and a predefined
+`18_INTERVIEW_QA/VALIDATION_SCORECARD.md` locking scoring criteria before any interview
+occurs, to prevent post-hoc narrative reinterpretation.
+
+**No interviews were conducted. No external validation has occurred. Every deliverable this
+cycle is preparation, not evidence.**
+
 ## 2026-07-11 — Cycle 8: Event 1 reclassified from core to optional module; final core architecture settled
 Attempted to kill the last surviving core payment event, per Petri's explicit instruction.
 Full detail in `06_COMMERCIAL_MODEL/cycle8_event1_survivability.md`.

@@ -174,15 +174,35 @@
 9. Retired the Cycle 6 X/Z architecture naming per Petri's decision — one core architecture,
    optional modules, not a maturity ladder.
 
-## Proposed Cycle 9
-1. **Conduct the external stakeholder validation designed in Cycle 8** — the single most
-   important open gap in the entire project; everything since Cycle 1 has been internal
-   analytical reasoning, never tested against real customer or provider behavior.
-2. Engage external legal counsel with the Cycle 8 drafting brief for the Event 4 liability
+## Cycle 9 (this session) — completed
+1. Built the Falsification Register — 10 ranked assumptions that could kill or damage the
+   architecture, each with evidence available/missing and explicit support/weaken/kill
+   answer definitions (`18_INTERVIEW_QA/FALSIFICATION_REGISTER.md`).
+2. Built three problem-first (not sales-first) validation protocols for customer CFO,
+   customer asset/site director, and provider CFO/CEO, each question mapped to a
+   falsification hypothesis with predefined signals.
+3. Attacked the Base-Fee-funded packaging assumption with 5 alternative commercial
+   structures — no winner selected (`06_COMMERCIAL_MODEL/WTP_PACKAGING_TEST.md`).
+4. Built the strongest case against Control Tower differentiation — verdict UNRESOLVED
+   (`03_STRATEGIC_THESIS/DIFFERENTIATION_FALSIFICATION.md`).
+5. Mapped Petri's direct experience against every architecture element — found the two most
+   load-bearing elements (Event 4, Control Tower Economics) are new hypotheses, not proven
+   by direct experience (`PETRI_ARCHITECTURE_EVIDENCE_MAP.md`).
+6. Wrote CEO conversation boundaries (5 safe claims, 5 not-yet claims, 3 validation
+   questions) and a predefined validation scorecard locking scoring criteria before any
+   interview occurs (`CEO_CONVERSATION_BOUNDARIES.md`, `18_INTERVIEW_QA/VALIDATION_SCORECARD.md`).
+7. **No interviews conducted. No external validation has occurred.**
+
+## Proposed Cycle 10
+1. Conduct the actual external stakeholder interviews using the Cycle 9 protocols — this is
+   the real next step, not further internal design work.
+2. Complete the Validation Scorecard against real responses once interviews occur.
+3. Engage external legal counsel with the Cycle 8 drafting brief for the Event 4 liability
    boundary.
-3. Calibrate real numbers now that the architecture is structurally settled: Base Fee
-   levels, Event 1's eligibility thresholds and cohort-life length, Turnaround Module terms
-   — deferred from Cycle 5 through 8, now the last major open design surface.
-4. Revisit Cycle 5's Model B/C in light of Event 3's full removal and Event 1's
-   reclassification — both were built assuming a richer event ledger than now exists.
-5. Only after 1-4: resume Gate 3 pricing optimisation on the final, settled architecture.
+4. Only after real evidence exists: calibrate real numbers (Base Fee levels, Event 1
+   eligibility thresholds, Turnaround Module terms) and revisit Cycle 5's Model B/C in light
+   of Event 3's removal and Event 1's reclassification.
+5. Do not build the executive deck until Falsification Register items #1-5 (CRITICAL) have
+   at least PARTIALLY SUPPORTED ratings — building a deck around unvalidated critical
+   assumptions would violate `CLAUDE.md` rule 20's Gate 3 discipline in spirit even if Gate 3
+   itself shows PASS WITH CONDITIONS.
