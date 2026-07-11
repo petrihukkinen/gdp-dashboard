@@ -1,92 +1,103 @@
-# Provider CFO / CEO Validation Protocol — Bilfinger-Scale Industrial Services Provider
+# Provider CEO / P&L Owner Validation Protocol — Bilfinger-Scale Industrial Services Provider
 
-## Q1 — Strategic attractiveness
-*"If this model succeeded exactly as designed, would it be strategically important to this
-company, or a nice-to-have niche offering?"*
-- **Testing:** genuine strategic priority versus peripheral interest.
-- **Positive:** named as strategically important, tied to real growth priorities.
-- **Warning:** interesting but peripheral.
-- **Kill:** no strategic relevance perceived.
+**Revised, Cycle 10.** Supersedes the Cycle 9 version. Tests the Accountability Economics
+Thesis directly — fewer, larger, longer accounts versus more, smaller, shorter ones.
 
-## Q2 — Revenue quality and margin potential
-*"Compare the revenue quality of a Base-Fee-funded Control Tower contract to your current
-Full Service maintenance book — more or less predictable, more or less profitable, and would
-leadership see it as a premium offering?"*
-- **Testing:** revenue quality / margin potential, honestly assessed.
-- **Positive:** seen as equal or better quality.
-- **Warning:** lower-margin but strategically interesting anyway.
-- **Kill:** clearly worse economics with no offsetting strategic value.
+## Q1 — Strategic preference: fewer/larger/longer vs. more/smaller/shorter
+*"Would winning fewer, larger, longer-duration accounts be strategically preferable to your
+current mix of contracts, even if unit margins were unchanged?"*
+- **Tested:** whether the ALV logic (`ACCOUNT_LIFETIME_VALUE_MODEL.md`) matches real
+  strategic preference, independent of any margin premium.
+- **Positive:** yes, clearly preferable.
+- **Warning:** interesting but not clearly preferable to current strategy.
+- **Kill:** no strategic preference for this shape of business at all.
 
-## Q3 — Downside corridor acceptability
-*"Would your organization accept a capped but real painshare exposure — money flowing from
-you to the customer when you cause a loss — as a standard feature of every contract using
-this model?"*
-- **Testing:** whether the design is acceptable to the people who'd actually carry the risk,
-  not just theoretically sound.
-- **Positive:** yes, with the caps as designed.
-- **Warning:** yes, but wants materially smaller caps or more exclusions.
-- **Kill:** no appetite for any real painshare exposure at all.
+## Q2 — Sales/rebid cost reality
+*"How much does it cost — in sales effort and time — to win a new account of this type, and
+to defend one at rebid? Would halving the frequency of that cycle change your view of this
+model's value?"*
+- **Tested:** whether Sales Cost/Rebid Cost amortization (the core of Mechanism 2's provider
+  benefit) is a real, material number internally.
+- **Positive:** real, material cost; halving frequency would meaningfully change the
+  economics.
+- **Warning:** real cost, but not decisive to the overall account decision.
+- **Kill:** sales/rebid cost is immaterial to how accounts are evaluated internally.
 
-## Q4 — Scalability
-*"Could this model be delivered consistently across 10, 50, or 100 customer sites without
-bespoke redesign each time?"*
-- **Testing:** scalability, directly.
-- **Positive:** yes, describes a replicable delivery model.
-- **Warning:** yes, but with real reservations about site-specific customization needs.
-- **Kill:** no — fundamentally bespoke, one relationship at a time.
+## Q3 — Would a lower annual margin be accepted for better lifetime value
+*"Would you accept a lower annual margin in exchange for a longer, more certain revenue
+stream and lower rebid risk, if the math showed better lifetime account value?"*
+- **Tested:** the actual ALV logic, put directly to the person who would have to approve it.
+- **Positive:** yes, if the math is shown and credible.
+- **Warning:** resistant to lower annual margin regardless of lifetime logic (annual
+  targets dominate internal incentives).
+- **Kill:** would never accept a lower annual number under any lifetime-value argument —
+  a structural internal-incentive barrier to the whole thesis, independent of customer
+  behavior.
 
-## Q5 — Working capital
-*"What working capital would this model require relative to your current contracts —
-better, worse, or the same — accounting for delayed settlement and claims
-administration?"*
-- **Testing:** whether Cycle 5's netting-delay findings hold up against real provider
-  Finance judgment.
-- **Positive:** manageable, comparable to existing models.
-- **Warning:** worse but tolerable.
-- **Kill:** unacceptably capital-intensive relative to the revenue generated.
+## Q4 — Delivery capability reality
+*"Do you have the delivery capability today to reliably run a much broader scope for one
+customer, or would this require real capability investment first?"*
+- **Tested:** Mechanism 1's required-capability precondition, honestly assessed.
+- **Positive:** capability largely exists.
+- **Warning:** partial, real investment needed.
+- **Kill:** does not exist and building it is not a near-term priority.
 
-## Q6 — Organizational capability
-*"Does your organization currently have the internal capability — people, systems,
-governance experience — to run a joint Value Validation Board and an atomic-event
-attribution process, or would this require significant new capability building?"*
-- **Testing:** real internal capability versus assumed.
-- **Positive:** largely exists already.
-- **Warning:** partial, needs real investment.
-- **Kill:** doesn't exist, and building it is not a viable near-term priority.
+## Q5 — Painshare acceptability at scale
+*"Would you accept real, capped painshare exposure as the price of winning meaningfully
+larger, longer accounts?"*
+- **Tested:** whether Event 4 is acceptable to the people who'd actually carry the risk, at
+  the larger scale this thesis implies.
+- **Positive:** yes, as designed.
+- **Warning:** yes, but wants smaller caps or more exclusions.
+- **Kill:** no appetite for real painshare exposure regardless of the scope/duration upside.
 
-## Q7 — Sales-cycle impact
-*"Would this model lengthen or shorten your typical sales cycle compared to a standard
-maintenance contract?"*
-- **Testing:** sales-cycle impact.
-- **Positive:** comparable or manageable increase.
-- **Warning:** materially longer, but justified by deal size/quality.
-- **Kill:** so much longer it kills deal velocity.
+## Q6 — Pull-through as existing strategy
+*"How much of your current growth strategy already depends on pull-through work from
+existing relationships — and would formalizing that as part of the commercial model help or
+create internal friction?"*
+- **Tested:** Mechanism 4's fit with existing provider strategy and organization.
+- **Positive:** already central to growth strategy; formalizing helps.
+- **Warning:** exists informally; formalizing creates friction with existing sales
+  structures.
+- **Kill:** not part of current strategy at all, and no appetite to make it one.
 
-## Q8 — Cannibalization
-*"Would this model cannibalize revenue or margin from your existing service lines, or would
-it be genuinely incremental?"*
-- **Testing:** cannibalization risk.
-- **Positive:** incremental / complementary.
-- **Warning:** partial overlap, manageable.
-- **Kill:** directly cannibalizes existing higher-margin business with no net gain.
+## Q7 — Internal P&L support or resistance
+*"If a regional or divisional P&L owner had to share account ownership and margin credit
+with people managing a centralized orchestration relationship, would they support it or
+fight it?"*
+- **Tested:** Falsification Register #4, directly, now framed around the specific new
+  economic logic.
+- **Positive:** support, or addressable resistance.
+- **Warning:** real resistance requiring incentive redesign.
+- **Kill:** resistance severe enough to be organizationally fatal.
 
-## Q9 — Who sells / who owns / who carries risk / who gets revenue and margin credit
-*"Under this model: who sells it — existing account teams or a new specialist function? Who
-owns the customer relationship — the site delivery team or a new Control Tower function? Who
-carries the contract risk — the business unit or corporate? Who receives the revenue, and
-who gets margin credit for it internally?"*
-- **Testing:** Falsification Register #4 — the internal-organizational-conflict question,
-  explicitly.
-- **Positive:** clear, non-contentious answers with an obvious owner for each.
-- **Warning:** answers exist but create real friction between functions/business units.
-- **Kill:** no clear answer exists, or the answer would trigger a turf fight severe enough
-  to block adoption regardless of customer appeal.
+## Q8 — Risk ownership structure
+*"Who would carry the risk on a broader-scope, capped-liability contract — the local
+business unit, or a corporate function — and does that ownership structure exist today?"*
+- **Tested:** whether risk ownership (as distinct from revenue/margin credit, Q7) has a
+  real home.
+- **Positive:** a clear structure exists or is easily built.
+- **Warning:** unclear, would require new governance.
+- **Kill:** no plausible risk-ownership structure exists.
 
-## Q10 — Internal P&L incentive alignment
-*"If a regional or divisional P&L owner had to give up direct account ownership or margin
-credit to a centralized Control Tower function, would they support or resist that change?"*
-- **Testing:** internal incentive alignment directly.
-- **Positive:** support, or neutral, framed as compensable/structurable.
-- **Warning:** resistance, but addressable through incentive redesign.
-- **Kill:** resistance strong enough to be organizationally fatal, unaddressed by any
-  incentive redesign.
+## Q9 — Provider-side concentration risk tolerance
+*"How much revenue concentration in a handful of large, long accounts would make your
+finance function uncomfortable?"*
+- **Tested:** the provider-portfolio mirror of the customer's own concentration concern
+  (`CUSTOMER_CFO_VALIDATION.md` Q5).
+- **Positive:** names a tolerance level comfortably above what this model would require.
+- **Warning:** names a tolerance level close to what this model would require.
+- **Kill:** any meaningful concentration in this style of account is unacceptable to
+  Finance.
+
+## Q10 — Closing: the actual bet
+*"If you had to bet the company's growth strategy on either winning many more accounts of
+the current type, or fewer, larger, longer accounts like this — which would you actually
+choose, and why?"*
+- **Tested:** the real, considered strategic preference, forcing a choice rather than a
+  hypothetical endorsement.
+- **Positive:** chooses the accountability-based shape, with reasoning that matches this
+  project's mechanisms.
+- **Warning:** genuinely torn, sees real trade-offs either way.
+- **Kill:** clearly prefers the current account model — the strongest possible signal that
+  this thesis is a solution in search of a strategic need that doesn't exist internally.

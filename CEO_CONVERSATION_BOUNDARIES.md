@@ -1,5 +1,12 @@
 # CEO Conversation Boundaries — Cycle 9
 
+**Cycle 10 note:** the underlying thesis changed from "separately priced Control Tower" to
+"Accountability Economics" (scope, duration, retention, pull-through, efficiency — see
+`03_STRATEGIC_THESIS/ACCOUNTABILITY_ECONOMICS_RED_TEAM.md`). The claims below remain
+directionally valid but should be read alongside that reframe — Question 1 in particular
+should be asked using the Cycle 10 framing (scope/duration), not the retired standalone-fee
+framing.
+
 For a 15-minute conversation with a Bilfinger-scale CEO-level executive. AMOR 2030 must be
 positioned as **a strategically developed hypothesis, grounded in direct industrial
 experience and eight cycles of commercial stress-testing — not a finished strategy.**

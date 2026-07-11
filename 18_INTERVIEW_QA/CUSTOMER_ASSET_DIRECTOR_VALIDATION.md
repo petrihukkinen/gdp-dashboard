@@ -1,94 +1,94 @@
 # Customer Asset/Maintenance/Site Director Validation Protocol — 30 Minutes
 
-For Asset Director, Maintenance Director, or Site Director roles. Operational, not
-commercial framing — but still a problem interview, not a pitch.
+**Revised, Cycle 10.** Supersedes the Cycle 9 version. Tests scope delegation, decision
+rights, and earned retention versus lock-in, operationally rather than commercially.
 
-## Q1 — Actual pain of fragmented accountability
-*"Describe the last time a contractor, an OEM, and your own maintenance team disagreed about
-who was responsible for a delay or a failure. How was it resolved, and how long did it
-take?"*
-- **Testing:** whether fragmented accountability is real, operational, costly pain.
-- **Positive:** real, costly friction, slow resolution.
-- **Warning:** happens but resolves quickly through informal relationships.
-- **Kill:** essentially never happens — accountability is already clear.
+## Q1 — What would genuinely be delegated
+*"What parts of your current maintenance/contractor management would you genuinely be glad
+to hand off to someone else, and why?"*
+- **Tested:** real, positive scope for delegation (Mechanism 1, operationally).
+- **Positive:** names a substantial, specific list.
+- **Warning:** names only minor, low-value tasks.
+- **Kill:** nothing — everything is seen as too important to delegate.
 
-## Q2 — Willingness to cede orchestration authority
-*"If an external party had the authority to select, direct, and reprioritize your
-contractors and specialist providers day-to-day — not just advise, but actually decide —
-how would your organization react?"*
-- **Testing:** Falsification Register #3, operationally.
-- **Positive:** openness, framed as relief rather than threat.
-- **Warning:** conditional openness, wants veto rights retained.
-- **Kill:** strong resistance — "we would never give up that control."
-
-## Q3 — Control Tower decision-rights boundary
-*"Which specific decisions would you never delegate to an external provider, no matter how
-much you trusted them — approved vendor lists, Capex, work prioritization, something else?"*
-- **Testing:** the real boundary of the decision-rights architecture.
-- **Positive:** names a short, specific, negotiable list.
-- **Warning:** names a long list that would gut the orchestration role.
+## Q2 — What would never be delegated
+*"What would you never hand off, no matter how good the provider was?"*
+- **Tested:** the real boundary of orchestration authority.
+- **Positive:** a short, specific, negotiable list.
+- **Warning:** a long list that would gut the orchestration role.
 - **Kill:** "everything" — no delegation acceptable at all.
 
-## Q4 — Work-permit/customer-dependency reality
-*"How often does work-permit timing or production-access scheduling actually delay planned
-maintenance work at your site, and who usually owns fixing that?"*
-- **Testing:** whether the customer-dependency exclusion logic (Event 4's SLA-driven
-  exclusions, Event 1's access dependencies) is solving a real or imagined problem.
-- **Positive:** frequent, well-understood, ownable friction.
+## Q3 — Decision rights under real orchestration authority
+*"If a provider had real day-to-day authority to direct your contractor ecosystem, what
+decision would you still insist on making yourself, every time?"*
+- **Tested:** decision-rights architecture reality, cross-checked against
+  `ACCOUNTABILITY_BOUNDARY.md`.
+- **Positive:** names decisions consistent with the customer-owned categories already
+  defined (Capex, statutory, production).
+- **Warning:** names additional operational decisions beyond those categories.
+- **Kill:** insists on retaining essentially all meaningful decisions.
+
+## Q4 — Earned retention versus lock-in, from lived experience
+*"What's the biggest frustration you've had with an incumbent provider over a long
+relationship — was it a performance problem, or a 'we're stuck with them' problem?"*
+- **Tested:** Mechanism 3's core distinction, grounded in real experience rather than
+  hypothetical framing.
+- **Positive:** describes performance-driven frustration, resolved by switching or
+  renegotiating on merit.
+- **Warning:** mixed — some lock-in experienced but tolerated.
+- **Kill:** describes real, damaging lock-in — a direct warning sign for this thesis.
+
+## Q5 — Do the retention protections actually change behavior
+*"If this provider's data, documentation, and processes were fully portable — you could hand
+everything to a new provider within a defined transition period — would that change how
+comfortable you'd be with a longer commitment?"*
+- **Tested:** whether `EARNED_RETENTION_PROTOCOL.md`'s specific protections move real
+  willingness, not just theoretical comfort.
+- **Positive:** yes, materially more comfortable.
+- **Warning:** somewhat more comfortable, but not decisive.
+- **Kill:** portability wouldn't change their view — the underlying objection is deeper than
+  data lock-in.
+
+## Q6 — Customer dependencies in practice
+*"What operational dependencies on your side — permits, production access, engineering
+sign-off — most often cause friction with external providers today?"*
+- **Tested:** whether the named customer-dependency taxonomy (permit timing, production
+  access, etc.) reflects real, current friction or a solved/non-problem.
+- **Positive:** frequent, specific, well-understood friction.
 - **Warning:** occasional, multi-causal.
-- **Kill:** essentially never an issue — the dependency-exclusion architecture may be
-  solving a non-problem.
+- **Kill:** essentially never an issue — the whole dependency architecture may be solving
+  something that doesn't matter operationally.
 
-## Q5 — Data transparency willingness
-*"Would you be comfortable giving an external provider real-time or near-real-time access to
-your CMMS, work-order, and contractor invoicing data?"*
-- **Testing:** a hard precondition for the entire attribution architecture.
-- **Positive:** yes, with reasonable controls.
-- **Warning:** yes, but only with heavy restrictions/anonymization.
-- **Kill:** no — data sharing at this level is off the table.
+## Q7 — Pull-through trust, operationally
+*"How would you personally verify that a provider recommending extra work is doing it for
+your asset's benefit and not their revenue?"*
+- **Tested:** whether `PULL_THROUGH_CONFLICT_PROTOCOL.md`'s safeguards would satisfy someone
+  who actually has to sign off on the work.
+- **Positive:** names a specific, addressable verification method already in the protocol.
+- **Warning:** skeptical, wants more than currently designed.
+- **Kill:** no governance mechanism would resolve their distrust.
 
-## Q6 — Internal organizational resistance
-*"If your own maintenance or procurement team's role changed significantly under this model
-— some work moving to the external provider — how would your organization respond
-internally?"*
-- **Testing:** real, human, political resistance risk.
-- **Positive:** describes a plausible transition path, existing appetite for change.
-- **Warning:** real but manageable resistance.
-- **Kill:** fundamental, likely fatal internal political resistance (union, headcount
-  protection, etc.).
+## Q8 — Conditions for a genuinely long relationship
+*"What would a five-plus-year relationship with one orchestrating provider need to look like
+for you to feel it was safe, not risky?"*
+- **Tested:** Mechanism 2's real operational preconditions.
+- **Positive:** names specific, meetable conditions.
+- **Warning:** names conditions that would be hard to guarantee.
+- **Kill:** no condition would make a 5+ year single-provider relationship feel safe.
 
-## Q7 — Fear of provider lock-in
-*"What would concern you most about depending heavily on one external provider for this
-orchestration role over a 5-10 year contract?"*
-- **Testing:** lock-in fear as a standalone blocker.
-- **Positive:** names manageable, addressable concerns (exit terms, data portability).
-- **Warning:** significant, harder-to-address concerns.
-- **Kill:** lock-in fear alone would block signing regardless of value proposition.
-
-## Q8 — KPI gaming risk / operational trust
-*"What would make you trust that a provider recommending additional preventive maintenance
-is doing it because it's genuinely needed, not because it protects the provider from a
-performance penalty?"*
-- **Testing:** whether the over-maintenance control concept (`overmaintenance_control.md`)
-  would actually satisfy a real operations leader, not just an internal Red Team.
-- **Positive:** names a specific, addressable form of evidence/governance that would satisfy
-  them.
-- **Warning:** skeptical, wants more than what's currently designed.
-- **Kill:** no governance mechanism would fully resolve their distrust.
-
-## Q9 — Operational credibility / precedent
-*"Has an external maintenance or service provider ever successfully run something like this
-orchestration role for you before, even informally? What worked and what didn't?"*
-- **Testing:** operational credibility grounded in real precedent, not theory.
-- **Positive:** describes a positive precedent.
-- **Warning:** mixed precedent.
-- **Kill:** describes a clearly negative precedent that colors this proposal.
+## Q9 — Trust in joint governance
+*"Would you trust a joint governance process — not just the provider's own word — to hold
+them accountable over that many years?"*
+- **Tested:** Value Validation Board credibility, operationally, over a long horizon.
+- **Positive:** yes, describes what would make it credible.
+- **Warning:** conditional trust.
+- **Kill:** would never trust joint governance over unilateral customer control.
 
 ## Q10 — Closing: core-only operational value
-*"If this provider only delivered the base maintenance service and the accountability
-guarantee — no contractor savings-sharing, no reliability rewards — would you still see real
-operational value in it?"*
-- **Testing:** Falsification Register #10, operationally.
+*"If this provider only delivered broader-scope accountability and transparent governance —
+no extra savings-sharing, no reliability rewards — would that alone be worth the
+relationship to you?"*
+- **Tested:** whether the Accountability Economics core has standalone operational value.
 - **Positive:** yes.
 - **Warning:** conditional.
 - **Kill:** no — without upside modules there's no operational case either.

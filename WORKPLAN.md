@@ -193,16 +193,48 @@
    interview occurs (`CEO_CONVERSATION_BOUNDARIES.md`, `18_INTERVIEW_QA/VALIDATION_SCORECARD.md`).
 7. **No interviews conducted. No external validation has occurred.**
 
-## Proposed Cycle 10
-1. Conduct the actual external stakeholder interviews using the Cycle 9 protocols — this is
-   the real next step, not further internal design work.
-2. Complete the Validation Scorecard against real responses once interviews occur.
+## Strategic Reframe Challenge (between Cycles 9 and 10) — completed
+Tested whether the Control Tower should be a separately monetized product versus the
+operating system enabling broader-scope, longer-duration, single-accountable relationships.
+Verdict: the latter is stronger, consistent with AMOR 2020's own actual deal logic. Renamed
+the "Accountability Premium" working hypothesis to avoid assuming a price premium exists.
+
+## Cycle 10 (this session) — completed: Gate 3A
+1. Built the Accountability Economics Tree — Account Lifetime Value logic from first
+   principles (`10_FINANCIAL_MODEL/ACCOUNTABILITY_ECONOMICS_TREE.md`).
+2. Tested five economic mechanisms (scope, duration, retention, pull-through, margin
+   efficiency) individually against economic logic, risk, and kill conditions
+   (`10_FINANCIAL_MODEL/FIVE_ECONOMIC_MECHANISMS.md`).
+3. Built the Accountability Boundary — six distinct accountability types, with Asset Owner,
+   Statutory, and Production accountability explicitly non-delegable to the provider
+   (`03_STRATEGIC_THESIS/ACCOUNTABILITY_BOUNDARY.md`).
+4. Rewrote all three Cycle 9 validation protocols in place around scope/duration/
+   accountability economics, retiring the "separate fee" framing entirely.
+5. Built the Earned Retention Protocol (customer data ownership, portability, documentation,
+   transition assistance — found net positive for provider economics, not a cost) and the
+   Pull-Through Conflict Protocol (tiered safeguards against the recommendation/sales agency
+   problem).
+6. Built an illustrative Account Lifetime Value sensitivity model — found Control Tower
+   operating cost, not renewal probability or pull-through, is the single most sensitive
+   variable in the entire thesis (`10_FINANCIAL_MODEL/ACCOUNT_LIFETIME_VALUE_MODEL.md` +
+   companion CSV).
+7. Ran a 12-point Red Team against "broader accountability creates superior account
+   lifetime economics" — thesis survives as coherent, not as proven.
+8. Built the Systematic Capability Map — no item qualifies as a proven moat; the two
+   genuine moat candidates (Control Tower replicability at scale, cross-site performance
+   data) require multi-site evidence this project cannot generate.
+9. **Gate 3A — Accountability Economics Logic: PASS WITH CONDITIONS.**
+
+## Proposed Cycle 11
+1. Conduct the actual external stakeholder interviews using the **revised Cycle 10**
+   protocols — the real next step, not further internal design work.
+2. Complete the Validation Scorecard against real responses once interviews occur,
+   prioritizing the scope-consolidation and duration-appetite questions as the single most
+   important test.
 3. Engage external legal counsel with the Cycle 8 drafting brief for the Event 4 liability
    boundary.
-4. Only after real evidence exists: calibrate real numbers (Base Fee levels, Event 1
-   eligibility thresholds, Turnaround Module terms) and revisit Cycle 5's Model B/C in light
-   of Event 3's removal and Event 1's reclassification.
-5. Do not build the executive deck until Falsification Register items #1-5 (CRITICAL) have
-   at least PARTIALLY SUPPORTED ratings — building a deck around unvalidated critical
-   assumptions would violate `CLAUDE.md` rule 20's Gate 3 discipline in spirit even if Gate 3
-   itself shows PASS WITH CONDITIONS.
+4. Investigate real Control Tower delivery cost data — the model's single most sensitive,
+   least-evidenced variable — through any means available short of fabrication.
+5. Only after real evidence exists: calibrate real numbers and revisit Cycle 5's Model B/C.
+6. Do not build the executive deck until Falsification Register items #1-5 and the Gate 3A
+   scope/duration hypothesis have at least PARTIALLY SUPPORTED ratings.

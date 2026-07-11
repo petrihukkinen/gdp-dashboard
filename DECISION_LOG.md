@@ -2,6 +2,47 @@
 
 One entry per material strategic decision. Newest first.
 
+## 2026-07-11 — Cycle 10: Accountability Economics thesis built, Gate 3A PASS WITH CONDITIONS
+Following the Strategic Reframe Challenge (Control Tower as operating system, not product),
+built the full economic and validation architecture for the "Accountability Economics"
+thesis (renamed from "Accountability Premium" — no price premium is assumed). Full detail
+across `10_FINANCIAL_MODEL/ACCOUNTABILITY_ECONOMICS_TREE.md`, `FIVE_ECONOMIC_MECHANISMS.md`,
+`ACCOUNT_LIFETIME_VALUE_MODEL.md`, `03_STRATEGIC_THESIS/ACCOUNTABILITY_BOUNDARY.md`,
+`ACCOUNTABILITY_ECONOMICS_RED_TEAM.md`, `SYSTEMATIC_CAPABILITY_MAP.md`, and
+`08_OPERATING_MODEL/EARNED_RETENTION_PROTOCOL.md` / `PULL_THROUGH_CONFLICT_PROTOCOL.md`.
+
+**Core finding:** the thesis claims superior Account Lifetime Value from scope, duration,
+retention, and pull-through economics — explicitly not from a price premium or a separately
+priced Control Tower fee. An illustrative sensitivity model found the thesis's advantage is
+directionally robust to renewal-probability and pull-through failure, but **highly sensitive
+to Control Tower operating cost** — a 3x cost increase erodes over half the modeled
+advantage. This is now understood as the single biggest unresolved risk to the whole
+strategy, more dangerous than any customer-behavior question, because it is entirely within
+the provider's own control to get wrong.
+
+**Accountability boundary formalized:** six distinct accountability types (Delivery,
+Orchestration, Performance — provider-ownable; Asset Owner, Statutory, Production —
+never delegable). "Single accountable provider" is now a permanently qualified phrase, not a
+free-standing claim.
+
+**Earned retention versus structural lock-in formally separated**, with required customer
+protections (data ownership, portability, documentation, transition assistance) found to be
+net positive for provider economics, not a tax on the model — they remove the biggest
+customer objection to the whole thesis.
+
+**Pull-through agency conflict addressed** with tiered safeguards (open-book disclosure,
+independent technical challenge, competitive tender above a threshold, structural separation
+of recommendation and sales incentives).
+
+All three Cycle 9 validation protocols were rewritten in place, retiring the "would you pay
+a separate Control Tower fee" question entirely and replacing it with scope-consolidation
+and duration-appetite questions as the new primary validation targets.
+
+**Gate 3A (Accountability Economics Logic): PASS WITH CONDITIONS.** The Differentiation
+Falsification verdict from Cycle 9 (UNRESOLVED) is unchanged — this reframe changes where
+the economics might come from, it does not prove the underlying capability is
+non-replicable.
+
 ## 2026-07-11 — Cycle 9: external validation readiness built, no validation conducted
 Built the falsification infrastructure needed before real external testing, per Petri's
 instruction not to simulate or fabricate validation. Full detail in `18_INTERVIEW_QA/` and
