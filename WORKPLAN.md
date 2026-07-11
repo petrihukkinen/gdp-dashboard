@@ -110,18 +110,25 @@
    illustrative settings).
 6. Formal verdict: **Gate 3 — PASS WITH CONDITIONS** — `10_FINANCIAL_MODEL/gate3_verdict.md`.
 
-## Proposed Cycle 6
+## Proposed Cycle 6 (revised after Cycle 5 addendum, 2026-07-11)
+0. **New top priority, per Petri's sparring:** an explicit "operability litmus test" —
+   could the current 6-9 atomic value events be cut to the 2-3 genuinely worth their
+   bureaucracy cost, with the rest permanently reporting-only? Test whether the architecture
+   as designed is something a real operations team on both sides would actually run, not
+   just something that is internally consistent on paper. See `RISK_REGISTER.md`.
 1. Resolve the catastrophic Event 4 under-compensation gap — consider whether an "excess
    loss" escalation/negotiation mechanism should exist above the standard corridor for
    genuinely large, undisputed, provider-attributable losses.
 2. Formalize the claim-bundling anti-gaming rule and build the Causal Connection Map
    (Petri's Cycle 5 decision 4) — both required before Event 3 gainshare and the damage-
    splitting Red Team finding can be considered closed.
-3. Resolve Model B's Base Fee/gainshare-split calibration and Model C's cap-base decision
-   (Control Tower Fee alone vs. total contract value) — both are required Petri/commercial
-   decisions, not further architecture work.
+3. Resolve Model B's Base Fee/gainshare-split calibration (needed to test whether Model B can
+   genuinely lead Phase 3-4, per Petri's hypothesis) and Model C's cap-base decision (Control
+   Tower Fee alone vs. total contract value, relevant now that Model C is a live market-entry
+   candidate too, not just a Phase 3-4 one).
 4. Design a customer-side adjudication SLA symmetric to the provider's submission SLA.
 5. Build the job-complexity-normalized catalog for Event 1 — still the one item blocking
    full Gate 2 closure, unresolved since Cycle 3.
-6. Name Event 9's independent benchmark provider before any TA-year modelling can be
-   treated as usable in a live contract.
+6. Event 9's benchmark provider must now satisfy the three independence tests added in the
+   Cycle 5 addendum (`07_KPI_ATTRIBUTION/event9_turnaround_execution_efficiency.md`), not
+   just be named — a slightly higher bar than previously logged.

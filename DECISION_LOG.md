@@ -2,6 +2,46 @@
 
 One entry per material strategic decision. Newest first.
 
+## 2026-07-11 — Cycle 5 addendum: two attribution gaps fixed, market-entry recommendation partially revised
+Petri re-sent the Cycle 5 brief (already fully executed in the prior turn, commit
+`ab72749`) with four sparring points attached. Two were already satisfied by the existing
+work (MII/RRE kept as control signals, not payment KPIs — `overmaintenance_control.md`;
+netting cash-flow explicitly modelled under three settlement options — each model file's
+cash-flow section). Two exposed genuine, unaddressed gaps, now fixed:
+1. **"Jointly selected" independence criteria for Event 9's benchmark provider were
+   underspecified** — a benchmark chosen jointly by both parties is not automatically
+   unbiased. Added three explicit independence tests (no material commercial relationship
+   with either party in 3 years; publicly documented/auditable methodology; a recognized
+   neutral institution, named expert, or multi-relationship historical dataset) plus a
+   mid-execution benchmark-change lockdown requiring dual Finance sign-off and independent
+   reviewer approval — `07_KPI_ATTRIBUTION/event9_turnaround_execution_efficiency.md`.
+2. **The customer maintenance-plan veto right (introduced in Cycle 4's over-maintenance
+   control) was never fed back into Event 4's attribution logic** — an internal
+   inconsistency: giving the customer a control lever to catch provider gaming necessarily
+   also gives the customer a channel to shift real controllability onto itself if it blocks
+   a genuinely necessary action. Added Step 3.6 to the Event 4 decision tree —
+   `07_KPI_ATTRIBUTION/event4_decision_tree_v3.md`.
+
+**Strategic hypothesis engaged, not deferred to:** Petri proposed Model C (not Model A) as
+the likely AMOR market-entry winner, and Model B as the real Phase 3-4 competitive
+advantage. Re-examined against the Cycle 5 numbers: Model C's absolute risk-corridor
+exposure is in fact the smallest of the three models (caps set against the small €8m
+Control Tower Fee) and its fixed-cost predictability (92.9%) is close to Model A's (96.9%)
+— meaning Model C is closer to Model A on risk grounds than the original Cycle 5 chat
+summary emphasized, while offering a materially better strategic narrative (it embodies
+Control Tower Economics directly, rather than resembling conventional Full Service
+outsourcing). **Recommendation partially revised: Model C is a legitimate, possibly superior,
+market-entry candidate on a combined risk-and-narrative basis, not just a Phase 3-4 model.**
+Model B's suitability as the Phase 3-4 leader is directionally agreed (it is the
+architecture most aligned with genuine outcome-based economics) but remains numerically
+unproven at current illustrative settings — depends on resolving the required Base
+Fee/gainshare-split recalibration already logged as an open decision.
+
+**New top risk named:** whether the attribution architecture, after five cycles of
+rigor-driven additions, has become too operationally complex for any real team to want to
+run — logged to `RISK_REGISTER.md` as a high-severity, high-priority Cycle 6 item, potentially
+more fundamental than any single remaining design gap.
+
 ## 2026-07-11 — Cycle 5: Gate 3 commercial modelling, PASS WITH CONDITIONS
 Petri set five Cycle 5 modelling decisions (180-day netting window confirmed with 90-365 day
 event-specific flexibility; net-basis materiality interpretation for secondary/netting

@@ -19,6 +19,17 @@ threshold, SLA defaults, netting-mechanism interaction, and over-maintenance con
   should have caught? No (novel/unforeseeable) → excluded, stop.
 - **Step 3.5:** Did the provider issue a documented, dated risk advisory that was overridden
   by a customer scheduling decision? Yes → excluded/customer-attributable, stop.
+- **Step 3.6 (new, Cycle 5 addendum, per Petri):** Did the customer exercise its
+  maintenance-plan review/veto right (`overmaintenance_control.md`'s over-maintenance
+  mitigation) to block, reduce, or delay a specific provider-proposed PM/CM action, **and**
+  is that blocked/reduced action the one that would have prevented this failure mode? Yes →
+  excluded/customer-attributable, stop. **This closes a gap the veto-right control itself
+  created:** giving the customer a review/veto right over maintenance-plan spend increases
+  (to catch over-maintenance gaming) necessarily also gives the customer a channel to shift
+  real controllability onto itself if it exercises that right and a preventable failure
+  follows. Without this step, the architecture would have added a customer control lever in
+  Cycle 4 without updating the attribution logic that lever interacts with — an internal
+  inconsistency, not just a theoretical risk.
 - **Step 4 (revised — SLA-driven, new):** Was the plant within its agreed operating envelope,
   **and** were all named customer dependencies within their agreed SLA at the relevant time —
   permit/customer approval cycle ≤ 48 hours; production access following an agreed

@@ -19,6 +19,39 @@ database, agreed in the contract before the first TA cycle** — never the provi
 estimate alone, and never selected unilaterally by either party mid-relationship (see
 Scenario 13, `cycle4_red_team_scenarios.md`).
 
+## Correction (Cycle 5 addendum, per Petri, 2026-07-11): "jointly selected" is not the same as "independent"
+Petri's sharpest sparring point on this event: a benchmark provider chosen jointly by
+customer and provider can still be captured, commercially dependent on one or both parties,
+or simply not rigorous — joint selection is a *process* safeguard, not a *substance*
+guarantee of independence. Two parties agreeing on a biased referee does not make the referee
+unbiased. **Independence must be defined by criteria, not by the selection process alone.**
+A benchmark source qualifies as independent only if it satisfies **all** of:
+1. **No material commercial relationship** with either party (no material revenue from either
+   the provider or the customer) in the preceding 3 years — a specific, checkable test, not
+   a self-declaration.
+2. **Publicly documented, auditable methodology** — the benchmark calculation method itself
+   must be inspectable by both parties' Finance functions, not a black box.
+3. Either **(a) a recognized neutral industry institution or dataset** (e.g. an established
+   third-party TA-duration benchmarking service), or **(b) a named individual expert with no
+   prior engagement history with either party**, or **(c) an independently validated
+   multi-turnaround historical benchmark methodology** built from data spanning multiple,
+   unrelated customer relationships — not derived solely from this contract's own history.
+
+Joint selection remains necessary (neither party may impose a benchmark unilaterally) but is
+no longer treated as sufficient. This tightens, not loosens, Event 9's Phase 3-4
+prerequisite — it was already gated on a benchmark provider being named; it is now also gated
+on that provider passing these three tests, which must be documented at contract
+mobilisation and re-attested at each TA cycle (commercial relationships can change over a
+multi-year contract term).
+
+**Mid-execution benchmark changes are locked down, not merely discouraged:** any benchmark
+adjustment requested after a turnaround's execution has begun requires **both** dual Finance
+sign-off (customer and provider) **and** independent reviewer approval — the same
+independent reviewer role defined in `08_OPERATING_MODEL/VALUE_VALIDATION_BOARD_MVP.md`.
+This closes the obvious gaming window (either party trying to move the goalposts once early
+execution results are visible) that a simple "benchmark is pre-agreed" rule alone doesn't
+fully prevent.
+
 ## Metrics considered
 - Critical-path duration (actual vs. independent benchmark)
 - Planned vs. actual productive wrench time

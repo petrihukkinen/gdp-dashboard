@@ -68,6 +68,15 @@ minimum maintenance activity — the same framework, not a separate one-sided ru
   trigger on the same asset class within a rolling 12 months escalates to a mandatory joint
   maintenance-plan review with customer veto rights over further PM/PdM scope changes for
   that class.
+
+  **Cycle 5 correction (per Petri):** this veto right is not a free protection for the
+  customer — it is a controllability transfer. If the customer exercises it to block a
+  specific provider-proposed action and that exact action would have prevented a subsequent
+  failure, `event4_decision_tree_v3.md` Step 3.6 excludes/customer-attributes that failure.
+  The over-maintenance control and Event 4's attribution logic must be read together, not in
+  isolation — a fix to one side of the corridor without an equivalent update on the other
+  side would have quietly shifted risk onto the provider even in cases where the customer's
+  own decision caused the loss.
 - **Under-maintenance trigger fires:** Event 1 gainshare/performance-fee eligibility is
   suspended for the affected asset class (cost "savings" driven by declining maintenance
   intensity correlated with declining asset health is not real productivity value), and an
