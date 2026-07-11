@@ -47,9 +47,27 @@ flagged UNTESTED)
 | Does it become consulting instead of a scalable service? | Live risk — see `RISK_REGISTER.md`. |
 
 ## Verdict for Cycle 1
-The thesis is plausible and worth continuing to test, but it is currently a hypothesis
-resting on almost no direct evidence of its hardest claims (performance-based pricing,
-attribution, gainshare). The strongest asset this project has — AMOR 2020 — is evidence for
-the easier, already-proven part of the ladder (cost-out, integration, contractor
-consolidation), not the harder, more valuable part (performance partnership). See
-`03_STRATEGIC_THESIS/red_team_review.md` for the sharpest version of this critique.
+The thesis is plausible and worth continuing to test. The AMOR 2020 deck itself provides no
+evidence of performance-linked compensation or formal gainshare attribution — that is a
+precise statement about one document, not a statement that the thesis is unproven overall.
+See `03_STRATEGIC_THESIS/red_team_review.md` for the sharpest version of this critique.
+
+## Correction (Cycle 2, per Petri, 2026-07-11)
+Cycle 1's chat verdict overstated the gap by saying the concept "proves nothing about
+performance-based pricing, gainshare, or attribution." That conflated "this one source is
+silent on X" with "X is unproven." **The AMOR 2030 evidentiary core is the combination of
+two sources, not one:** AMOR 2020 (Level A, customer-side transformation/outsourcing
+architecture) and Petri's ABB experience (Level B — real, operational fixed-price →
+performance-based maintenance delivery with OEE/production-performance linkage across ~43
+Finnish Full Service contracts; see `PETRI_EXPERIENCE.md`). Together they support a stronger
+claim than either alone: the customer-side logic for large-scale maintenance
+transformation is real and detailed (AMOR), and the provider-side transition to
+performance-linked pricing is something Petri has actually built and run (ABB) — not a
+theoretical maturity-ladder rung.
+
+This also means the Cycle 1 recommendation to treat "Option B: Asset Performance
+Partnership" as the answer was too conservative. Petri's correction: **B is the market-entry
+architecture, not the strategic destination.** See the revised recommendation in
+`03_STRATEGIC_THESIS/business_model_options.md` ("Cycle 2 revision") and the newly adopted
+`03_STRATEGIC_THESIS/control_tower_economics.md` design principle, which is what makes a
+more ambitious destination credible rather than aspirational.

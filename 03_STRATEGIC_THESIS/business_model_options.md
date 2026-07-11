@@ -59,4 +59,34 @@ today's evidence.
 | Tests the core thesis? | No | Yes, narrowly and credibly | Yes, fully — but prematurely |
 | CFO credibility today | High | Medium-High, if scoped as above | Low — would fail Red Team on attribution grounds |
 | Scalability | Medium (proven playbook, but no performance differentiation vs. competitors) | Medium-High | High, if it ever becomes fundable |
-| Recommended as Cycle 1 answer | No — doesn't test the thesis | **Yes — see recommendation in chat output** | No — premature, but is the target end-state for a staged path (A → B → C) |
+
+## Cycle 2 revision (per Petri, 2026-07-11) — supersedes the Cycle 1 recommendation
+
+Petri's correction: Cycle 1 was 80% right but **Option B is a market-entry model, not the
+final strategic destination.** Recommending B alone risks letting risk management eat the
+original strategic ambition — the result would be "Better Managed Maintenance," which per
+Petri is "not interesting enough" for a Bilfinger-scale pitch.
+
+**Revised architecture:**
+- **Strategic destination: Selective Outcome-Based Asset Performance Platform** — a scoped
+  version of Option C. "Selective" is load-bearing: gainshare/painshare only on pools that
+  pass the attribution test (see `07_KPI_ATTRIBUTION/attribution_architecture.md`), not
+  full-scope outcome contracting on day one or ever forced onto pools that can't support it
+  (e.g. Pool 4 lifecycle/Capex stays jointly-governed and rarely payment-linked even at
+  full maturity — see `05_VALUE_POOLS/value_pool_tree.md`).
+- **Market entry: Asset Performance Partnership (Option B)** — unchanged from Cycle 1, still
+  the right place to start because it's the only architecture with real attribution
+  confidence today.
+- **Maturity path: Managed Transformation → Asset Performance Partnership → Selective
+  Outcome-Based Modules.** Each stage is a deliberate maturity gate, not a rename of the same
+  offer — see `07_KPI_ATTRIBUTION/attribution_architecture.md` for which atomic value events
+  become payment-eligible at which stage.
+- **Underlying design principle: Control Tower Economics** (`control_tower_economics.md`) —
+  what makes the destination credible is that the provider's core differentiated asset is
+  ecosystem orchestration and accountability, not labor delivery. A labor/subcontract
+  delivery business does not naturally evolve into an outcome-based platform; an
+  orchestration business does.
+
+**Do not present the destination as Option B.** B is necessary but not sufficient — it is
+the credible first step on a path whose destination is intentionally more ambitious, scoped
+by what can actually be attributed rather than by what sounds impressive.

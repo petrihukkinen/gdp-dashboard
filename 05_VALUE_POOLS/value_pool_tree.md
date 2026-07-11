@@ -11,26 +11,39 @@ AMOR 2030.
 - **Baseline:** €68m/yr subcontracting spend (largest cost category, A5).
 - **Value driver:** Consolidation to fewer, larger partners; hourly-rate → lump-sum
   conversion; integrator-managed KPIs and productivity targets.
-- **Controllability:** **Provider-controlled** — once granted mandate, the provider directly
-  runs sourcing, contracting, and performance management.
+- **Controllability:** **CORRECTED (2026-07-11, per Petri): "Primarily provider-controlled,
+  with defined customer dependencies"** — not "fully provider-controlled" as Cycle 1
+  originally stated. The customer retains real influence via: approved-supplier lists,
+  procurement contracts, vendor lock-in situations, labor/union constraints, work-permit
+  processing, work prioritization, and Capex decisions. Any commercial model using this
+  pool must carve out these dependencies explicitly rather than assume clean provider
+  control. See `RISK_REGISTER.md` for the painshare exposure this correction protects
+  against.
 - **Measurement:** Contractor spend by category, rate-card benchmarking, output-per-hour
   where measurable, contractor KPI scorecards.
 - **Financial value:** €17-20m/yr claimed potential (A10).
-- **Attribution:** Clean — few confounding external factors. Best candidate in the entire
-  pool set for early-phase fixed-fee or even performance-fee contracting.
-- **Contract suitability:** High — suitable from Phase 1 (Transformation) onward, and a
-  credible Phase 3/4 candidate given clean attribution.
+- **Attribution:** Strong but not clean — best candidate in the pool set for early-phase
+  fixed-fee contracting, and a credible performance-fee candidate **once the customer
+  dependencies above are named and excluded** from the attribution formula, not before.
+- **Contract suitability:** High — suitable from Phase 1 (Transformation) onward; Phase 3/4
+  performance-fee eligible only with explicit customer-dependency carve-outs in the contract.
+- **Design note:** this pool is the clearest example of "Control Tower Economics" — the
+  provider's value is in orchestrating and holding accountable a network of contractors it
+  does not fully control end-to-end, not in performing the work itself. See
+  `03_STRATEGIC_THESIS/control_tower_economics.md`.
 
 ## Pool 2 — Own-Organisation Efficiency
 - **Baseline:** ~350 FTE own resources; €32m/yr combined BC+WC personnel cost (A5).
 - **Value driver:** Role redefinition, right-sizing, org restructuring from technical-
   discipline silos to maintenance-function structure.
-- **Controllability:** **Provider-controlled**, once the workforce transfers to the
-  provider.
+- **Controllability:** **Provider-controlled once the workforce transfers to the provider,
+  subject to labor/union agreement constraints** (softened per the same 2026-07-11
+  correction — this pool is cleaner than Pool 1 but still not unconditionally "fully"
+  controlled where collective agreements constrain restructuring pace or method).
 - **Measurement:** Headcount vs. plan, cost per FTE, role-utilization tracking.
 - **Financial value:** €2-3m/yr claimed potential (A10) — smallest pool in dollar terms, but
-  cleanest attribution.
-- **Attribution:** Fully provider-controlled — highest-confidence pool in the set.
+  cleanest attribution in the set.
+- **Attribution:** Highest-confidence pool in the set, labor/union constraints aside.
 - **Contract suitability:** High for a fixed-fee model; too small alone to anchor a
   performance-fee story, but a good "prove the model works" pool for Phase 1-2.
 
@@ -90,14 +103,24 @@ Petri as a specific fix versus the 2020 original.
 - **Contract suitability:** Foundational — belongs in the Standard Core (Section 13),
   not a payment-linked pool itself.
 
-## Reconciliation note (answers `OPEN_QUESTIONS.md` Q4, provisionally)
+## Reconciliation note (answers `OPEN_QUESTIONS.md` Q4 — updated 2026-07-11)
 Sum of the "potential" figures across pools 1-4: €48-62m/yr at one site. The AMOR 2020
 source's own committed target was ~€17m/yr improvement by year 5 (from €129m to €112m,
-A6) — roughly a **third of the low end** of its own stated potential. Two explanations are
-possible and neither should be assumed: (a) genuine realization-rate discounting (only a
-fraction of identified potential is typically realized — a normal and honest pattern per the
-protocol's Section 15 Realized Value formula), or (b) the potential figures were inflated
-sales-case numbers never meant to be delivered in full. AMOR 2030 must adopt an explicit,
-stated realization-rate assumption (e.g. "we target realizing X% of identified potential in
-year Y") rather than repeating the 2020 pattern of showing both numbers side by side with no
-bridge between them.
+A6) — roughly a **third of the low end** of its own stated potential, and per Petri's direct
+confirmation (`EVIDENCE_REGISTER.md` B4), **neither number was ever achieved** — the
+proposal was never executed. Both figures are proposal-stage estimates only.
+
+Petri's instruction: stop treating "potential" and "committed" as two competing numbers to
+reconcile after the fact, and instead build every value pool through his adopted formula:
+
+**Identified Value × Controllability × Realization Probability × Time-to-Impact =
+Committable Value**
+
+This refines the protocol's Section 15 Realized Value formula for this project by splitting
+"provider influence" into two distinct factors (Controllability — is this pool
+provider-controlled, jointly-influenced, or customer-controlled, per the corrected tagging
+above — and Realization Probability — given control, how likely is the value to actually
+materialize) and adding Time-to-Impact (some value, like contractor rate renegotiation, lands
+in months; some, like avoided lifecycle Capex, takes years — a commercial model that treats
+them identically will misprice both). First worked application of this formula is in
+`07_KPI_ATTRIBUTION/attribution_architecture.md`.

@@ -38,13 +38,22 @@ planning horizon. Neste logo appears on the closing slide.
 | AI1 | "OPP" = Neste's refining/production organisation at Porvoo (and by extension Naantali); "One Refinery" is Neste's initiative to manage both sites as one asset base | Neste logo on closing slide; slides 29/32/37/39 use "Neste" and "OPP" interchangeably in identical sentence structures; fire brigades named are Porvoo and Naantali, both Neste refinery sites |
 | AI2 | "MMA" = Maintenance & Asset Management, the pre-existing Neste internal function the 4 authors led | Repeated use of "MMA management," "MMA resources," "same scope of services as MMA today" |
 
-## Level B — Petri Hukkinen's Direct Experience (per project brief, not independently verified in this session)
+## Level B — Petri Hukkinen's Direct Experience (per project brief and direct answers, not independently verified against external documents in this session)
 
 | # | Claim | Status |
 |---|-------|--------|
-| B1 | ABB — international industrial service/maintenance leadership, P&L responsibility, ~43 Full Service maintenance contracts in Finland moved from hourly to fixed-price/performance models, later led Full Service business in Asia | As stated in project brief; not cross-checked against external documents in this session |
+| B1 | ABB — international industrial service/maintenance leadership, P&L responsibility, ~43 Full Service maintenance contracts in Finland. Per Petri's direct confirmation (2026-07-11): these were developed *towards* fixed-price and performance-based maintenance agreements, not merely hourly contracts, and OEE/production performance linkage was used in the operating and commercial logic. Petri explicitly cautions against claiming all 43 contracts had identical gainshare/painshare structures — contract-by-contract variation is unconfirmed. Later led Full Service business in Asia. | Level B, upgraded with Petri's direct confirmation; treat "performance-based Full Service was real operational practice" as Level B fact, but do not claim uniform gainshare/painshare terms across all 43 contracts without further evidence |
 | B2 | Neste — senior Asset Management responsibility spanning refineries, terminals, reliability, lifecycle management, contractor management, shutdowns/turnarounds, investment planning, ISO 55000 | As stated in project brief |
 | B3 | Petri is one of the four named co-authors of the original 2020 AMOR proposal (A1) | Corroborated — his name appears first on the source document |
+| B4 | **The 2020 AMOR proposal did not proceed to execution.** Per Petri's direct confirmation (2026-07-11): Neste did not proceed with the business transfer/MBO structure. No AMOR Oy was formed. There are no post-implementation results against the €129m baseline, the €43m five-year benefit target, or the 350→310 FTE plan. | Level B (Petri's direct, first-hand testimony as a co-author of the original proposal). **Governing rule, per Petri: do not present any AMOR 2020 savings figure as an achieved result anywhere in this project. AMOR 2020 is evidence of business model architecture and customer-side transformation thinking — not a performance track record.** This resolves `OPEN_QUESTIONS.md` Q1. |
+| B5 | AMOR 2030 is currently being developed in the context of Petri's senior leadership discussions with Bilfinger. | Level B, per Petri's direct statement (2026-07-11). **Do not infer or invent any specific Bilfinger capability, org structure, or competitive position from this fact alone — it establishes the likely acting party's scale/category, not verified operational detail.** |
+
+## Correction log (evidence discipline, not just facts)
+
+| Date | What was corrected | Why |
+|---|---|---|
+| 2026-07-11 | Cycle 1 chat verdict stated "[AMOR 2020] proves nothing about performance-based pricing, gainshare, or attribution" — Petri flagged this as overstated. Corrected framing: **the AMOR 2020 deck itself provides no evidence of performance-linked compensation or formal gainshare attribution** (true and precise). Separately, **Petri's ABB experience (B1) is Level B evidence that the fixed-price → performance-based transition is not theoretical to him.** The combination of AMOR (Level A, customer-side transformation/outsourcing architecture) and ABB (Level B, provider-side fixed-price/performance-based delivery experience) is the actual evidentiary core of the AMOR 2030 case — neither piece alone carries it. | A single document's silence on a topic is not proof the topic is untestable — conflating "this source doesn't show X" with "X is unproven" understates the project's real evidence base once Level B sources are counted properly. |
+| 2026-07-11 | Cycle 1 tagged contractor/subcontractor management as "fully provider-controlled" in `05_VALUE_POOLS/value_pool_tree.md`. Petri corrected this: the customer retains real influence via approved-supplier lists, procurement contracts, vendor lock-in, labor/union constraints, work-permit processing, work prioritization, and Capex decisions. Corrected tag: **"primarily provider-controlled, with defined customer dependencies."** | Material, not cosmetic — labeling a pool "fully provider-controlled" in a painshare clause transfers financial exposure for customer-caused underperformance onto the provider. See `RISK_REGISTER.md`. |
 
 ## Level C — Strategic Hypothesis (unvalidated, requires testing)
 
@@ -54,17 +63,16 @@ planning horizon. Neste logo appears on the closing slide.
 | C2 | A large industrial services company (unnamed — the brief references Bilfinger's governance standard, not confirmed as the acting party) can build a scalable Asset Performance as a Service business | See `HYPOTHESIS_REGISTER.md` |
 | C3 | The AMOR MBO model (single-site, single-customer, management-owned spinout) generalizes into a multi-customer, multi-site platform business | Central to the AMOR 2020 → 2030 bridge |
 
-## Unresolved evidence gaps (block Gate 0 fully closing — logged to `OPEN_QUESTIONS.md`)
+## Evidence gaps — status after Petri's 2026-07-11 answers
 
-- **Whether the 2020 AMOR proposal was ever executed.** The source document is explicitly
-  non-binding and discussion-only, and slide 14 shows Neste was still evaluating options.
-  Nothing in the material or in this session confirms whether AMOR Oy was formed, whether
-  Neste approved the MBO, or what happened to the four authors' proposal between H2/2020 and
-  today (2026-07-11). This materially changes what "2030" means for this project — a revival
-  of a shelved idea vs. a proven case vs. an abandoned one. **Do not assume an outcome.**
-- **Whether Petri Hukkinen is currently affiliated with Bilfinger, or Bilfinger is simply
-  the quality bar cited in the brief.** Treated as unconfirmed (Assumption, see
-  `ASSUMPTIONS.md`).
+- ~~Whether the 2020 AMOR proposal was ever executed~~ — **RESOLVED, see B4.** It was not
+  executed. Gate 0 can close on this point.
+- ~~Whether Petri is currently affiliated with Bilfinger~~ — **PARTIALLY RESOLVED, see B5.**
+  AMOR 2030 is being developed in the context of real senior-leadership discussions with
+  Bilfinger. Bilfinger-specific capability claims remain unverified and must not be invented.
+- **Still open:** which, if any, of the ~43 ABB Full Service contracts actually reached
+  formal gainshare/painshare pricing versus fixed-price-with-performance-linkage only (B1
+  caveat). Not blocking — logged for future evidence-gathering, not contacted this cycle.
 - **Slide 15 of the source PDF is corrupted/truncated in extraction** ("Clif hld hif
   ibiliibddiif ii...") — the second half of the OPP organisational-needs slide is unreadable.
   Not reconstructed or guessed at.

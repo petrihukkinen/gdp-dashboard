@@ -8,25 +8,33 @@ project files existed before this cycle — this repository previously contained
 Streamlit GDP-dashboard template with no connection to AMOR; that content is left untouched
 alongside the new project structure.
 
-## Key unresolved context question
+## Key context question — RESOLVED 2026-07-11
 
-The single biggest open unknown shaping this entire project: **what happened to the original
-AMOR proposal between H2/2020 and today?** The source deck is non-binding, discussion-only,
-and shows Neste was still weighing multiple scenarios (slide 14). Whether AMOR Oy was formed,
-approved, rejected, or shelved is unknown in this session and must not be assumed in either
-direction. This determines the entire framing of "AMOR 2030":
-- If AMOR (2020) never happened → AMOR 2030 is picking up a shelved MBO concept and asking
-  whether the underlying logic scales into a platform business for a services company (e.g.
-  at Bilfinger-caliber scale) rather than a single-site MBO.
-- If AMOR (2020) happened and ran → AMOR 2030 is either a validated case study to generalize,
-  or a cautionary tale to learn from, depending on outcome.
-- If AMOR (2020) happened in modified form → the actual commercial terms achieved (fixed
-  price %, realized savings vs. €43m claim, headcount outcome vs. 310 FTE target) are the
-  single most valuable piece of evidence available to this whole project, and are currently
-  missing.
+**What happened to the original AMOR proposal between H2/2020 and today?** Petri has
+confirmed directly: it did not proceed to execution. No AMOR Oy was formed; there are no
+post-implementation results. See `EVIDENCE_REGISTER.md` B4.
 
-**Action for Petri:** this question should be resolved directly (see `OPEN_QUESTIONS.md`,
-Q1) — it changes downstream work more than any other single fact.
+This settles the framing of "AMOR 2030": it is **picking up a shelved, unexecuted MBO
+concept** and asking whether its underlying architecture — reconstructed and corrected —
+scales into a platform business for a large industrial services provider (working context:
+a Bilfinger-scale provider, per Petri's confirmation, `EVIDENCE_REGISTER.md` B5), rather than
+repeating a single-site MBO. It is not a validated case study and not a cautionary tale — it
+is architectural raw material only.
+
+**The evidentiary core of this project, per Petri's explicit correction (2026-07-11), is the
+combination of two distinct sources:**
+- **AMOR 2020 (Level A)** — real customer-side transformation and outsourcing architecture:
+  a genuine cost baseline, a staged commercial model, an integrator concept, a governance
+  structure. Proves the customer-side logic is real and detailed.
+- **Petri's ABB experience (Level B)** — real provider-side fixed-price and
+  performance-based maintenance delivery, including OEE/production-performance linkage in
+  commercial logic across ~43 Finnish Full Service contracts. Proves the provider-side
+  transition from time-and-materials to performance-linked pricing is operational practice,
+  not a theoretical construct.
+
+Neither source alone proves AMOR 2030's thesis. Together, they are its strongest available
+evidence base, and every deliverable should draw on both explicitly rather than leaning on
+the AMOR 2020 deck alone.
 
 ## Organizational glossary (as used in the source material)
 
