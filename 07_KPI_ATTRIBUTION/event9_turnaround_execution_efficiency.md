@@ -1,5 +1,17 @@
 # Event 9 — Turnaround Execution Efficiency (Cycle 4, new)
 
+**Cycle 6 verdict:** deleted from core/default payment-event status. Failed Gate B
+(attribution clarity — hardest of all six events to explain) and Gate C (administrative
+efficiency — the Cycle 5 independence-criteria addendum's 3-year relationship check and
+per-TA-cycle re-attestation is a real, disproportionate maintenance cost for an event firing
+once every 4-6 years). Survives only as part of an optional, bundled **Turnaround Value
+Module** (with Event 5), activated exclusively for contracts where the provider holds
+genuine TA execution responsibility and TA frequency/scale justifies the fixed cost. Default
+status in the core commercial model: reporting only. See
+`06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`, Tasks 2 and 5. The attribution rules
+and independence criteria below remain valid and unchanged for whenever the module is
+activated — this is a commercial-scope decision, not a redesign.
+
 Distinct from Event 5 (TA scope reduction). Event 5 monetizes *what* work was removed from
 scope; Event 9 monetizes *how well* the provider executes the scope that remains, once
 jointly frozen. Numbered 9 to avoid collision with Events 7 (permit cycle time) and 8 (CMMS

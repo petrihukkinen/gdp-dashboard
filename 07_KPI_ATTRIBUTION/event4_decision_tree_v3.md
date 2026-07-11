@@ -3,6 +3,14 @@
 Supersedes the tree in `event_stress_test.md`. Incorporates the Cycle 4 materiality
 threshold, SLA defaults, netting-mechanism interaction, and over-maintenance context.
 
+**Cycle 6 note:** the tree below is unchanged and frozen per Petri's explicit instruction —
+Cycle 6 did not redesign Event 4's attribution logic. What changed is presentation and
+governance only: Event 4 is reclassified from a routine "payment event" to a **downside
+corridor / liability adjustment mechanism** — same caps, same steps, same clawback, but
+commercially framed and administered as a rare exception-handling process rather than an
+expected, regular claims category. See `06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`,
+Task 4.
+
 - **Step 0 (materiality gate, new):** Is the estimated financial value of this event ≥
   €100,000 **or** ≥ 0.25% of Annual Contract Value, whichever is higher? No → excluded from
   Value Validation Board case review entirely; logged for reporting/context only. Stop.

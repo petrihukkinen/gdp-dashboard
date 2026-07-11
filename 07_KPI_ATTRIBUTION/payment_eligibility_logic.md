@@ -1,5 +1,15 @@
 # Payment Eligibility Logic — Cycle 4 Consolidated
 
+**Superseded in part by Cycle 6 (`06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`):**
+after a dedicated complexity/subtraction test, Event 2 is downgraded further to REPORTING
+ONLY (no fee mechanism at all); Event 3 as designed below is killed and replaced by a
+simplified "Annual Reliability Event Reward" (same qualification criteria, pre-agreed
+per-event reward instead of case-by-case dollar-value proof); Event 4 is reclassified from
+"payment event" to "downside corridor" in how it is presented and governed (the decision
+tree itself is unchanged); Events 5 and 9 are demoted to reporting-only by default, available
+only as an optional, bundled Turnaround Value Module. Read this document for the original
+Cycle 4 logic; read the Cycle 6 file for the current, simplified status.
+
 Organized around the three monetisation engines Petri named. No engine, and no event within
 it, aggregates into total OEE, annual availability, or absolute maintenance cost.
 

@@ -2,6 +2,53 @@
 
 One entry per material strategic decision. Newest first.
 
+## 2026-07-11 — Cycle 6: Commercial Complexity Kill Test — architecture reduced from 6 events to a lean core + optional module
+Ran a dedicated subtraction exercise against the frozen Gate 2/3 architecture, per Petri's
+explicit "Priority Zero: do not add, only remove unless resolving a fatal contradiction"
+instruction. Full detail in `06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`.
+
+**Killed:** Event 2 as any kind of fee mechanism (downgraded to pure reporting — even the
+Cycle 3 KPI-fee-only wrapper was excess machinery for €160,000/yr of stakes). **Event 3 as
+originally designed** (case-by-case dollar-value gainshare) — failed attribution-clarity and
+administrative-efficiency gates, specifically the unsized Causal Connection Map fixed cost
+and the "paying for something that didn't happen" communication problem. **Event 9** as a
+core/default payment event — failed the same two gates even more decisively once the Cycle 5
+independence-criteria addendum raised its maintenance cost.
+
+**Restructured, not killed:** Event 3 survives as a simplified **"Annual Reliability Event
+Reward"** — same qualification criteria (unchanged), but a pre-agreed reward per qualifying
+event counted and settled annually, instead of case-by-case dollar-value proof. This is
+logged as subtraction (removing the per-event financial-proof burden), not as a new,
+seventh payment event.
+
+**Reclassified, not redesigned:** Event 4's attribution logic (the full decision tree,
+including Step 3.6) is unchanged and frozen, as instructed. It is reclassified from "payment
+event" to "downside corridor / liability adjustment mechanism" for commercial presentation
+and governance purposes only.
+
+**Modularized:** Events 5 and 9 (TA scope reduction, TA execution efficiency) are bundled
+into an optional **Turnaround Value Module**, default-off, activated only for contracts
+where TA execution responsibility and frequency justify the fixed governance cost.
+
+**Recommended Minimum Viable Commercial Architecture: Architecture Z** — Event 1 (core
+upside) + Event 3-simplified (core upside) + Event 4 (downside corridor) as the always-on
+core, plus the optional Turnaround Value Module. Estimated claims volume ~13-15/year,
+comfortably below the estimated 25-40/year bureaucracy break point. A 15-minute, ~180-word
+CFO explanation was written and passed the test (does not require MII/RRE formulas, the full
+Event 4 decision tree, VVB procedures, netting methodology, or six separate event
+definitions to be credible).
+
+**Three monetisation engines confirmed intact** (productivity/Event 1; reliability/Event
+3-simplified + Event 4 + optional module; strategic asset/Event 6 advisory engine,
+untouched) — Checker-verified no killed event silently re-entered through another mechanism.
+
+**Real, unresolved risks carried forward, not solved by simplification alone:** the
+architecture may still read as "a complicated bonus scheme" to a skeptical customer; a
+customer can still refuse to fund reliability value even in simplified form (Architecture X
+— Event 1 + Event 4 only — is the explicit fallback if so); the optional Turnaround Module
+needs a minimum-term commitment rule to prevent cherry-picking easy turnarounds, not yet
+designed.
+
 ## 2026-07-11 — Cycle 5 addendum: two attribution gaps fixed, market-entry recommendation partially revised
 Petri re-sent the Cycle 5 brief (already fully executed in the prior turn, commit
 `ab72749`) with four sparring points attached. Two were already satisfied by the existing

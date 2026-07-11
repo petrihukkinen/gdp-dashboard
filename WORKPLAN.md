@@ -5,7 +5,7 @@
 | 0 | Source Integrity | AMOR source material analyzed; Petri experience separated from facts; evidence register established | **CLOSED** (2026-07-11) — Q1 resolved: AMOR 2020 did not execute, see `EVIDENCE_REGISTER.md` B4 |
 | 1 | Customer Problem | ≥3 material value pools with credible measurement logic | **DRAFTED, corrected** — see `04_CUSTOMER_PROBLEM/`, `05_VALUE_POOLS/`; controllability tagging corrected 2026-07-11 per Petri (Pool 1 "primarily," not "fully," provider-controlled) |
 | 2 | Controllability | Attribution Matrix completed | **SUBSTANTIVELY CLOSED (Cycle 4)** — Petri set all outstanding numeric thresholds (materiality, risk corridor, SLAs); Event 6 permanently excluded; over-maintenance control and intervention netting designed and stress-tested. Only the Event 1 job-complexity catalog remains open — see `07_KPI_ATTRIBUTION/gate2_assessment.md`. |
-| 3 | Commercial Viability | Revenue logic, risk caps, value validation defined; survives CFO + Red Team | **PASS WITH CONDITIONS (Cycle 5)** — three commercial archetypes modelled, Checker-verified, Red-Team-tested; see `10_FINANCIAL_MODEL/gate3_verdict.md`. Five remaining commercial gaps logged (catastrophic Event 4 under-compensation, claim bundling/damage-splitting, Model B risk/reward asymmetry, Model C cap-base decision, no customer-side adjudication SLA). |
+| 3 | Commercial Viability | Revenue logic, risk caps, value validation defined; survives CFO + Red Team | **PASS WITH CONDITIONS (Cycle 5), architecture simplified (Cycle 6)** — three archetypes modelled and Checker-verified (`10_FINANCIAL_MODEL/gate3_verdict.md`), then stress-tested for operability and cut from 6 payment events to a lean core (Event 1 + Event 3-simplified + Event 4 corridor) plus an optional Turnaround Module — `06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`. Five Cycle 5 gaps plus one new module-gaming risk remain logged in `RISK_REGISTER.md`. |
 | 4 | Operating Model | Governance, RACI, Asset Performance Office architecture | NOT STARTED |
 | 5 | Scale | Standard core vs. configurable modules separated | NOT STARTED |
 | 6 | Executive Narrative | Strategy explainable in 10 minutes, no technical detail | NOT STARTED |
@@ -110,25 +110,32 @@
    illustrative settings).
 6. Formal verdict: **Gate 3 — PASS WITH CONDITIONS** — `10_FINANCIAL_MODEL/gate3_verdict.md`.
 
-## Proposed Cycle 6 (revised after Cycle 5 addendum, 2026-07-11)
-0. **New top priority, per Petri's sparring:** an explicit "operability litmus test" —
-   could the current 6-9 atomic value events be cut to the 2-3 genuinely worth their
-   bureaucracy cost, with the rest permanently reporting-only? Test whether the architecture
-   as designed is something a real operations team on both sides would actually run, not
-   just something that is internally consistent on paper. See `RISK_REGISTER.md`.
-1. Resolve the catastrophic Event 4 under-compensation gap — consider whether an "excess
-   loss" escalation/negotiation mechanism should exist above the standard corridor for
-   genuinely large, undisputed, provider-attributable losses.
-2. Formalize the claim-bundling anti-gaming rule and build the Causal Connection Map
-   (Petri's Cycle 5 decision 4) — both required before Event 3 gainshare and the damage-
-   splitting Red Team finding can be considered closed.
-3. Resolve Model B's Base Fee/gainshare-split calibration (needed to test whether Model B can
-   genuinely lead Phase 3-4, per Petri's hypothesis) and Model C's cap-base decision (Control
-   Tower Fee alone vs. total contract value, relevant now that Model C is a live market-entry
-   candidate too, not just a Phase 3-4 one).
-4. Design a customer-side adjudication SLA symmetric to the provider's submission SLA.
-5. Build the job-complexity-normalized catalog for Event 1 — still the one item blocking
-   full Gate 2 closure, unresolved since Cycle 3.
-6. Event 9's benchmark provider must now satisfy the three independence tests added in the
-   Cycle 5 addendum (`07_KPI_ATTRIBUTION/event9_turnaround_execution_efficiency.md`), not
-   just be named — a slightly higher bar than previously logged.
+## Cycle 6 (this session) — completed
+1. Ran the Commercial Complexity Kill Test against the frozen Gate 2/3 architecture — event
+   economic density ranking, four-gate survival test, explicit attacks on Events 1 and 3,
+   Event 4 reclassification, Event 9 modularity test, three reduced architectures (X/Y/Z),
+   a 15-minute CFO explainability test, a bureaucracy break-even test, and 10 commercial Red
+   Team attacks on the reduced architecture — `06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`.
+2. **Killed** Event 2 as any fee mechanism and Event 3 as originally designed; **restructured**
+   Event 3 into a simplified Annual Reliability Event Reward; **reclassified** Event 4 as a
+   downside corridor (logic unchanged); **modularized** Events 5/9 into an optional
+   Turnaround Value Module, default-off.
+3. Recommended Architecture Z (Event 1 + Event 3-simplified + Event 4 core, optional
+   Turnaround Module) as the Minimum Viable Commercial Architecture — ~13-15 claims/yr,
+   below the ~25-40/yr bureaucracy break point, with a passing 180-word CFO pitch.
+4. Checker confirmed no killed event silently re-entered through another mechanism and that
+   all three monetisation engines remain intact.
+
+## Proposed Cycle 7
+1. Design the Turnaround Value Module's minimum-term commitment rule (prevent cherry-picking
+   easy turnarounds) — new gap surfaced by Cycle 6's own Red Team.
+2. Develop the commercial narrative that actively differentiates the model from "a
+   complicated bonus scheme" — a live risk even after simplification.
+3. Build the four Event 1 contract-mechanism fixes surfaced by Cycle 6's attack (external
+   baseline verification, catalog governance, a labour-substitution/quality cross-check,
+   a procurement-change re-baselining trigger).
+4. Size the Causal Connection Map's actual one-time build cost — still unsized, now more
+   urgent since it's a prerequisite for the simplified Event 3 as well as the original.
+5. Carry forward the still-open Cycle 5 items: catastrophic Event 4 under-compensation,
+   Model B/C calibration decisions, customer-side adjudication SLA, Event 1's job-complexity
+   catalog.
