@@ -2,6 +2,50 @@
 
 One entry per material strategic decision. Newest first.
 
+## 2026-07-11 — Cycle 7: Event 3 killed entirely; core architecture reduced to Event 1 + Event 4
+Attacked Cycle 6's "Annual Reliability Event Reward" (Event 3's restructured successor)
+directly, per Petri's instruction not to protect Architecture Z if it turned out to be
+semantic repackaging. Full detail in `06_COMMERCIAL_MODEL/cycle7_mva_hardening.md`.
+
+**Verdict: SEMANTIC REPACKAGING.** The flat-reward redesign removed only the dollar-
+valuation step of the original Event 3 — the actually expensive and disputed part
+(proving a failure was genuinely avoided: counterfactual dependence, the Causal Connection
+Map, the 180-day netting window, the ≥3-prior-failures baseline) was fully inherited
+unchanged, and two new gaming risks (claim fragmentation, provider event-hunting) were
+introduced. Tested all three candidate reward mechanisms (flat, severity-banded, annual
+pool) — none escape the finding, because the mechanism used to *pay* doesn't fix a problem
+that lives in how events *qualify*. **Event 3 is killed in every tested form, not just the
+original.** Reliability value becomes a managed, reported operational discipline (context/
+management KPIs only), never an individually monetized event.
+
+**Structural consequence:** Architecture X (Event 1 + Event 4) and Architecture Z's core are
+now identical. The X→Z "maturity path" as originally framed (graduating into the Reliability
+Reward) is moot — there is nothing to graduate into. Architecture X is not an entry-tier
+discount of Z; it is Z with the optional Turnaround Value Module switched off, a complete
+and permanent offering in its own right, not a stalled migration. The Turnaround Module
+readiness gate (Task 4) was redesigned around 5 evidence-based conditions unrelated to
+reliability data, since the original premise no longer applies.
+
+**Also this cycle:** Event 1 hardened against baseline-inflation, labour-substitution,
+contractor-rate-vs-productivity conflation, and job-mix manipulation — real fixes, at real
+added administrative cost (burden score rises from 14 to ~18 on the Cycle 6 scale); still
+passes all four gates, now as the sole core upside mechanism. The Causal Connection Map was
+sized for the first time (€2-11.25m initial build at large-site scale) — direct evidence
+supporting the kill decision, and a second reason (provider selection bias under progressive
+coverage) not to build it for this purpose. The Turnaround Module anti-selection rule was
+designed (site-wide, minimum-term, pre-scope-freeze activation). The "complicated bonus
+scheme" objection was engaged honestly — the honest AMOR differentiation claim is now
+narrower than the original thesis: an ongoing, provider-incentivized share of measured
+contractor savings, plus a real, capped, performance-linked liability that ordinary
+maintenance contracts don't carry — not a claim to monetize reliability, which must not be
+made. Catastrophic Event 4 losses are reframed as a **legal liability/indemnity** matter,
+separate from and never overlapping with the performance corridor — Cycle 5's 26.7%-recovery
+finding was a category error, not a corridor design flaw.
+
+**Recommended Minimum Viable Commercial Architecture, final: Event 1 + Event 4 core, plus an
+optional Turnaround Value Module (Events 5+9 bundled) for TA-intensive customers meeting the
+5-condition readiness gate. Nothing else is monetized.**
+
 ## 2026-07-11 — Cycle 6: Commercial Complexity Kill Test — architecture reduced from 6 events to a lean core + optional module
 Ran a dedicated subtraction exercise against the frozen Gate 2/3 architecture, per Petri's
 explicit "Priority Zero: do not add, only remove unless resolving a fatal contradiction"

@@ -1,5 +1,15 @@
 # Cycle 6 — Commercial Complexity Kill Test
 
+**Cycle 7 update:** the "Annual Reliability Event Reward" proposed below as Event 3's
+restructured successor was subsequently attacked and **killed entirely** in Cycle 7 — verdict
+SEMANTIC REPACKAGING, not genuine simplification. See
+`06_COMMERCIAL_MODEL/cycle7_mva_hardening.md`, Tasks 1-2. Reliability value is no longer a
+monetized event of any kind (flat, banded, or pooled) — it is a managed, reported discipline
+only. Architecture X and Z's cores are consequently identical (Event 1 + Event 4); the
+distinction is the optional Turnaround Value Module only. Read this document for the Cycle 6
+density/gate analysis, which remains valid for Events 1, 2, 4, 5, 9 — only the Event 3
+conclusion below is superseded.
+
 Priority Zero: subtraction, not addition. The Gate 2/3 attribution architecture (MII/RRE,
 netting, Causal Connection Map, Event 4 decision tree incl. Step 3.6, Event 9 independence
 rules, Value Validation Board, risk corridor, settlement options) is frozen and used as-is,

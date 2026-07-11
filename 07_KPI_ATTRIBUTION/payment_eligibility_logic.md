@@ -1,14 +1,17 @@
 # Payment Eligibility Logic — Cycle 4 Consolidated
 
-**Superseded in part by Cycle 6 (`06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`):**
-after a dedicated complexity/subtraction test, Event 2 is downgraded further to REPORTING
-ONLY (no fee mechanism at all); Event 3 as designed below is killed and replaced by a
-simplified "Annual Reliability Event Reward" (same qualification criteria, pre-agreed
-per-event reward instead of case-by-case dollar-value proof); Event 4 is reclassified from
-"payment event" to "downside corridor" in how it is presented and governed (the decision
-tree itself is unchanged); Events 5 and 9 are demoted to reporting-only by default, available
-only as an optional, bundled Turnaround Value Module. Read this document for the original
-Cycle 4 logic; read the Cycle 6 file for the current, simplified status.
+**Superseded by Cycle 6 (`06_COMMERCIAL_MODEL/cycle6_complexity_kill_test.md`) and Cycle 7
+(`06_COMMERCIAL_MODEL/cycle7_mva_hardening.md`):** Event 2 is REPORTING ONLY (no fee
+mechanism). **Event 3 — in its original case-by-case dollar-value design and in every
+restructured successor tested (flat reward, severity-banded reward, annual reward pool) — is
+killed entirely.** Reliability value is managed and reported (context/management KPIs), never
+individually monetized. Event 4 is reclassified from "payment event" to "downside corridor"
+in presentation and governance only — its decision tree is unchanged. Events 5 and 9 are
+reporting-only by default, available only via an optional, bundled Turnaround Value Module
+with a site-wide, minimum-term anti-selection rule. **The core commercial architecture is
+now Event 1 (upside) + Event 4 (downside corridor) — nothing else is monetized by default.**
+Read this document for the original Cycle 4 logic; read the Cycle 7 file for the current,
+final status.
 
 Organized around the three monetisation engines Petri named. No engine, and no event within
 it, aggregates into total OEE, annual availability, or absolute maintenance cost.

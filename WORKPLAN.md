@@ -126,16 +126,38 @@
 4. Checker confirmed no killed event silently re-entered through another mechanism and that
    all three monetisation engines remain intact.
 
-## Proposed Cycle 7
-1. Design the Turnaround Value Module's minimum-term commitment rule (prevent cherry-picking
-   easy turnarounds) — new gap surfaced by Cycle 6's own Red Team.
-2. Develop the commercial narrative that actively differentiates the model from "a
-   complicated bonus scheme" — a live risk even after simplification.
-3. Build the four Event 1 contract-mechanism fixes surfaced by Cycle 6's attack (external
-   baseline verification, catalog governance, a labour-substitution/quality cross-check,
-   a procurement-change re-baselining trigger).
-4. Size the Causal Connection Map's actual one-time build cost — still unsized, now more
-   urgent since it's a prerequisite for the simplified Event 3 as well as the original.
-5. Carry forward the still-open Cycle 5 items: catastrophic Event 4 under-compensation,
-   Model B/C calibration decisions, customer-side adjudication SLA, Event 1's job-complexity
-   catalog.
+## Cycle 7 (this session) — completed
+1. Attacked Event 3-simplified directly — verdict **SEMANTIC REPACKAGING**; killed in every
+   tested form (original, flat reward, severity-banded reward, annual pool). Reliability
+   value is now managed/reported only, never monetized.
+2. **Structural consequence:** Architecture X and Z's cores are now identical (Event 1 +
+   Event 4). X is not an entry-tier discount of Z — it is a complete, permanent offering.
+3. Hardened Event 1 against baseline-inflation, labour-substitution, rate-vs-productivity
+   conflation, and job-mix manipulation; retested against the four gates — still passes, at
+   a disclosed higher administrative cost, now as the sole core upside mechanism.
+4. Sized the Causal Connection Map (€2-11.25m initial build at large-site scale) — strong
+   supporting evidence for the kill decision; recommended building nothing for now.
+5. Designed the Turnaround Module anti-selection rule (site-wide, minimum-term, pre-scope-
+   freeze activation).
+6. Engaged the "complicated bonus scheme" objection directly — honest, narrower commercial
+   differentiation claim written; banned claims identified (must not claim to monetize
+   reliability).
+7. Reframed catastrophic Event 4 losses as a legal liability/indemnity matter, structurally
+   separate from the performance corridor — Cycle 5's 26.7%-recovery finding was a category
+   error, not a corridor flaw.
+8. **Final recommended Minimum Viable Commercial Architecture: Event 1 + Event 4 core, plus
+   an optional Turnaround Value Module for TA-intensive customers meeting a 5-condition
+   readiness gate. Nothing else is monetized.**
+
+## Proposed Cycle 8
+1. Negotiate/design the standard liability/indemnity clause boundary for catastrophic
+   Event 4 losses (legal drafting, likely outside this project's direct scope but needs a
+   clear handoff point).
+2. Size real numbers to replace the illustrative ones now that the architecture is stable:
+   Event 1's Base Fee/gainshare split, the Turnaround Module's qualifying-TA threshold and
+   minimum term length, the Causal Connection Map decision (confirmed: not building it).
+3. Test the "complicated bonus scheme" honest answer with real stakeholder input — it was
+   developed analytically, not yet pressure-tested outside this project.
+4. Revisit Model B/C from Cycle 5 in light of Event 3's full removal — both models were
+   built assuming Event 3 (in some form) was part of the ledger; recalibrate or retire.
+5. Only after 1-4: resume Gate 3 pricing optimisation on the now-final architecture.
