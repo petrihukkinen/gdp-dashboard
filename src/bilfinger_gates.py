@@ -1,0 +1,29 @@
+"""Phase B4: E2E gate definitions and KPI observation model (structure only; no names, no real authorities).
+Writes results/bilfinger_gates.csv and results/bilfinger_kpi_observation_model.csv"""
+import csv
+gates = [
+ # gate, minimum evidence, owner (ROLE), approver (ROLE), rejection condition, next action
+ ["Prospecting","Segment/site fits AM&L + AI/PS scope; public/legal screening; no red-line conflicts","Business development lead (role)","Group model owner (role)","Site outside integrity-risk appetite or sanctions/legal block","Qualification call; assign opportunity ID"],
+ ["Qualification","Client confirms decision rights & data access in principle; baseline data exists (>=24 mo history) or plan to build it","Opportunity owner (role)","Regional P&L owner (role)","No baseline data and client unwilling to fund baseline build; performance responsibility requested without control","Feasibility charter with explicit system boundary"],
+ ["Feasibility","Baseline normalised (production, availability, cost, events); controllability matrix filled (Bilfinger-controls/joint/client/external) for every outcome promise; data quality scored; capability evidence (references, competence inventory); transition readiness; value model with uncertainty (P10/P50/P90); integrity red lines listed","Feasibility lead (role)","Group model owner + regional P&L owner + HSEQ/integrity function (roles)","Any outcome promise whose drivers are >50% client/external-controlled; P10 joint value < 0; baseline noise > expected effect; missing AI/PS risk screening for refining/oil&gas/chemicals","Due diligence scope & pilot design"],
+ ["Due diligence / Contracting","Asset register + condition audit sample; contract terms: baseline, normalisation rules, KPI definitions with data lineage, gain-share formula, exit/handback conditions, integrity red lines as binding constraints; legal & HSEQ approvals by humans","Contract lead (role)","Legal, HSEQ, finance, regional P&L (roles); per delegation of authority","Legal/HSEQ non-approval; KPI not measurable independently; end-of-term incentives allow deferral","Signature; transition plan; Day-1 checklist"],
+ ["Transition / Day 1","Personnel transfer plan; data access live; baseline frozen & signed; risk register; integrity backlog triage completed","Transition manager (role)","Regional P&L owner + client counterpart (roles)","Baseline not frozen; data feeds missing; critical competence not secured","Operate; monthly value verification starts"],
+ ["Operate & Improve","Monthly: measured KPIs vs baseline with uncertainty; integrity debt indicator; competence index; backlog age profile; quarterly independent verification; BTS gap review","Site lead (role)","Client steering committee (roles)","Two consecutive quarters below P10 value path; integrity red-line breach; KPI drift vs production counts (gaming indicator)","Corrective plan or re-baselining or exit trigger"],
+ ["Renewal / Exit","Handback condition audit; residual debt measured vs contract; lessons; re-qualification","Contract lead (role)","Regional P&L owner (role)","Handback condition below contract; unresolved integrity items","Renew, re-scope or exit"],
+]
+kpis = [
+ # KPI, type, data source, frequency, responsible (role), confidence, manipulation risk, decision supported
+ ["Availability (true)","measured consequence","DCS/historian runtime & production counts (two independent sources)","daily→monthly","Client production control (role) + Bilfinger reliability (role)","high if both sources reconcile","medium: definitional (planned vs unplanned) — fix definitions in contract","gain-share verification; corrective plan"],
+ ["Asset health index","explanatory/latent (estimated)","Condition monitoring, inspections, failure history; model-based","monthly","Bilfinger reliability engineering (role)","medium: model-dependent","medium: inspection scope can be reduced","PM intensity; capex proposals"],
+ ["Risk-weighted backlog","explanatory (measured stock)","CMMS work orders × criticality","weekly","Bilfinger planning (role)","medium: criticality coding","high: re-coding criticality, closing WOs administratively — audit sample required","resource allocation; deferral control"],
+ ["Latent integrity debt indicator","explanatory/latent","Overdue inspections, deferred repairs on safety-critical elements, MOC backlog","monthly","Integrity function (role), independent of site P&L","medium","high if site-controlled → independence required","integrity red-line check; stop-work"],
+ ["Critical competence index","explanatory","Skills matrix vs criticality; vacancies; certification validity","quarterly","HR/competence (role)","medium","low-medium","hiring/training; transition readiness"],
+ ["Maintenance cost (opex)","measured consequence","ERP actuals","monthly","Finance (role)","high","medium: capitalisation/deferral shifts","fee reconciliation; budget"],
+ ["Integrity/HSE events","measured consequence","Incident system; regulator reports","event-based","HSEQ (role)","high for reportables; low for near-misses","medium: under-reporting","binding constraint; not tradeable against value"],
+ ["Production margin realised","measured consequence","Sales/production accounts (demand-limited)","monthly","Client finance (role)","high","low","joint value calculation (contribution margin, not sales price)"],
+]
+with open("results/bilfinger_gates.csv","w",newline="") as f:
+    w=csv.writer(f); w.writerow(["gate","minimum_evidence","owner_role","approver_role","rejection_condition","next_action"]); w.writerows(gates)
+with open("results/bilfinger_kpi_observation_model.csv","w",newline="") as f:
+    w=csv.writer(f); w.writerow(["kpi","type","data_source","frequency","responsible_role","confidence","manipulation_risk","decision_supported"]); w.writerows(kpis)
+print("written gates and KPI observation model CSVs")

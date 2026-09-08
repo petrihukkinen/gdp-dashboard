@@ -1,0 +1,82 @@
+=== 1. Expansion branch ===
+General solution (sympy): [Eq(R(T), 2**(1/3)*(-3**(2/3) - 3*3**(1/6)*I)*(C1**2 + 2*C1*sqrt(G)*sqrt(Mpp)*T + G*Mpp*T**2)**(1/3)/4), Eq(R(T), 2**(1/3)*(-3**(2/3) + 3*3**(1/6)*I)*(C1**2 + 2*C1*sqrt(G)*sqrt(Mpp)*T + G*Mpp*T**2)**(1/3)/4), Eq(R(T), 2**(1/3)*3**(2/3)*(C1**2 + 2*C1*sqrt(G)*sqrt(Mpp)*T + G*Mpp*T**2)**(1/3)/2)]
+R4(T) with C1=0 (R4(0)=0):  R4 = 2**(1/3)*3**(2/3)*G**(1/3)*Mpp**(1/3)*T**(2/3)/2
+ODE residual after substitution (should be 0): 0
+H(T) = R4'/R4 = 2/(3*T)
+c0(T) = sqrt(GM''/R4) = 2**(1/3)*3**(2/3)*G**(1/3)*Mpp**(1/3)/(3*T**(1/3))   -> c0 ∝ T^(-1/3)
+Limits as T->0+ : c0 -> inf, H -> inf, R4 -> 0 (curvature singularity of the 4-radius).
+Kinetic energy of expansion  M c0^2  and gravitational energy -G M M''/R4 both diverge as 1/R4;
+their SUM is identically zero for all T (that is the postulate), so zero total energy does not
+regularise the R4->0 point. Contracting branch: dR/dT = -sqrt(GM''/R) gives R = [(3/2)sqrt(GM'')(T0-T)]^{2/3};
+joining it to the expanding branch at T0 requires dR/dT to jump from -inf to +inf: NOT a regular bounce,
+the sign change alone supplies no dynamics through R4=0.
+Clock ticks accumulated since R4=0, divided by present clock rate: 3*T0/2  (= 3/2 T0)
+With H0 = 2/(3 T0)  ->  T0 = 2/(3 H0)  ->  age in present-clock units = (3/2)(2/(3H0)) = 1/H0.
+  H0=67.4: coordinate age 2/(3H0) = 9.67 Gyr ; present-clock age 1/H0 = 14.51 Gyr
+  H0=70.0: coordinate age 2/(3H0) = 9.31 Gyr ; present-clock age 1/H0 = 13.97 Gyr
+  H0=73.0: coordinate age 2/(3H0) = 8.93 Gyr ; present-clock age 1/H0 = 13.39 Gyr
+
+=== 2. 3-sphere potential integral: candidate distance kernels ===
+  k = 0.775929 (quad err 8.6e-15)  <- arc length on S^3 (d = R*theta)
+  k = 0.848826 (quad err 9.4e-15)  <- chord in R^4 (d = 2R sin(theta/2))
+  k = 1.273240 (quad err 1.4e-14)  <- projected chord (d = R sin theta) [1/sin]
+  k = 1.000000 (quad err 1.1e-14)  <- 4D Newton 1/d^2 kernel, chord
+  k = 0.902823 (quad err 1.0e-14)  <- 1/d^2 kernel, arc
+  closed form (arc kernel) = (1/pi)[ln 2pi + gamma - Ci(2pi)] = 0.775929
+  2-sphere analogue, arc kernel: Si(pi)/2 = 0.925969
+IDENTIFICATION: 0.776 = (2/pi)∫_0^pi sin^2(theta)/theta dtheta, i.e. uniform S^3 with GEODESIC (arc-length)
+  1/d kernel. The chord kernel gives 0.849, the 4D 1/d^2 kernel gives exactly 1.  No candidate here gives 0.991;
+  the origin of 0.991 is NOT IDENTIFIED in this run (article text inaccessible).
+NOTE: 1/d with d = geodesic distance is the flat-space Newtonian kernel transplanted onto S^3. It is NOT the
+  Green's function of the Laplacian on S^3 (which on a compact manifold requires a zero-mean source and has the
+  form ∝ (π-θ)cotθ). Whether 0.776 double counts self-energy depends on whether E_g is summed over all pairs
+  (factor 1/2) or per test mass (no 1/2): the per-test-mass form used in c0^2 = GM''/R4 has no 1/2.
+  S^3 candidate Green's function (π-θ)cotθ: Laplacian away from θ=0 = 2 (a CONSTANT) ->
+  Δ_S3 G = const + δ : the compact-space Poisson equation Δφ = 4πG(ρ - ρ̄) is solved by this kernel, not by 1/θ.
+  Hence 'Poisson on S^3' and 'flat 1/d kernel on S^3' are different local field laws; 0.776 assumes the latter.
+
+=== 4. Fine structure constant with coefficient 1.1049 ===
+  1/(1.1049 * 4 pi^3)      = 0.007297387644402
+  scipy CODATA alpha        = 0.007297352564300  (scipy 1.17.1; CODATA set: scipy.constants.codata)
+  article text value (as quoted in task) = 0.00729735254
+  relative diff formula vs CODATA = 4.807e-06
+  coefficient needed to reproduce CODATA exactly: 1.104905312  (1.1049 is this rounded to 5 s.f.)
+  rounding 1.1049 vs 1.104905: relative -4.81e-06  -> explains the alpha discrepancy exactly.
+
+=== 6. Process rates relative to expansion ===
+  N_atomic(Ta->Tb) ∝ -3*Ta**(2/3)/2 + 3*Tb**(2/3)/2
+  N_grav  (Ta->Tb) ∝ -log(Ta) + log(Tb)   (free-fall rate sqrt(G rho))
+  N_exp   (Ta->Tb) = -2*log(Ta)/3 + 2*log(Tb)/3   (e-folds of R4)
+  Γ_grav/H = const  -> gravitational collapse per e-fold of expansion is epoch-independent (same as EdS).
+  Γ_atomic/H ∝ T^{2/3} -> atomic processes per e-fold were FEWER early on, not more.
+  => a larger early c0 does not, by itself, imply faster structure formation; the claim needs a separate
+     local dynamical law in which the collapse rate scales with c0. Not derivable from the two postulates.
+
+=== A4. Two local light-propagation models, same global R4(T) ===
+Shared: R4(T) ∝ T^{2/3}, tangential light speed c(T) = c0(T) = dR4/dT, wavelength ∝ R4 => 1+z = R4_obs/R4_emit.
+Model L-A (path-length): observable distance = light path length D = ∫ c dT = R4_o - R4_e = R4_o z/(1+z).
+Model L-B (geodesic):   angular separation χ = ∫ c dT / R4 = ln(1+z); transverse metric distance = R4_o sin χ.
+   z      D_A(L-A)/R4o   D_A(L-B)/R4o    ratio LB/LA
+   0.01       0.0099        0.0099       0.9950
+   0.10       0.0909        0.0865       0.9517
+   0.50       0.3333        0.2630       0.7889
+   1.00       0.5000        0.3195       0.6390
+   2.00       0.6667        0.2969       0.4453
+   5.00       0.8333        0.1626       0.1951
+  10.00       0.9091        0.0615       0.0677
+  14.00       0.9333        0.0280       0.0300
+  20.00       0.9524        0.0046       0.0048
+  22.00       0.9565        0.0003       0.0003
+  30.00       0.9677       -0.0093      -0.0096
+  L-B antipode at χ = π  ->  z = e^π - 1 = 22.141;  sin χ < 0 for z > 22.14 (parity flip).
+  L-A never reaches the antipode (D -> R4_o as z->inf).
+  Both models are consistent with the two postulates + 'c = dR4/dT'; they differ at z=1 by 36% in D_A. => the global constraint does not fix the observable; a closure postulate
+  on how the angular/transverse geometry of S^3 enters the observation is required.
+  L-B arrival-interval stretch in coordinate time: Δt_o/Δt_e = H_e/H_o = (1+z)^{3/2};
+  in local-clock units (f∝c0∝R^{-1/2}): (1+z)^{3/2} (1+z)^{-1/2} = (1+z). Same as FRW in proper time.
+  Etherington: L-B (photon conservation on S^3 + (1+z) energy + (1+z) rate) gives D_L = D_A (1+z)^2 -> holds.
+  L-A with D_A = D and F ∝ D^{-2}(1+z)^{-q} gives D_L = D (1+z)^{q/2}: reciprocity holds only for q = 4.
+  For the Suntola-type q=1 (D_L = R z (1+z)^{1/2}/(1+z)... see pantheon_fit) reciprocity is violated ->
+  the violated assumption is photon-number conservation through the flux tube / transverse S^3 geometry.
+
+written results/symbolic_checks.{json,txt}

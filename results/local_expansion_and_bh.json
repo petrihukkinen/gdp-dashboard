@@ -1,0 +1,47 @@
+{
+  "H0r_Moon": {
+    "m_per_s": 8.720288912036898e-10,
+    "cm_per_yr": 2.7519138937049563
+  },
+  "H0r_Earth-Sun": {
+    "m_per_s": 3.393695767766752e-07,
+    "cm_per_yr": 1070.9689356087606
+  },
+  "DU_scalings": {
+    "round_trip_ticks_rate": "1 H (drift +H0 r)",
+    "orbital_period_ticks_rate": "1 H",
+    "ratio_Porb_over_roundtrip": "0 (no signal)",
+    "doppler": "H0 r present"
+  },
+  "kepler_discriminator": "tidal: dlnP = 1.5 dln a ; DU: dlnP = 1.0 dln a (ticks)",
+  "injection_recovery": {
+    "recovered_rate_cm_yr": 3.8302488765420266,
+    "err": 0.0012175867603330577,
+    "identifiable_from_range_alone": false,
+    "lod_ms_cy_if_all_tidal": 2.093980478945088,
+    "lod_ms_cy_if_DU_split": 0.5894233057973216,
+    "status": "EHDOLLINEN: numbers for literature LOD/tidal values from memory; verify before use."
+  },
+  "GR_reference": {
+    "schwarzschild_isco": "[6*M]",
+    "kerr_isco": {
+      "0.0": [
+        6.0,
+        6.0
+      ],
+      "0.5": [
+        4.233002529530826,
+        7.554584714512358
+      ],
+      "0.9": [
+        2.320883041761887,
+        8.717352279606489
+      ],
+      "0.98": [
+        1.6140296676354695,
+        8.943695231691395
+      ]
+    },
+    "sgrA_isco_period_min": 32.574931061707304
+  }
+}

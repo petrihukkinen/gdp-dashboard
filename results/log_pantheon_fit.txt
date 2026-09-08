@@ -1,0 +1,44 @@
+max |C - C^T| in released file = 3.000e-08 (file precision); symmetrised as (C+C^T)/2
+N selected (zHD>0.01) = 1590  ; z range 0.0102..2.261
+flat LCDM: Omega_m = 0.3316 (+0.0184 / -0.0180), chi2 = 1402.92, N=1590, params(shape)=1 (+M)
+   Brout et al. 2022 published SN-only: Omega_m = 0.334 +/- 0.018
+open LCDM: Omega_m = 0.295, Omega_L = 0.613, chi2 = 1402.41, params(shape)=2 (+M)
+DU q=-1: D_L ∝ z (1+z)^-0.5  chi2 = 7111.79  (Δchi2 vs flat LCDM = +5708.87), params(shape)=0 (+M)
+DU q=+0: D_L ∝ z (1+z)^+0.0  chi2 = 3168.99  (Δchi2 vs flat LCDM = +1766.07), params(shape)=0 (+M)
+DU q=+1: D_L ∝ z (1+z)^+0.5  chi2 = 1485.02  (Δchi2 vs flat LCDM = +82.10), params(shape)=0 (+M)
+DU q=+2: D_L ∝ z (1+z)^+1.0  chi2 = 2059.87  (Δchi2 vs flat LCDM = +656.95), params(shape)=0 (+M)
+DU q=+3: D_L ∝ z (1+z)^+1.5  chi2 = 4893.55  (Δchi2 vs flat LCDM = +3490.63), params(shape)=0 (+M)
+DU q free: q = 1.246 (+0.030/-0.030), chi2 = 1416.94 (Δ vs flat LCDM +14.02), params(shape)=1 (+M)
+Candidate C2 (L-B geodesic, Etherington): chi2 = 1680.32 (Δ vs flat LCDM +277.40), params(shape)=0
+Reference EdS (Omega_m=1):                chi2 = 2101.15 (Δ vs flat LCDM +698.23), params(shape)=0
+
+Model comparison (k counts the profiled M):
+  flat_LCDM    chi2= 1402.92 k=2 AIC= 1406.92 BIC= 1417.66  ΔAIC=  +0.00
+  open_LCDM    chi2= 1402.41 k=3 AIC= 1408.41 BIC= 1424.53  ΔAIC=  +1.49
+  DU_q=+1      chi2= 1485.02 k=1 AIC= 1487.02 BIC= 1492.39  ΔAIC= +80.10
+  DU_q=-1      chi2= 7111.79 k=1 AIC= 7113.79 BIC= 7119.16  ΔAIC=+5706.87
+  DU_q=+3      chi2= 4893.55 k=1 AIC= 4895.55 BIC= 4900.92  ΔAIC=+3488.63
+  DU_q_free    chi2= 1416.94 k=2 AIC= 1420.94 BIC= 1431.68  ΔAIC= +14.02
+  C2_LB_geodesic chi2= 1680.32 k=1 AIC= 1682.32 BIC= 1687.69  ΔAIC=+275.40
+  EdS          chi2= 2101.15 k=1 AIC= 2103.15 BIC= 2108.52  ΔAIC=+696.23
+
+Prediction test (train z<0.4: N=1282, test z>=0.4: N=308):
+  flat LCDM : Omega_m(train)=0.334, test chi2 = 222.07, mean test residual = -0.0070 mag
+  DU q free : q(train)=1.360,        test chi2 = 254.40, mean test residual = -0.0595 mag
+  DU q=+1   : (M only)                 test chi2 = 253.70, mean test residual = +0.0735 mag
+
+Binned weighted-mean residuals (mag; diagonal weights, for display only):
+  z_lo   z_hi     n     LCDM  DU q=+1  DU qfit       ±
+  0.01   0.02   154  +0.0374  -0.0255  +0.0191  0.0159
+  0.02   0.05   380  +0.0025  -0.0524  -0.0119  0.0075
+  0.05   0.10    96  +0.0056  -0.0324  -0.0008  0.0138
+  0.10   0.20   207  -0.0035  -0.0040  +0.0056  0.0088
+  0.20   0.30   259  -0.0077  +0.0197  +0.0095  0.0088
+  0.30   0.40   186  +0.0131  +0.0622  +0.0329  0.0100
+  0.40   0.50    98  +0.0036  +0.0697  +0.0207  0.0143
+  0.50   0.70   135  -0.0261  +0.0534  -0.0199  0.0144
+  0.70   0.90    48  -0.0489  +0.0365  -0.0642  0.0255
+  0.90   1.20     8  +0.1448  +0.2218  +0.0839  0.0706
+  1.20   1.60    14  +0.0939  +0.1427  -0.0374  0.0599
+  1.60   2.40     5  -0.0648  -0.0772  -0.3096  0.1043
+written results/pantheon_fit.json, results/pantheon_hubble_residuals.png

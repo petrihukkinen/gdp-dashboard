@@ -1,0 +1,39 @@
+=== Part 1: H0 x r and the DU-scaled observables (H0 = 70 km/s/Mpc) ===
+  Moon      : H0*r = 8.720e-10 m/s = 2.752 cm/yr
+  Earth-Sun : H0*r = 3.394e-07 m/s = 1070.969 cm/yr
+  Observed LLR lunar recession (Williams & Boggs 2016, tidal): 3.83 cm/yr [from memory of paper; flagged].
+  DU-scaled observables (rates in units of H0):
+    coordinate round-trip time 2r/c0 : 3/2 H
+    round-trip in atomic ticks       : 1 H   <- LLR range in light-seconds drifts at +H0*r
+    orbital period in atomic ticks   : 1 H
+    ratio P_orb/(round-trip)         : 0 H  <- pure dimensionless ratio: no signal
+    Doppler: d ln r/dT / c0 -> v_r = H0*r in frequency ratio terms: present, 2.75 cm/yr for the Moon
+  => Under these scalings a DU expansion of the Moon's orbit IS observable in LLR range (light-seconds) and in
+     the orbital period measured in atomic seconds; it is invisible only in the ratio of the two. The claim that
+     'expansion is unobservable locally' therefore depends on which observable is used; LLR is not one of them.
+  Kepler check: tidal da/a -> dP/P = 1.5 da/a ; DU expansion da/a = H, dP/P(ticks) = H  (not 1.5 H) ->
+     the ratio dP/P : da/a is 1.5 for tides but 1.0 for DU expansion: a second discriminating observable.
+
+=== Part 2: injection–recovery toy (synthetic, 30 yr, monthly normal points) ===
+  recovered total secular rate = 3.8302 ± 0.0012 cm/yr (injected 3.83)
+  A range-only fit recovers the SUM; a separate DU term is a column identical to t -> design matrix singular:
+  rank of [1, t, sin, cos, t_DU] = 4 of 5 columns -> NOT identifiable from range alone.
+  If ALL 3.83 cm/yr is tidal: tidal LOD increase = 2.09 ms/century (literature tidal value ≈ 2.3–2.4 ms/cy [flagged, from memory]).
+  If only 1.08 cm/yr is tidal (DU takes 2.75): tidal LOD increase = 0.59 ms/century.
+  The eclipse-record LOD trend (+1.7–1.8 ms/cy total, from memory; flagged) is explained by tidal 2.3–2.4 minus a
+  non-tidal (GIA/core) −0.5–0.6 ms/cy. Under the DU split the non-tidal term would have to be ≈ +1.1 ms/cy of the
+  opposite sign. This is the discriminating observable; the caveat is the poorly known non-tidal budget and
+  variability of tidal dissipation over ~10^8 yr (not needed here: the LOD comparison is over 2700 yr).
+
+=== Part 3: GR reference for compact-object orbits ===
+  Schwarzschild: L^2(circ) = M*r**2/(-3*M + r);  d2V/dr2 on circular orbits = 2*M*(6*M - r)/(r**3*(3*M - r))
+  ISCO from d2V/dr2 = 0: r = [6*M] (in GM/c^2) ; photon sphere r = 3 GM/c^2 ; horizon r = 2 GM/c^2
+  Kerr a*=0.0: ISCO prograde 6.000, retrograde 6.000 GM/c^2
+  Kerr a*=0.5: ISCO prograde 4.233, retrograde 7.555 GM/c^2
+  Kerr a*=0.9: ISCO prograde 2.321, retrograde 8.717 GM/c^2
+  Kerr a*=0.98: ISCO prograde 1.614, retrograde 8.944 GM/c^2
+  Sgr A* (M=4.297e6 Msun): ISCO period Schwarzschild = 32.6 min ; a*=0.9 prograde ISCO (2.32 rg) = 9.8 min
+  GRAVITY flare periods ~30–45 min (from memory; flagged) sit near the Schwarzschild ISCO period — the observed
+  period is a Kerr-ISCO-type diagnostic only with spin and inclination modelled; horizon, photon sphere, ISCO are
+  distinct radii and must not be conflated. DU side (local c -> 0, 'no horizon'): EI TESTATTU in this run.
+written results/local_expansion_and_bh.json

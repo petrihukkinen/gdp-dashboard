@@ -1,0 +1,18 @@
+K_QR for a T=10000 K blackbody, rest filter Q=B-like tophat(440±45 nm).
+Case 1: observer filter R = Q redshifted exactly (R(λ)=Q(λ/(1+z))): K should be pure bandwidth term -2.5log10(1+z).
+  z= 0.1: K = -0.10349 -0.10349 -0.10349 (three D_X values)   -2.5log10(1+z) = -0.10348
+  z= 0.5: K = -0.44023 -0.44023 -0.44023 (three D_X values)   -2.5log10(1+z) = -0.44023
+  z= 1.0: K = -0.75258 -0.75258 -0.75258 (three D_X values)   -2.5log10(1+z) = -0.75257
+  z= 2.0: K = -1.19281 -1.19281 -1.19281 (three D_X values)   -2.5log10(1+z) = -1.19280
+Case 2: R = fixed observer 'R'-like tophat(640±70 nm), Q = B: K carries SED-slope term, still no D_X dependence.
+  z=0.10: K = -0.11762 (D_X=1e24 m) -0.11762 (D_X=3e26 m)
+  z=0.30: K = -0.31557 (D_X=1e24 m) -0.31557 (D_X=3e26 m)
+  z=0.45: K = -0.40371 (D_X=1e24 m) -0.40371 (D_X=3e26 m)
+
+Theory with bolometric flux L/(4πD²(1+z)^p): catalog-frame m_R = M_Q + 5log10(D/10pc) + 2.5·p·log10(1+z) + K_QR.
+Standard FRW: p=2 (energy + rate). Adding a *further* 5log10(1+z) 'for the K-correction' counts (1+z)^2 twice.
+The only (1+z) inside K itself is the bandwidth term (-2.5 log10(1+z) in the f_nu/AB convention), which SALT2/
+SNANA handle in the model integration; it is not the energy/arrival-rate dilution.
+
+Bolometric consistency at z=1: ∫f_obs dν / (L_bol/4πD_X²) = 1.000000 (should be 1: the bandwidth (1+z) is not a dilution factor)
+written results/kcorrection_audit.json

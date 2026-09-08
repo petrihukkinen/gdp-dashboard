@@ -1,0 +1,13 @@
+system                        e     f(e)   Pbdot_GR(PM)    Pbdot_GR(E)   published GR       observed   obs/GR
+PSR J1738+0333        3.400e-07   1.0000    -2.7462e-14    -2.7462e-14      -2.77e-14    -2.5900e-14  0.943±0.117
+    reproduction of published GR value: here/published = 0.9914 (mass-range 1.0579..0.9417)
+PSR B1913+16          6.171e-01  11.8568    -2.4022e-12    -2.4022e-12   -2.40263e-12    -2.3980e-12  0.998±0.002
+    reproduction of published GR value: here/published = 0.9998 (mass-range 1.0010..0.9987)
+PSR J0737-3039A/B     8.778e-02   1.0515    -1.2479e-12    -1.2479e-12           None    -1.2479e-12  1.000±0.000
+
+PSR J1738+0333: intrinsic decay is nonzero at 8.1 sigma. f(e)-1 = 7.56e-13 -> GR decay is e-independent here.
+Any decay law with dPb/dt -> 0 as e -> 0 (e.g. ∝ e^n, n>0) predicts |dPb/dt| < 1e-20 s/s for e=3.4e-7 and is excluded
+at 8.1 sigma by this system alone; the double pulsar (e=0.088) adds an independent constraint.
+f(0.6171) = 11.8533: GR decay for B1913+16 is 11.86x the circular-orbit value with the same Pb and masses.
+Illustrative: a pure power law in e reproducing both would need n = 0.314 (i.e. essentially e-independent).
+written results/binary_decay.json

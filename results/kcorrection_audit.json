@@ -1,0 +1,69 @@
+{
+  "cases": [
+    {
+      "case": "R=Q shifted",
+      "z": 0.1,
+      "K": [
+        -0.10348571923054095,
+        -0.10348571923054095,
+        -0.10348571923054806
+      ],
+      "expected": -0.10348171289556268
+    },
+    {
+      "case": "R=Q shifted",
+      "z": 0.5,
+      "K": [
+        -0.4402329737776469,
+        -0.4402329737776469,
+        -0.440232973777654
+      ],
+      "expected": -0.4402281476392031
+    },
+    {
+      "case": "R=Q shifted",
+      "z": 1.0,
+      "K": [
+        -0.7525764850300405,
+        -0.7525764850300405,
+        -0.7525764850300476
+      ],
+      "expected": -0.752574989159953
+    },
+    {
+      "case": "R=Q shifted",
+      "z": 2.0,
+      "K": [
+        -1.1928094586948035,
+        -1.1928094586948035,
+        -1.1928094586948106
+      ],
+      "expected": -1.192803136799156
+    },
+    {
+      "case": "R fixed",
+      "z": 0.1,
+      "K": [
+        -0.11762208578417699,
+        -0.1176220857841841
+      ]
+    },
+    {
+      "case": "R fixed",
+      "z": 0.3,
+      "K": [
+        -0.3155702485309675,
+        -0.3155702485309746
+      ]
+    },
+    {
+      "case": "R fixed",
+      "z": 0.45,
+      "K": [
+        -0.4037148437369993,
+        -0.4037148437370135
+      ]
+    }
+  ],
+  "conclusion": "K_QR is independent of D_X; it contains only bandpass/SED terms and the bandwidth (1+z). The cosmological (1+z)^2 dilution is part of D_L by definition (Hogg eq.1), not part of K. Adding 5log10(1+z) to a theory's bolometric distance modulus 'because of the K-correction' is a double count unless the theory's 'bolometric' D omitted those factors in the first place \u2014 in which case the correct fix is to derive the theory's own photon-energy and arrival-rate factors, not to invoke the K-correction."
+}

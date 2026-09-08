@@ -1,0 +1,80 @@
+{
+  "expansion": {
+    "R4_T": "2**(1/3)*3**(2/3)*G**(1/3)*Mpp**(1/3)*T**(2/3)/2",
+    "H_T": "2/(3*T)",
+    "c0_T": "2**(1/3)*3**(2/3)*G**(1/3)*Mpp**(1/3)/(3*T**(1/3))",
+    "integration_constant": "C1 chosen = 0  <=> R4(T=0) = 0 (coordinate-time origin at R4=0).",
+    "general_solution": "(2/3) R4^{3/2} = sqrt(G M'') T + C1 ; C1 != 0 just shifts the time origin, not the shape.",
+    "R4_to_0": "Both energy terms diverge as 1/R4; sum is zero by postulate; velocity dR4/dT -> inf; contraction->expansion join is a velocity discontinuity (-inf -> +inf), not a regular solution.",
+    "age_coordinate_time": "T0 = 2/(3 H0)",
+    "age_present_clock_units": "1/H0  (requires extra assumption f_clock \u221d c0)"
+  },
+  "potential_kernels": {
+    "arc length on S^3 (d = R*theta)": 0.7759291740995762,
+    "chord in R^4 (d = 2R sin(theta/2))": 0.8488263631567752,
+    "projected chord (d = R sin theta) [1/sin]": 1.2732395447351628,
+    "4D Newton 1/d^2 kernel, chord": 0.9999999999999999,
+    "1/d^2 kernel, arc": 0.9028233335802806,
+    "closed_form_arc": 0.7759291740995762,
+    "two_sphere_arc": 0.9259685259912329,
+    "S3_green_function_laplacian_const": "2"
+  },
+  "alpha": {
+    "formula_1p1049": 0.007297387644402094,
+    "codata": 0.0072973525643,
+    "text_value": 0.00729735254,
+    "coef_exact_for_codata": 1.1049053115159864,
+    "rel_diff": 4.807236841708473e-06,
+    "verdict": "Discrepancy = rounding of coefficient. Whether 1.1049(05) is derived independently or calibrated to measured alpha could not be checked (article/book inaccessible): EI YKSIL\u00d6IDY."
+  },
+  "process_rates": {
+    "N_atomic": "-3*Ta**(2/3)/2 + 3*Tb**(2/3)/2",
+    "N_grav": "-log(Ta) + log(Tb)",
+    "N_exp": "-2*log(Ta)/3 + 2*log(Tb)/3",
+    "conclusion": "Gamma_grav/H constant; Gamma_atomic/H \u221d T^(2/3)."
+  },
+  "A4_nonuniqueness": {
+    "z": [
+      0.01,
+      0.1,
+      0.5,
+      1.0,
+      2.0,
+      5.0,
+      10.0,
+      14.0,
+      20.0,
+      22.0,
+      30.0
+    ],
+    "D_A_LA": [
+      0.009900990099009901,
+      0.09090909090909091,
+      0.3333333333333333,
+      0.5,
+      0.6666666666666666,
+      0.8333333333333334,
+      0.9090909090909091,
+      0.9333333333333333,
+      0.9523809523809523,
+      0.9565217391304348,
+      0.967741935483871
+    ],
+    "D_A_LB": [
+      0.009851650156888029,
+      0.08651449566977477,
+      0.2629641331429072,
+      0.3194806381568174,
+      0.296859013889249,
+      0.16261446841843127,
+      0.06154669962799785,
+      0.028005876535263218,
+      0.004615135473067836,
+      0.00026514781998291607,
+      -0.009298256994693563
+    ],
+    "z_antipode_LB": 22.140692632779263,
+    "note": "Both models constructed from the same postulates; differ in D_A(z).",
+    "time_dilation_LB_clock_units": "(1+z)"
+  }
+}

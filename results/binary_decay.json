@@ -1,0 +1,61 @@
+{
+  "PSR J1738+0333": {
+    "e": 3.4e-07,
+    "f_e": 1.0000000000007563,
+    "Pbdot_GR_here": -2.7462317282056525e-14,
+    "Pbdot_GR_here_mass_range": [
+      -2.93031354021339e-14,
+      -2.608390818978384e-14
+    ],
+    "Pbdot_GR_published": -2.77e-14,
+    "Pbdot_obs_intrinsic": -2.59e-14,
+    "obs_err": 3.2e-15,
+    "ratio_obs_over_GR_here": 0.9431105079003176,
+    "ratio_err": 0.11652330599540604,
+    "ratio_published": null,
+    "source": "Freire et al. 2012 MNRAS 423,3328 (arXiv:1205.1450) abstract; masses Antoniadis et al. 2012 (arXiv:1204.3948) abstract. Pb value from memory of the paper's Table 1 (8.5 h confirmed by abstract) -> flagged in OPEN_LOOPS."
+  },
+  "PSR B1913+16": {
+    "e": 0.617134,
+    "f_e": 11.856836688170436,
+    "Pbdot_GR_here": -2.4022229178071746e-12,
+    "Pbdot_GR_here_mass_range": [
+      -2.4050560389345864e-12,
+      -2.3993911318820556e-12
+    ],
+    "Pbdot_GR_published": -2.40263e-12,
+    "Pbdot_obs_intrinsic": -2.398e-12,
+    "obs_err": 4e-15,
+    "ratio_obs_over_GR_here": 0.9982420791276817,
+    "ratio_err": 0.0016651244022146486,
+    "ratio_published": [
+      0.9983,
+      0.0016
+    ],
+    "source": "Weisberg & Huang 2016 ApJ 829,55: masses and ratio 0.9983+/-0.0016 confirmed via search snippet; Pb, e, and the GR value -2.4025e-12 from snippet/memory -> flagged."
+  },
+  "PSR J0737-3039A/B": {
+    "e": 0.0877775,
+    "f_e": 1.0515436227145931,
+    "Pbdot_GR_here": -1.2478738835160716e-12,
+    "Pbdot_GR_here_mass_range": [
+      -1.2478899850302092e-12,
+      -1.2478577820848585e-12
+    ],
+    "Pbdot_GR_published": null,
+    "Pbdot_obs_intrinsic": -1.24792e-12,
+    "obs_err": 7.8e-17,
+    "ratio_obs_over_GR_here": 1.0000369560454285,
+    "ratio_err": 6.250631656800391e-05,
+    "ratio_published": [
+      0.999963,
+      6.3e-05
+    ],
+    "source": "Kramer et al. 2021 PRX 11,041050; e=0.088 and 'agreement within 0.013%' confirmed via snippet; other numbers from memory of the paper -> flagged."
+  },
+  "constraint": {
+    "J1738_sigma_nonzero": 8.09375,
+    "statement": "Any dPb/dt law vanishing as e->0 is excluded at >8 sigma by PSR J1738+0333.",
+    "status_eq32": "EI TESTATTU sellaisenaan: artikkelin yht\u00e4l\u00f6\u00e4 32 ei voitu lukea (l\u00e4hde estetty). Testi on ehdollinen: JOS yht\u00e4l\u00f6 32 -> 0 kun e -> 0, NIIN se on ristiriidassa J1738+0333:n kanssa."
+  }
+}

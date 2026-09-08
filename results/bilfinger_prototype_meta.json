@@ -1,0 +1,85 @@
+{
+  "params": {
+    "degr_rate": 0.009,
+    "backlog_health_coupling": 0.6,
+    "pm_effect": 0.04,
+    "arrival_rate": 0.45,
+    "arrival_health_gain": 1.2,
+    "corr_capacity": 1.0,
+    "attrition": 0.003,
+    "train_effect": 0.05,
+    "debt_from_deferral": 0.35,
+    "integ_effect": 0.25,
+    "event_lambda": 0.008,
+    "event_downtime": 0.12,
+    "event_loss": 1500000.0,
+    "A_max": 0.96,
+    "a_h": 0.25,
+    "a_b": 0.012,
+    "hours_month": 720.0,
+    "contribution_margin_per_hour": 6000.0,
+    "demand_fraction": 0.93,
+    "cost_per_pm_unit": 180000.0,
+    "cost_per_corr_unit": 220000.0,
+    "cost_per_train_unit": 250000.0,
+    "cost_per_integ_unit": 200000.0,
+    "cost_data": 40000.0,
+    "capex_amount": 6000000.0,
+    "capex_health_gain": 0.25,
+    "client_capex_lag": 12,
+    "transition_cost": 1800000.0,
+    "transition_months": 6,
+    "transition_eff": 0.7,
+    "discount_annual": 0.08,
+    "fee_fixed_month": 300000.0,
+    "gain_share": 0.35,
+    "A_noise": 0.005,
+    "backlog_noise": 0.05
+  },
+  "stress": {
+    "none": {},
+    "latent_debt": {
+      "event_lambda": 0.03
+    },
+    "capex_delay": {
+      "client_capex_lag": 24
+    },
+    "skills_shortage": {
+      "attrition_shock_month": 24,
+      "attrition_shock": 0.05
+    },
+    "poor_data": {
+      "A_noise": 0.02,
+      "backlog_noise": 0.25,
+      "missing_frac": 0.2
+    },
+    "demand_shock": {
+      "demand_shock": [
+        30,
+        42,
+        0.7
+      ]
+    },
+    "transition_delay": {
+      "transition_months": 12,
+      "transition_eff": 0.6
+    },
+    "kpi_gaming": {
+      "gaming_bias": 0.02
+    },
+    "end_of_contract": {
+      "eoc_defer": true
+    }
+  },
+  "checks": {
+    "P1 shows early cost saving vs P0 (first 12 months)": true,
+    "P1 ends with higher latent debt than P0": true,
+    "P2 joint incremental value mean > 0": true,
+    "P2 joint value p10 > 0 (robustness)": false,
+    "fee redistributes only: client_inc + bilfinger_net == joint (P2, exact identity)": true,
+    "KPI gaming detectable: reported \u2212 true availability > 3\u03c3_noise": true
+  },
+  "seed": 20260908,
+  "nmc": 2000,
+  "horizon": 60
+}

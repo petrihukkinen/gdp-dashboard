@@ -162,3 +162,5 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+# DU audit: large public data file (33 MB), re-downloadable via sources/fetch_sources.sh; SHA-256 in sources/SHA256SUMS.txt
+sources/Pantheon+SH0ES_STAT+SYS.cov
