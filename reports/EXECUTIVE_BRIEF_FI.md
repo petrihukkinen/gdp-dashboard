@@ -2,37 +2,37 @@
 
 Ajo 2026-09-08. Koodi, testit, tulokset: `src/`, `tests/`, `results/`. Väiterekisteri 25 väitettä, falsifiointimatriisi 11 riviä, avoimet asiat 19.
 
-## Kysymys 1: Mikä on DU:n evidentiaalinen tila uusien testien jälkeen?
+## Kysymys 1: Mikä on DU:n evidentiaalinen tila varmennuskierroksen jälkeen?
 
-**Ydinviesti:** DU:n kaksi julkaistua kvantitatiivista havaintoennustetta, jotka voitiin testata, ovat kumpikin ristiriidassa datan kanssa yli 8σ:lla. Jäljelle jäävä teoria on joko vahvassa jännitteessä tai ei vielä ennustava. Mikään testi ei tue DU:ta ΛCDM:ää paremmin. Koko teoriaa ei julisteta kumotuksi; sen **nykyisin muotoillut** ennusteet eivät kestä.
+**Ydinviesti (korjattu).** Yksi DU:n julkaistusta tekstimuunnoksesta johdettu supernovarelaatio (p = 1,5) on falsifioitu sellaisena kuin se on muotoiltu, ehdollisesti sille, että ulkoisesti toimitettu muunnos on täydellinen. Eksentrisyyteen perustuva hidastumisluokka on vahvassa ehdollisessa jännitteessä J1738+0333:n kanssa, mutta ilman varmennettua yhtälöä 32 sitä ei julisteta falsifioiduksi. Muut DU-kohdat eivät ole vielä ennustavia. Mikään testi ei tue DU:ta ΛCDM:ää paremmin. Aiempi lause "kaksi ennustetta ristiriidassa yli 8σ:lla" on vedetty takaisin liian vahvana.
 
 | Testi | Tulos | Status |
 |---|---|---|
-| Pantheon+ (1590 SN, STAT+SYS), julkaistun tekstimuunnoksen implikoima relaatio p = 1,5 | Δχ² = +3491 vs ΛCDM, jäännöstiltti −4,4 mag/dex, 59σ parhaasta p:stä | **FALSIFIED AS CURRENTLY FORMULATED** |
-| Pantheon+, bolometrinen DU p = 0,5 | Δχ² = +82 (0 muotoparametria), 8σ | TENSION |
-| Pantheon+, vapaa p = 0,623 ± 0,015 | Δχ² = +14 samalla parametrimäärällä; test-χ² 254 vs 222 | ei pelasta |
-| PSR J1738+0333 (Tier-1), DU-32-ONLY | ennuste 0 mittausvirheen sisällä (raja: prefaktorisuhde ≥ 1830 vaadittaisiin) vs −25,9 ± 3,2 fs/s → 8,1σ | **FALSIFIED AS CURRENTLY FORMULATED** |
-| PSR J1738+0333, DU-PLUS-QUADRUPOLE | kaksikomponenttisovitus: κ = 1,0005 ± 0,0005; yhtälö 32 ≤ 0,2–0,8 % B1913+16:sta | NOT YET PREDICTIVE (pelastus vie yhtälöltä 32 sisällön) |
-| Capotauro | Liu ym. 2026: ominaisliike 37,6 mas/v, ekstragalaktinen suljettu >6σ | tuki poistettu |
-| Kulmakoot / antipodi | postulaatit eivät määrää D_A(z); L-B hylätty SN:llä | NOT YET PREDICTIVE (antipodi säilyy ehdollisena) |
-| LLR / paikallinen laajeneminen | signaali ei katoa; erottelu LOD-taseesta | TENSION (ehdollinen) |
+| Pantheon+, tekstimuunnoksen implikoima p = 1,5 | Δχ² = +3491, χ²/dof 3,08, tiltti −4,4 mag/dex | **FALSIFIED AS CURRENTLY FORMULATED** (ehdollinen provenienssille) |
+| Pantheon+, bolometrinen p = 0,5 | Δχ² = +82, χ²/dof 0,935 (absoluuttisesti hyväksyttävä), Wald 8,3σ parhaasta p:stä | TENSION |
+| Pantheon+, vapaa p = 0,623 ± 0,015 | Δχ² = +14 samalla k; held-out-diagnostiikka heikompi | ei pelasta |
+| J1738+0333, DU-32-ONLY | H_32 (nolla virheen sisällä) vs. havaittu −25,9 ± 3,2 fs/s: 8,1σ; ehdollinen analyyttisyydelle ja prefaktorille | TENSION (vahva, ehdollinen) |
+| DU-PLUS-QUADRUPOLE | κ = 1,0005 ± 0,0005 ja yht. 32 ≤ 0,8 % **vain** muistista otetulla J0737-suhteella; ilman ≤ 29 % | NOT YET PREDICTIVE |
+| Capotauro | Liu ym. 2026 (EXT): Y-kääpiö, ekstragalaktinen suljettu >6σ | tuki poistettu |
+| Kulmakoot / antipodi | postulaatit eivät määrää D_A(z); L-B hylätty SN:llä | NOT YET PREDICTIVE |
+| LLR / paikallinen laajeneminen | signaali ei katoa; erottelu LOD-taseesta (kirjallisuusarvot muistista) | TENSION (ehdollinen) |
 | CMB, BBN, GW | ei DU-johdantoja | NOT YET PREDICTIVE |
-| Laajenemislaki, ikä 1/H0 | suuruusluokka oikea | SUPPORTED (heikosti, ei ainutlaatuinen) |
+| Laajenemislaki, ikä 1/H0 | suuruusluokka oikea, ei ainutlaatuinen | SUPPORTED (heikosti) |
 
-K-korjaus (Hogg 2002, ulkoisesti vahvistettu määritelmä) on kaistamuunnos; se ei poista kosmologisia laimennustekijöitä. Lisätermin +2,5 log10[(1+z)²] perustelu ei pidä, ja termi tuottaa falsifioidun relaation. Mitä kirjattiin: ΛCDM:n Ωm-toisto (0,332 ± 0,018) on tehty, ei suojattu; avoin ΛCDM ei paranna merkitsevästi.
+Luokkamäärät johdettu matriisista (12 riviä): SUPPORTED 1 · NOT DISCRIMINATING 2 · TENSION 3 · FALSIFIED 1 · NOT YET PREDICTIVE 5.
 
-**Provenienssi:** artikkelin lausumat, J1738:n arvot, Liu ym. ja Hogg-määritelmä on toimitettu ulkoisesti varmennettuina; tämä ympäristö ei hakenut niitä (egress-esto). Renderöityä yhtälöä 32 tai 36 ei ole nähty; numeerinen DU-32-ONLY-arvo on UNRESOLVED, ja p = 1,5 on "tekstimuunnoksen implikoima relaatio".
+**Varmennuksen tila.** Alkuperäislähteet (artikkeli, pulsarijulkaisut) ovat edelleen saavuttamattomia; yhtälöitä 32 ja 36 ei ole nähty renderöityinä. EXTERNALLY SUPPLIED -tiedot säilyttävät provenienssinsa ilman riippumatonta varmennusta. Laskenta on toistettavaa (testit 13/13, ristiintarkistus), lähteet eivät ole varmennettuja, johtopäätökset ovat ehdollisia edellä kuvatulla tavalla.
 
-**Seuraava erotteleva testi per kustannus:** renderöity yhtälö 36 (onko muita termejä) ja yhtälö 32 (numeerinen J1738-ennuste). Kummankin uudelleenajo on sekunteja.
+**Kriittiset avoimet riippuvuudet:** (1) renderöity yhtälö 36 — onko muita termejä; (2) yhtälön 32 analyyttisyys ja prefaktori — TENSION → FALSIFIED vaatii nämä; (3) J0737:n Ṗb-suhde alkuperäislähteestä — DU-PLUS-QUADRUPOLE-raja riippuu siitä.
 
 ## Kysymys 2: Mitkä konkreettiset suunnitteluperiaatteet parantavat Bilfinger Performance Outsourcing 2030:a?
 
-Synteettisiä rahalukuja ei käytetä näyttönä. Menetelmästä siirtyy **Performance Outsourcing Decision Engine**: 12 pakollista kerrosta (järjestelmäraja, baseline/vastatilanne, hallittavuusmatriisi, HSEQ/integrity-red lines, siirtymävalmius, arvonluontimalli, P10, hyödyn attribuutio, KPI-anti-gaming, arvonjako, jatkuva validointi, uusinta/exit), kullakin INPUT / LASKENTA / OMISTAJAROOLI / NÄYTTÖ / GREEN–AMBER–RED / VIKATILA / TIETOTARVE / BTS-KYVYKKYYS, kartoitettuna Qualification → Feasibility → Due Diligence → Contracting → Transition → Operate & Improve → Renewal/Exit (`results/po_decision_engine_layers.csv`, `po_gate_mapping.csv`).
+Synteettisiä rahalukuja ei käytetä näyttönä. Kaikki alla oleva on **ehdotus**, ei empiirisesti validoitu liiketoimintamalli eikä Bilfingerin hyväksymä sääntö; integrity-/HSEQ-hyväksynnän omistajuus on roolitason oletus, jota ei ole vahvistettu, ja BTS:n korvaamista ei oleteta. Menetelmästä siirtyy ehdotettu **Performance Outsourcing Decision Engine**: 12 pakollista kerrosta (järjestelmäraja, baseline/vastatilanne, hallittavuusmatriisi, HSEQ/integrity-red lines, siirtymävalmius, arvonluontimalli, P10, hyödyn attribuutio, KPI-anti-gaming, arvonjako, jatkuva validointi, uusinta/exit), kullakin INPUT / LASKENTA / OMISTAJAROOLI / NÄYTTÖ / GREEN–AMBER–RED / VIKATILA / TIETOTARVE / BTS-KYVYKKYYS, kartoitettuna Qualification → Feasibility → Due Diligence → Contracting → Transition → Operate & Improve → Renewal/Exit (`results/po_decision_engine_layers.csv`, `po_gate_mapping.csv`).
 
 Periaatteet, jotka nousivat suoraan tutkimusmenetelmästä:
 
 1. **Tuloslupaus = väite, jolla on hylkäysehto.** Sama rakenne kuin väiterekisterissä: oletukset, ajurit, mittari, testi, status.
-2. **P10-portti, ei P50-päätös.** Prototyypissä P50 oli positiivinen ja P10 negatiivinen; ilman P10-kriteeriä tämä olisi näyttänyt vihreältä.
+2. **P10-portti, ei P50-päätös (ehdotettu riskipolitiikka, ei yleispätevä sääntö).** Prototyypissä P50 oli positiivinen ja P10 negatiivinen; ilman P10-kriteeriä tämä olisi näyttänyt vihreältä.
 3. **Hallittavuus on sulkuehto.** Globaali arvolupaus ei määrää paikallista ohjausta, kuten DU:n globaali tase ei määrää havaintoa. Vastuu ilman päätösvaltaa on RED.
 4. **Mittaus ≠ tulkinta.** Jokaiselle tulos-KPI:lle kaksi riippumatonta lähdettä, audit trail, ajautumatesti. Raportoitu käytettävyys ei ole todennettu käytettävyys.
 5. **Kannustintesti lykkäyspolitiikalla** ennen allekirjoitusta: sopimusrakenne, jossa toimittaja hyötyy lykkäyksestä (kiinteä maksu ≥ toimituskustannus ilman integrity-/backlog-alarajaa), on RED riippumatta P50:stä.

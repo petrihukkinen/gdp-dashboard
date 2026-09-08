@@ -154,7 +154,7 @@ Jäännökset z:n funktiona (`results/pantheon_decisive_residuals.png`): B:n jä
 
 PSR J1738+0333 nostetaan **Tier-1-erottelevaksi havainnoksi** (C14). Erottelu:
 
-**DU-32-ONLY** (julkaistu eksentrisyys-/periastronimekanismi). Tarkkaa yhtälöä 32 ei ole → numeerinen ennuste **UNRESOLVED**. Rigoröösi rajalausuma: julkaistu lausuma kiinnittää F(0) = 0; jos F on analyyttinen e = 0:ssa (kaikki e:stä, √(1−e²):sta ja periastronitermeistä rakennetut suljetun muodon tekijät ovat), F = O(eⁿ), n ≥ 1. Kalibroimalla yhtälö 32 DU:lle edullisimmin B1913+16:n koko hidastumaan: |Ṗb_32(J1738)| ≤ 2,40·10⁻¹² · (e_J/e_B)ⁿ · X, missä X on massa/jakso-prefaktorien suhde. Raja saavuttaa mittausvirheen 3,2·10⁻¹⁵ vain, jos X ≥ 1830 (n = 1, e + 1σ); GR-tyyppinen prefaktori antaa X = 0,14 (J1738:n prefaktori on *pienempi*). Siis DU-32-ONLY ennustaa Ṗb(J1738) = 0 mittausvirheen sisällä; havaittu −25,9 ± 3,2 → **8,1σ ristiriita — FALSIFIED AS CURRENTLY FORMULATED**. Falsifiointia ei julisteta pelkästä kvalitatiivisesta e→0-lausumasta vaan tästä rajasta.
+**DU-32-ONLY** (julkaistu eksentrisyys-/periastronimekanismi). Tarkkaa yhtälöä 32 ei ole → numeerinen ennuste **UNRESOLVED**. Rigoröösi rajalausuma: julkaistu lausuma kiinnittää F(0) = 0; jos F on analyyttinen e = 0:ssa (kaikki e:stä, √(1−e²):sta ja periastronitermeistä rakennetut suljetun muodon tekijät ovat), F = O(eⁿ), n ≥ 1. Kalibroimalla yhtälö 32 DU:lle edullisimmin B1913+16:n koko hidastumaan: |Ṗb_32(J1738)| ≤ 2,40·10⁻¹² · (e_J/e_B)ⁿ · X, missä X on massa/jakso-prefaktorien suhde. Raja saavuttaa mittausvirheen 3,2·10⁻¹⁵ vain, jos X ≥ 1830 (n = 1, e + 1σ); GR-tyyppinen prefaktori antaa X = 0,14 (J1738:n prefaktori on *pienempi*). Siis DU-32-ONLY ennustaa Ṗb(J1738) = 0 mittausvirheen sisällä; havaittu −25,9 ± 3,2 → 8,1σ nollahypoteesia H_32 vastaan. *(Päivityksessä 2 tämä luokiteltiin FALSIFIED AS CURRENTLY FORMULATED; Päivityksessä 3 status on korjattu TENSION (vahva, ehdollinen), koska analyyttisyys ja prefaktori ovat varmentamattomia lisäoletuksia, ks. §19–20.)*
 
 **DU-PLUS-QUADRUPOLE** (mainittu, ei kvantifioitu). Kaksikomponenttinen fenomenologia Ṗb = κ·Ṗb_GR(e) + β·(GR:n ympyräprefaktori)·eⁿ sovitettuna J1738 (e = 3,4·10⁻⁷), J0737−3039 (0,088), B1913+16 (0,617):
 
@@ -171,7 +171,7 @@ Kvadrupolitermin on oltava GR:n kaltainen 0,05–0,4 %:n tarkkuudella, ja yhtäl
 |---|---|---|---|
 | Pantheon+ implikoitu luettelorelaatio (p = 1,5) | **FALSIFIED AS CURRENTLY FORMULATED** | vain poistamalla +5 log10(1+z) → p = 0,5 (TENSION) tai uusi vuolaimennuslaki | K-korjaus ei voi antaa termiä; p ≈ 0,62 ei vastaa mekanismia |
 | Pantheon+ bolometrinen (p = 0,5) | TENSION (Δχ² +82, 8σ) | vapaa p (Δχ² +14 samalla k) | 1 parametri, ei mekanismia, huonompi ennuste |
-| PSR J1738+0333 (Tier-1) | DU-32-ONLY: **FALSIFIED**; DU-PLUS-QUADRUPOLE: NOT YET PREDICTIVE | kvadrupolitermi | κ = 1 ± 0,0005; yhtälö 32 ≤ 0,2–0,8 % |
+| PSR J1738+0333 (Tier-1) | DU-32-ONLY: TENSION (vahva, ehdollinen; korjattu Päivityksessä 3, aiemmin FALSIFIED); DU-PLUS-QUADRUPOLE: NOT YET PREDICTIVE | kvadrupolitermi | κ = 1 ± 0,0005 ja yhtälö 32 ≤ 0,2–0,8 % vain J0737-syötteellä (muistista); ilman ≤ 29 % |
 | PSR B1913+16 | NOT DISCRIMINATING (yksin) | — | — |
 | Capotauro | NOT DISCRIMINATING (tuki poistettu; Galaktinen Y-kääpiö) | n/a | n/a |
 | Kulmakokorelaatio | NOT YET PREDICTIVE (L-A vs L-B; L-B hylätty SN:llä) | sulkupostulaatti | 1 postulaatti, on toteutettava SN ja koot samanaikaisesti |
@@ -181,6 +181,56 @@ Kvadrupolitermin on oltava GR:n kaltainen 0,05–0,4 %:n tarkkuudella, ja yhtäl
 | GW-aaltomuodot | NOT YET PREDICTIVE | sama säteilysektori kuin DU-PLUS-QUADRUPOLE | sama |
 | Laajenemislaki / ikä 1/H0 | SUPPORTED (heikosti; ei DU:lle ainutlaatuinen) | — | — |
 
-Luokat: SUPPORTED 1 · NOT DISCRIMINATING 2 · TENSION 2 · FALSIFIED AS CURRENTLY FORMULATED 2 · NOT YET PREDICTIVE 5 (matriisissa 11 riviä; J1738-rivi kantaa kaksi statusta).
+Luokat (johdettu korjatusta matriisista, 12 riviä, yksi status per rivi; J1738 jaettu DU-32-ONLY- ja DU-PLUS-QUADRUPOLE-riveiksi): SUPPORTED 1 · NOT DISCRIMINATING 2 · TENSION 3 · FALSIFIED AS CURRENTLY FORMULATED 1 · NOT YET PREDICTIVE 5. Aiempi versio ilmoitti 11 riviä ja 12 luokkaa, koska J1738-rivi kantoi kahta statusta; tämä on korjattu (`results/falsification_matrix_counts.json`).
 
-**Evidentiaalinen tila.** DU:n kaksi julkaistua, kvantitatiivista havaintoennustetta, jotka voitiin testata (supernovien luettelorelaatio; lähes ympyräradan hidastuma yhtälöllä 32 yksin) ovat kumpikin ristiriidassa datan kanssa yli 8σ:lla. Jäljelle jäävä DU on joko (a) bolometrinen muoto vahvassa jännitteessä tai (b) laajennuksia, joilla ei vielä ole ennustetta. Mikään testi ei tue DU:ta ΛCDM:ää paremmin. Tämä ei ole väite koko teorian kumoutumisesta: se on väite, että sen **nykyisin muotoillut** havaintoennusteet eivät kestä ja että jäljellä oleva teoria ei ole vielä ennustava.
+**Evidentiaalinen tila (korjattu varmennuskierroksella, ks. Päivitys 3).** Yksi DU:n julkaistusta tekstimuunnoksesta johdettu relaatio (p = 1,5) on falsifioitu sellaisena kuin se on muotoiltu — ehdollisesti sille, että ulkoisesti toimitettu muunnos on täydellinen (renderöityä yhtälöä 36 ei ole nähty). Eksentrisyyteen perustuva hidastumisluokka (DU-32-ONLY) ennustaa eksplisiittisten lisäoletusten (analyyttisyys, prefaktori) alla nollahidastuman J1738+0333:lle, jossa hidastuma on mitattu 8,1σ:lla nollasta; koska yhtälön 32 kerrointa ei ole varmennettu, tämä kirjataan vahvana ehdollisena jännitteenä, ei falsifiointina. Bolometrinen SN-muoto on jännitteessä (Δχ² +82) mutta absoluuttisesti hyväksyttävä sovitus (χ²/dof 0,935). Muut kohdat eivät ole vielä ennustavia. Mikään testi ei tue DU:ta ΛCDM:ää paremmin. Aiempi lause "kaksi julkaistua kvantitatiivista ennustetta ovat ristiriidassa yli 8σ:lla" on **vedetty takaisin** liian vahvana: toinen ennusteista ei ole yksikäsitteinen, ja 8,1σ on havainnon merkitsevyys nollaa vastaan, ei DU-käyrän χ².
+
+
+---
+
+# PÄIVITYS 3 (2026-09-08): evidenssin varmennus- ja viimeistelykierros
+
+## 17. Lähteiden varmennus — tulos
+
+Alkuperäislähteiden haku yritettiin uudelleen: frontiersin.org, doi.org, arxiv.org ja physicsfoundations.org palauttavat edelleen 000 (egress-esto). **Yhtälöitä 32 ja 36, niiden muuttujamääritelmiä, soveltamisehtoja ja renderöityjä muotoja ei ole varmennettu.** Kaikki EXTERNALLY SUPPLIED -tiedot säilyttävät alkuperäisen provenienssinsa; riippumatonta varmennusta ei saatu (`sources/manifest.csv`, rivi "verification round 3"). Seuraukset: (i) D_eff ∝ z(1+z)^{3/2} on **tekstistä johdettu ehdollinen tulkinta**, ei varmennettu DU-ennuste; (ii) yhtälö 32 ei mahdollista yksikäsitteistä J1738-ennustetta tässä ajossa.
+
+Erottelu: **laskennan toistettavuus** (kaikki skriptit ajettavia, testit 13/13) ≠ **lähteiden varmennus** (artikkeli ja pulsarijulkaisut: ei) ≠ **johtopäätösten pätevyys** (ehdollinen, alla).
+
+## 18. Supernovatestin tilastollinen tarkastus (`src/pantheon_robustness.py`)
+
+- **Parametrisoinnit:** `pantheon_fit.py` käyttää q:ta (D_L ∝ z(1+z)^{q/2}), `pantheon_decisive_test.py` p:tä (D_L ∝ z(1+z)^p); p = q/2, numeerisesti varmennettu. Tehtävänannon "raw q = 0,5 / K-korjattu q = 1,5" vastaa p-konventiota.
+- **Vapaat parametrit ja BIC:** n = 1590; k sisältää profiloidun M:n: ΛCDM 2, kiinteä p 1, vapaa p 2.
+- **Kolme eri asiaa erotettuna:**
+
+| Malli | χ²/dof (absoluuttinen) | P(χ² ≥ obs) | Δχ² / ΔBIC (suhteellinen) | Wald-poikkeama parhaasta p:stä |
+|---|---|---|---|---|
+| D ΛCDM | 0,883 | 1,00 | 0 / 0 | — |
+| A p = 0,5 | 0,935 | 0,97 | +82 / +75 | 8,3σ |
+| B p = 1,5 | 3,08 | 0 | +3491 / +3483 | 59σ |
+| C p vapaa | 0,892 | 1,00 | +14 / +14 | — |
+
+  Wald-σ kuvaa kiinteän p:n etäisyyttä parhaasta p:stä (1 dof, sisäkkäinen malli); se **ei** ole "falsifioinnin σ". Absoluuttinen sovitus riippuu julkaistusta kovarianssista, joka sisältää Pantheon+-putkessa kalibroidun intrinsic scatterin. A on absoluuttisesti hyväksyttävä mutta suhteellisesti selvästi heikompi; B hylätään myös absoluuttisesti.
+- **Held-out z ≥ 0,4** on **saman aineiston osajoukkodiagnostiikka**, ei riippumaton ennustetesti: systematiikat ovat yhteisiä ja opetus–testi-ristikovarianssi on nollasta poikkeava. Oikea ehdollinen Gaussin ennuste (ristikovarianssi mukana): ΛCDM 229,0 · A 258,1 · C 263,6 · B 3026,9 (aiemmin lohkokohtaisesti 222 · 254 · 254 · 2947). Järjestys ei muutu. Jako z = 0,4 valittiin kerran etukäteen.
+- **Vertailukelpoisuus:** m_b_corr sisältää BBC-bias-korjauksen, joka on laskettu referenssikosmologialla (keskiarvo −0,011 mag, vaihteluväli −0,54…+0,37). Rajaava herkkyysajo ilman korjausta (ei "parempi data"): Δχ²(A) 82 → 110, Δχ²(B) 3491 → 3329, Δχ²(C) 14 → 17. Valinta zmin = 0,023: A +81, B +3284; ilman Cepheid-kalibraattoreita: A +81, B +3490. **Johtopäätökset eivät riipu näistä.** Havaintosuureen (K-korjattu rest-frame B -magnitudi, SALT2-standardoitu) vertaaminen mallien D_L:iin on perusteltua, kun kukin malli antaa oman bolometrisen laimennuksensa D_L:ssä (§14, K-korjausauditointi).
+- Aiempaa laskentaa ei muutettu: konkreettista virhettä ei löytynyt; held-out-tulos nimettiin uudelleen ja täydennettiin ehdollisella muodolla.
+
+## 19. Pulsaritestin varmennus (`src/binary_decay_sensitivity.py`)
+
+**Syötteiden provenienssi:** J1738: e, Ṗb_int, Ṗb_GR = EXT; massat, kinemaattinen korjaus = abstraktitaso; Pb = muistista. B1913+16: massat ja suhde 0,9983 ± 0,0016 abstraktitaso; Pb, e, Ṗb muistista. J0737: e = 0,088 ja "0,013 %" abstraktitaso; suhde 0,999963(63) ja muut muistista. Alkuperäisjulkaisuja ei saatu.
+
+**Teoriariippuvuus:** B1913+16:n ja J0737:n massat johdetaan GR:n post-Kepler-parametreista (ω̇, γ) → niiden Ṗb-testi on GR:n itsekonsistenssitesti, ja DU-testissä ne edellyttäisivät DU:n omat PK-kaavat. J1738:n massat tulevat WD-spektroskopiasta ja massasuhteesta → **vähiten teoriariippuva**, mikä tukee sen Tier-1-asemaa. Kinemaattiset korjaukset (Shklovskii, Galaktinen kiihtyvyys) ovat klassisia ja etäisyysriippuvia; J1738:lle vähennetty parallaksilla (abstraktitaso).
+
+**J1738-raja vaiheittain:** S1 (EXT) F(0) = 0 takaa vain raja-arvon lim Ṗb_32 → 0. S2 analyyttisyys (**lisäoletus**) antaa häviämisnopeuden eⁿ, n ≥ 1. S3 kalibrointi B1913:n koko hidastumaan (**lisäoletus**, DU:lle edullinen). S4 prefaktorisuhde X (**tuntematon**). Tulos: n = 1 vaatii X ≥ 2400 (e = 3,4·10⁻⁷) tai X ≥ 1830 (e + 1σ); n = 2 vaatii X ≥ 3·10⁹; GR-tyyppinen skaalaus antaa X = 0,136. **Jos F ei ole analyyttinen (n = 1/2), raja vaatii vain X ≥ 1,8 eikä ole robusti** — siksi S2 on kriittinen ja varmentamaton. Kolme eri väitettä: tarkka ennuste = UNRESOLVED; ehdollinen yläraja = edellä; havainnollistava nollaennuste = H_32: "Ṗb(J1738) = 0 virheen sisällä", jota vastaan havainto on 8,1σ. **8,1σ sitoutuu H_32:een**, ei DU-käyrän χ²-testiin.
+
+**DU-PLUS-QUADRUPOLE:** κ ja β ovat lähes täysin degeneroituneet (korrelaatio −1,00). κ = 1,00045 ± 0,00048 ja eksentrisyystermi ≤ 0,2–0,8 % B1913:sta **vain J0737-suhteella** (muistista; tarkkuustaso 0,013 % abstraktitason vahvistama). Ilman J0737:ää: κ = 0,935 ± 0,116 ja eksentrisyystermi ≤ 29 % (dof 0). κ:n 0,05 %:n tarkkuus on **empiirinen rajoite lisätermin amplitudille**, ei teoreettinen hienosäätövaatimus. Aineisto kertoo alkuperäisestä DU-mekanismista: jos GR-tyyppinen termi on läsnä, eksentrisyystermi on enintään promilleluokkaa (J0737 mukana) tai kymmenesosaluokkaa (ilman) havaituista hidastumista. Aiempi muotoilu "pelastus vie yhtälöltä 32 empiirisen sisällön" **lievennetään**: se pätee J0737-syötteen ehdolla.
+
+## 20. Korjatut ja lievennetyt väitteet
+
+| Aiempi | Korjattu |
+|---|---|
+| "Kaksi julkaistua kvantitatiivista ennustetta ristiriidassa >8σ" | Vedetty takaisin. Yksi tekstistä johdettu relaatio (p = 1,5) falsifioitu ehdollisesti provenienssille; DU-32-ONLY on vahva ehdollinen jännite (H_32 vs. 8,1σ havainto), ei falsifiointi ennen yhtälön 32 varmennusta. |
+| J1738 DU-32-ONLY: FALSIFIED AS CURRENTLY FORMULATED | TENSION (vahva, ehdollinen); puuttuva kerroin ei yksin ole falsifiointi. |
+| "Yhtälö 32 ≤ 0,2–0,8 % B1913:sta" | Pätee vain muistista otetulla J0737-suhteella; ilman sitä ≤ 29 %. |
+| "Ennustetesti z ≥ 0,4" | Saman aineiston osajoukkodiagnostiikka; ehdollinen χ² ristikovarianssilla lisätty. |
+| Falsifiointimatriisi 11 riviä / 12 luokkaa | 12 riviä, yksi status per rivi; luvut johdettu koneellisesti. |
+| "p = 0,5 on 8σ" | Wald-poikkeama parhaasta p:stä 8,3σ; absoluuttinen sovitus hyväksyttävä (χ²/dof 0,935). |

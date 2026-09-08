@@ -1,0 +1,134 @@
+{
+  "provenance": {
+    "PSR J1738+0333": {
+      "e": "EXT",
+      "Pbdot_int": "EXT",
+      "Pbdot_GR": "EXT",
+      "masses": "SNIP (Antoniadis+2012 abstract)",
+      "Pb": "MEM",
+      "kinematic_corr": "SNIP (abstract: subtracted using proper motion + parallax)",
+      "mass_method": "WD optical spectroscopy + mass ratio: weakly theory-dependent (no GR PK parameters used)"
+    },
+    "PSR B1913+16": {
+      "e": "MEM",
+      "Pbdot_int": "MEM",
+      "Pbdot_GR": "SNIP/MEM",
+      "masses": "SNIP (1.438/1.390)",
+      "ratio": "SNIP (0.9983\u00b10.0016)",
+      "Pb": "MEM",
+      "kinematic_corr": "MEM (Galactic acceleration correction is the dominant systematic; distance-dependent)",
+      "mass_method": "GR post-Keplerian (omega-dot, gamma): theory-DEPENDENT; the Pbdot test is a GR self-consistency test"
+    },
+    "PSR J0737-3039A/B": {
+      "e": "SNIP (0.088)",
+      "Pbdot_int": "MEM",
+      "ratio": "MEM (0.999963\u00b10.000063; snippet: 'agreement within 0.013%')",
+      "masses": "MEM",
+      "Pb": "MEM",
+      "mass_method": "GR post-Keplerian + mass ratio R (theory-independent) : partly theory-dependent"
+    }
+  },
+  "bound_rows": [
+    {
+      "n": 0.5,
+      "e_J": 3.4e-07,
+      "bound_X1": 1.7799135136676872e-15,
+      "X_needed_for_1sigma": 1.797840162135791
+    },
+    {
+      "n": 0.5,
+      "e_J": 4.5e-07,
+      "bound_X1": 2.0476970222391326e-15,
+      "X_needed_for_1sigma": 1.5627311878887422
+    },
+    {
+      "n": 1,
+      "e_J": 3.4e-07,
+      "bound_X1": 1.3211393311663268e-18,
+      "X_needed_for_1sigma": 2422.151793160968
+    },
+    {
+      "n": 1,
+      "e_J": 4.5e-07,
+      "bound_X1": 1.748566761837786e-18,
+      "X_needed_for_1sigma": 1830.0702437216196
+    },
+    {
+      "n": 2,
+      "e_J": 3.4e-07,
+      "bound_X1": 7.278603554439572e-25,
+      "X_needed_for_1sigma": 4396447719.766473
+    },
+    {
+      "n": 2,
+      "e_J": 4.5e-07,
+      "bound_X1": 1.2750148959982817e-24,
+      "X_needed_for_1sigma": 2509774599.5308847
+    }
+  ],
+  "GR_like_X": 0.136,
+  "tested_hypothesis": "H_32: Pbdot_int(J1738) = 0 within 3.2e-15 s/s (consequence of DU-32-ONLY under S1-S4)",
+  "significance_of_observed_vs_zero": 8.09375,
+  "two_component_sensitivity": {
+    "all three (EXT+SNIP+MEM) n=1": {
+      "kappa": 0.9954638366123172,
+      "kappa_err": 0.004248369035520846,
+      "beta": 0.05389875395833957,
+      "beta_err": 0.0509180704813144,
+      "corr_kappa_beta": -0.9998902113257062,
+      "fracB": 0.0028053649130979573,
+      "fracB_2sig_upper": 0.008105812804020916,
+      "dof": 1
+    },
+    "all three (EXT+SNIP+MEM) n=2": {
+      "kappa": 1.0004533300390326,
+      "kappa_err": 0.00047982912325678523,
+      "beta": -0.06692243102759697,
+      "beta_err": 0.06458156488500544,
+      "corr_kappa_beta": -0.991356573859013,
+      "fracB": -0.0021496206149198387,
+      "fracB_2sig_upper": 0.0019992383278565487,
+      "dof": 1
+    },
+    "without J0737 (drop MEM ratio) n=1": {
+      "kappa": 0.9350176371600764,
+      "kappa_err": 0.11552422034661329,
+      "beta": 1.2158277480004607,
+      "beta_err": 2.219749977293659,
+      "corr_kappa_beta": -0.9999041037991704,
+      "fracB": 0.06328236283992332,
+      "fracB_2sig_upper": 0.29435296261530475,
+      "dof": 0
+    },
+    "without J0737 (drop MEM ratio) n=2": {
+      "kappa": 0.9350180505412814,
+      "kappa_err": 0.11552346570446329,
+      "beta": 1.970106663729081,
+      "beta_err": 3.596845218636087,
+      "corr_kappa_beta": -0.9999041025462472,
+      "fracB": 0.06328194945871868,
+      "fracB_2sig_upper": 0.2943510398050506,
+      "dof": 0
+    },
+    "J1738 + J0737 (drop B1913) n=1": {
+      "kappa": 0.9350177860142495,
+      "kappa_err": 0.11552393620582163,
+      "beta": 0.7780208549178432,
+      "beta_err": 1.383936389757658,
+      "corr_kappa_beta": -0.9999998513013416,
+      "fracB": 0.04049504390643307,
+      "fracB_2sig_upper": 0.18455947228956365,
+      "dof": 0
+    },
+    "J1738 + J0737 (drop B1913) n=2": {
+      "kappa": 0.9350180505403307,
+      "kappa_err": 0.11552346568742697,
+      "beta": 8.863520674299084,
+      "beta_err": 15.766349612505454,
+      "corr_kappa_beta": -0.9999998513001304,
+      "fracB": 0.2847058373355337,
+      "fracB_2sig_upper": 1.2975701230067802,
+      "dof": 0
+    }
+  }
+}

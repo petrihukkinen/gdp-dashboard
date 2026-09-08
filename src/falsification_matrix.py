@@ -9,7 +9,7 @@ rows = [
  "m = M + 5log10(R4 z (1+z)^1.5) ; p = 1.5 (relation implied by the published textual transformation)",
  "1590 SNe, zHD>0.01, STAT+SYS covariance, M profiled",
  f"chi2 = {t['B_DU_implied_Kcorr_p1.5']['chi2']:.1f} vs LCDM {t['D_flat_LCDM']['chi2']:.1f}; dchi2 = {t['B_DU_implied_Kcorr_p1.5']['dchi2']:+.0f}; dBIC = {t['B_DU_implied_Kcorr_p1.5']['dBIC']:+.0f}; residual tilt {pd_['residual_tilt_B_mag_per_dex']:+.2f} mag/dex; test chi2 (z>=0.4) {pd_['train_test']['B']['chi2_test']:.0f} vs {pd_['train_test']['D']['chi2_test']:.0f}; p=1.5 is 59 sigma from best-fit p",
- "FALSIFIED AS CURRENTLY FORMULATED",
+ "FALSIFIED AS CURRENTLY FORMULATED (conditional on provenance: the textual transformation is externally supplied; rendered Eq. 36 not seen)",
  "Only by dropping the +5log10(1+z) term (then p=0.5, TENSION) or by a new flux-dilution law; the K-correction cannot supply the term (Hogg definition: K independent of dilution distance)",
  "Removes the article's stated justification; requires a derived photon energy/arrival-rate law giving p≈0.62 — no integer photon-counting mechanism does",
  "Obtain rendered Eq. 36 and re-run; light-curve time-dilation vs z fixes the arrival-rate factor independently"],
@@ -21,13 +21,21 @@ rows = [
  f"Free exponent p = {pd_['p_free']['best']:.3f} ± {(pd_['p_free']['hi']-pd_['p_free']['lo'])/2:.3f} reduces dchi2 to {t['C_DU_free_p']['dchi2']:+.1f} at equal parameter count",
  "One new parameter with no mechanism; still dAIC +14 and worse out-of-sample",
  "Same as above"],
-["PSR J1738+0333 orbital decay (Tier-1)",
- "DU-32-ONLY: F(e)=0 at e=0 -> Pbdot = 0 within error for e=3.4e-7 (bound: any analytic F, prefactor ratio < ~1e3); DU-PLUS-QUADRUPOLE: not quantitatively specified",
- "Pbdot_int = (-25.9 ± 3.2)e-15 s/s (Freire+2012, externally supplied); GR -27.7e-15",
- f"Nonzero at {bt['DU_32_ONLY']['J1738_sigma_nonzero']:.1f} sigma; obs/GR = 0.94 ± 0.12",
- "FALSIFIED AS CURRENTLY FORMULATED (DU-32-ONLY); NOT YET PREDICTIVE (DU-PLUS-QUADRUPOLE)",
- "Yes: add a quadrupole-type radiative term",
- f"Two-component fit: kappa = {bt['DU_PLUS_QUADRUPOLE']['fits']['n=2']['kappa']:.4f} ± {bt['DU_PLUS_QUADRUPOLE']['fits']['n=2']['kappa_err']:.4f}; eccentricity term <= {bt['DU_PLUS_QUADRUPOLE']['fits']['n=1']['frac_B1913_2sigma_upper']*100:.1f} % of B1913+16 decay (2 sigma, n=1). The added term must equal GR's quadrupole to 0.05 %; Eq. 32 loses its empirical content",
+["PSR J1738+0333 orbital decay — DU-32-ONLY (Tier-1)",
+ "Eq. 32 (eccentricity/periastron mechanism; exact form NOT available): F(0)=0 externally supplied. Under A-ANALYTIC (n>=1) and A-CALIB (Eq. 32 alone explains B1913+16), the bound |Pbdot| <= 2.4e-12 (e_J/e_B)^n X is below the 3.2e-15 error unless prefactor ratio X >= ~1800; illustrative null prediction Pbdot = 0. Exact numerical prediction UNRESOLVED.",
+ "Pbdot_int = (-25.9 ± 3.2)e-15 s/s; e = (3.4 ± 1.1)e-7 (Freire+2012, externally supplied); GR -27.7e-15",
+ f"Observed decay nonzero at {bt['DU_32_ONLY']['J1738_sigma_nonzero']:.1f} sigma against H_32 (null within error); obs/GR = 0.94 ± 0.12. Wald-type significance of the observation vs zero, not a chi2 of a unique DU curve.",
+ "TENSION (strong; conditional exclusion of the e->0-vanishing class). Becomes FALSIFIED AS CURRENTLY FORMULATED once Eq. 32's analytic e-dependence and prefactor are read from the rendered article; a missing coefficient alone is not a falsification.",
+ "Yes: add a quadrupole-type radiative term (DU-PLUS-QUADRUPOLE)",
+ "See next row",
+ "Read Eq. 32 (rendered) and compute the J1738 value; verify B1913/J0737 inputs from the papers"],
+["PSR J1738+0333 / J0737 / B1913 joint — DU-PLUS-QUADRUPOLE",
+ "Not quantitatively specified in the article; two-component phenomenology Pbdot = kappa Pbdot_GR(e) + beta (GR circular prefactor) e^n fitted here",
+ "Three systems' observed/GR ratios (J1738 EXT; B1913 snippet; J0737 memory)",
+ f"kappa = {bt['DU_PLUS_QUADRUPOLE']['fits']['n=2']['kappa']:.5f} ± {bt['DU_PLUS_QUADRUPOLE']['fits']['n=2']['kappa_err']:.5f} (n=2); eccentricity term <= {bt['DU_PLUS_QUADRUPOLE']['fits']['n=1']['frac_B1913_2sigma_upper']*100:.1f} % of B1913+16 decay (2 sigma, n=1); corr(kappa,beta) = -1.00; WITHOUT the J0737 ratio (from memory) the bound weakens to <= 29 % (results/binary_decay_sensitivity.json)",
+ "NOT YET PREDICTIVE",
+ "The added term IS the rescue; it has no DU derivation yet",
+ "Empirically the added term must carry a GR-like amplitude to 0.05 % with J0737 (memory-sourced ratio; precision level 0.013 % snippet-confirmed) or to 12 % without it and Eq. 32 is confined to <= ~1 % of B1913+16; this is a data constraint on the amplitude, not a theoretical fine-tuning claim",
  "Derive the DU radiative sector; predict J1738-type systems and the double pulsar before fitting"],
 ["PSR B1913+16 orbital decay",
  "DU-32-ONLY reportedly matches at e=0.617 (figure not verifiable here)",
@@ -95,4 +103,13 @@ rows = [
  "Clock-rate scaling test via quasar spectral ratios / atomic-clock cosmology"],
 ]
 with open("results/falsification_matrix.csv","w",newline="") as f: csv.writer(f).writerows(rows)
-print(f"{len(rows)-1} rows written")
+classes = ["SUPPORTED", "NOT DISCRIMINATING", "TENSION", "FALSIFIED AS CURRENTLY FORMULATED", "NOT YET PREDICTIVE"]
+def primary(status):
+    for c in sorted(classes, key=len, reverse=True):
+        if status.startswith(c): return c
+    raise ValueError(status)
+counts = {c: 0 for c in classes}
+for r in rows[1:]: counts[primary(r[4])] += 1
+assert sum(counts.values()) == len(rows) - 1
+json.dump(dict(n_rows=len(rows)-1, counts=counts, rows=[dict(test=r[0], status=r[4]) for r in rows[1:]]), open("results/falsification_matrix_counts.json", "w"), indent=2)
+print(f"{len(rows)-1} rows written; counts: {counts}")

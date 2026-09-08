@@ -21,6 +21,8 @@ src/pantheon_decisive_test.py TASK A: p=0.5 / implied p=1.5 / free p / flat LCDM
 src/binary_decay_tiers.py     TASK B: DU-32-ONLY limiting bound + DU-PLUS-QUADRUPOLE two-component fit (J1738 Tier-1)
 src/falsification_matrix.py   TASK C: results/falsification_matrix.csv
 src/po_decision_engine.py     TASK D: 12-layer decision engine, gate mapping, BTS requirements matrix (CSV)
+src/pantheon_robustness.py    verification round: absolute fit, conditional held-out, bias/selection sensitivity
+src/binary_decay_sensitivity.py verification round: provenance tiers, stepwise J1738 bound, two-component fit sensitivity
 src/kcorrection_audit.py      Hogg K-correction from definitions: K independent of the dilution distance
 src/local_expansion_and_bh.py H0*r observables under DU scalings, LLR injection–recovery, GR ISCO/Kerr reference
 src/bilfinger_prototype.py    SYNTHETIC state-space prototype, 3 policies, Monte Carlo, 9 stress tests, value accounting
@@ -45,6 +47,8 @@ python src/kcorrection_audit.py
 python src/local_expansion_and_bh.py
 python src/bilfinger_prototype.py
 python src/bilfinger_gates.py
+PYTHONPATH=src python src/pantheon_robustness.py
+PYTHONPATH=src python src/binary_decay_sensitivity.py
 python src/falsification_matrix.py
 python src/po_decision_engine.py
 python -m pytest -q tests

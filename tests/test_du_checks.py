@@ -76,3 +76,21 @@ def test_binary_tiers_bound_and_two_component_fit():
     f2 = b["DU_PLUS_QUADRUPOLE"]["fits"]["n=2"]
     assert abs(f2["kappa"] - 1) < 3*f2["kappa_err"] and f2["kappa_err"] < 1e-3
     assert f2["frac_B1913_2sigma_upper"] < 0.01
+
+def test_verification_round_parametrisation_and_counts():
+    rb = R("pantheon_robustness.json"); fc = R("falsification_matrix_counts.json")
+    assert rb["parametrisation"].startswith("verified")
+    assert fc["n_rows"] == sum(fc["counts"].values()) == 12
+    # conditional held-out must be >= block-only for every model here (shared systematics) and preserve ordering
+    ho = rb["heldout"]; assert ho["D flat LCDM"]["chi2_conditional"] < ho["A DU p=0.5"]["chi2_conditional"] < ho["B DU p=1.5"]["chi2_conditional"]
+
+def test_verification_round_pulsar_sensitivity():
+    bs = R("binary_decay_sensitivity.json")
+    allthree = bs["two_component_sensitivity"]["all three (EXT+SNIP+MEM) n=1"]; noJ = bs["two_component_sensitivity"]["without J0737 (drop MEM ratio) n=1"]
+    assert allthree["fracB_2sig_upper"] < 0.01 and noJ["fracB_2sig_upper"] > 0.2   # bound depends on J0737 input
+    n1 = [r for r in bs["bound_rows"] if r["n"] == 1 and abs(r["e_J"] - 4.5e-7) < 1e-9][0]
+    assert 1800 < n1["X_needed_for_1sigma"] < 1900
+
+def test_absolute_fit_classification():
+    t = R("pantheon_robustness.json")["table"]
+    assert t["A DU p=0.5"]["chi2_dof"] < 1.0 and t["B DU p=1.5"]["chi2_dof"] > 3.0

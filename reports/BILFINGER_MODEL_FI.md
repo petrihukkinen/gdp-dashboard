@@ -105,6 +105,8 @@ Ei valintaa ilman aineistoa. Vertailukriteerit: (1) datan lineage ja KPI-laskenn
 
 # OSA 2 — PERFORMANCE OUTSOURCING DECISION ENGINE (TASK D)
 
+> **Status: ehdotus.** Kerrokset, kriteerit ja periaatteet ovat tutkimusmenetelmästä johdettuja ehdotuksia, eivät empiirisesti validoitu liiketoimintamalli. P10-portti on ehdotettu riskipolitiikka, ei yleispätevä eikä Bilfingerin hyväksymä sääntö. Omistaja- ja hyväksyjäroolit ovat rakenteellisia oletuksia; integrity-/HSEQ-hyväksynnän omistajuutta ei ole vahvistettu. BTS:n korvaamista ei oleteta etukäteen. Tätä osaa ei laajennettu varmennuskierroksella.
+
 Prototyypin synteettisiä rahalukuja **ei käytetä näyttönä**. Alla oleva on menetelmän muunnos toimintamallilogiikaksi: 12 pakollista kerrosta, kullekin INPUT / LASKENTA TAI HARKINTA / OMISTAJAROOLI / VAADITTU NÄYTTÖ / GREEN–AMBER–RED / VIKATILA / TIETOTARVE / BTS-KYVYKKYYS. Täysi taulukko: `results/po_decision_engine_layers.csv`. Porttikartoitus: `results/po_gate_mapping.csv`. BTS-vaatimusmatriisi: `results/po_bts_requirements.csv`. Roolit ovat rooleja, eivät nimiä tai nykyisiä valtuuksia.
 
 ## Kerrokset (tiivistelmä; koko sisältö CSV:ssä)
@@ -140,7 +142,7 @@ Prototyypin synteettisiä rahalukuja **ei käytetä näyttönä**. Alla oleva on
 
 BTS:ää **ei oleteta korvattavaksi**. Matriisi (`results/po_bts_requirements.csv`) listaa 10 vaatimusta kerroksista 1–12 ja kullekin, mitä Improve-, Intelligence Layer- ja Replace-vaihtoehto tarkoittaa sekä mikä tieto tarvitaan päätökseen. Ratkaisevat rivit: (a) kaksilähteinen KPI-täsmäytys ja muuttumaton audit trail (kerrokset 9, 11) — harvoin natiivisti BTS:ssä, Intelligence Layerin ydin, Replace vain jos audit trailia ei voi pakottaa lähteessä; (b) integrity-red-line-seuranta (kerros 4) — IDMS/RBI-moduulin olemassaolo ratkaisee; (c) master data & kriittisyys (kerrokset 1, 3) — yleensä Improve. Valinta tehdään vasta kenttäinventaarion, integraatioinventaarion ja audit-trail-testin jälkeen.
 
-## Suunnitteluperiaatteet, jotka tutkimusmenetelmä tuo Performance Outsourcing 2030:een
+## Suunnitteluperiaatteet, jotka tutkimusmenetelmä tuo Performance Outsourcing 2030:een (ehdotuksia)
 
 1. **Väiterekisteri sopimukselle:** jokainen tuloslupaus = väite, jolla on oletukset, ajurit, mittari, testi ja hylkäysehto — sama rakenne kuin `claim_register.csv`.
 2. **Ennakkoon määritellyt hylkäyskriteerit** (P10, integrity-red lines, KPI-ajautuma) ennen sopimusta, ei jälkikäteen.

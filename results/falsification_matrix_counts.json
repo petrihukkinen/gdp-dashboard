@@ -1,0 +1,60 @@
+{
+  "n_rows": 12,
+  "counts": {
+    "SUPPORTED": 1,
+    "NOT DISCRIMINATING": 2,
+    "TENSION": 3,
+    "FALSIFIED AS CURRENTLY FORMULATED": 1,
+    "NOT YET PREDICTIVE": 5
+  },
+  "rows": [
+    {
+      "test": "Pantheon+ SNe Ia, implied catalog relation (bolometric D_L = z sqrt(1+z) R4 + 5log10(1+z))",
+      "status": "FALSIFIED AS CURRENTLY FORMULATED (conditional on provenance: the textual transformation is externally supplied; rendered Eq. 36 not seen)"
+    },
+    {
+      "test": "Pantheon+ SNe Ia, bolometric DU form (no K term)",
+      "status": "TENSION (strong)"
+    },
+    {
+      "test": "PSR J1738+0333 orbital decay \u2014 DU-32-ONLY (Tier-1)",
+      "status": "TENSION (strong; conditional exclusion of the e->0-vanishing class). Becomes FALSIFIED AS CURRENTLY FORMULATED once Eq. 32's analytic e-dependence and prefactor are read from the rendered article; a missing coefficient alone is not a falsification."
+    },
+    {
+      "test": "PSR J1738+0333 / J0737 / B1913 joint \u2014 DU-PLUS-QUADRUPOLE",
+      "status": "NOT YET PREDICTIVE"
+    },
+    {
+      "test": "PSR B1913+16 orbital decay",
+      "status": "NOT DISCRIMINATING (alone)"
+    },
+    {
+      "test": "Capotauro (claimed z\u224831-32 galaxy)",
+      "status": "NOT DISCRIMINATING (support removed)"
+    },
+    {
+      "test": "Angular-size relation theta(z)",
+      "status": "NOT YET PREDICTIVE"
+    },
+    {
+      "test": "LLR / local expansion",
+      "status": "TENSION (conditional on LOD budget values)"
+    },
+    {
+      "test": "CMB TT/TE/EE",
+      "status": "NOT YET PREDICTIVE"
+    },
+    {
+      "test": "BBN light-element abundances",
+      "status": "NOT YET PREDICTIVE"
+    },
+    {
+      "test": "Gravitational-wave waveforms",
+      "status": "NOT YET PREDICTIVE"
+    },
+    {
+      "test": "Expansion law / age",
+      "status": "SUPPORTED (weakly; not unique to DU)"
+    }
+  ]
+}

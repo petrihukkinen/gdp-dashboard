@@ -46,6 +46,17 @@ checks += [
  ("tiers ecc share n=1 0.8 %", abs(bt["DU_PLUS_QUADRUPOLE"]["fits"]["n=1"]["frac_B1913_2sigma_upper"]*100 - 0.8) < 0.05 and "0,8 %" in reports),
  ("falsification matrix rows", sum(1 for _ in open(os.path.join(root, "results", "falsification_matrix.csv"), encoding="utf-8")) >= 12),
 ]
+rb = J("pantheon_robustness.json"); bs = J("binary_decay_sensitivity.json"); fc = J("falsification_matrix_counts.json")
+checks += [
+ ("counts match report (TENSION 3, FALSIFIED 1)", fc["counts"]["TENSION"] == 3 and fc["counts"]["FALSIFIED AS CURRENTLY FORMULATED"] == 1 and "TENSION 3" in reports and "FALSIFIED AS CURRENTLY FORMULATED 1" in reports),
+ ("chi2/dof A 0.935 / B 3.08", abs(rb["table"]["A DU p=0.5"]["chi2_dof"] - 0.935) < 0.001 and abs(rb["table"]["B DU p=1.5"]["chi2_dof"] - 3.08) < 0.005 and "0,935" in reports and "3,08" in reports),
+ ("Wald 8.3 sigma", abs(rb["wald_sigma"]["A"] - 8.3) < 0.05 and "8,3σ" in reports),
+ ("conditional held-out 229/258/264/3027", abs(rb["heldout"]["D flat LCDM"]["chi2_conditional"] - 229.0) < 0.1 and abs(rb["heldout"]["A DU p=0.5"]["chi2_conditional"] - 258.1) < 0.1 and abs(rb["heldout"]["B DU p=1.5"]["chi2_conditional"] - 3026.9) < 0.1 and "229" in reports and "258" in reports),
+ ("bias sensitivity 110 / 17", abs(rb["bias_sensitivity"]["dchi2_A"] - 110.5) < 0.2 and abs(rb["bias_sensitivity"]["dchi2_C"] - 17.1) < 0.2 and "110" in reports),
+ ("no-J0737 bound 29 %", abs(bs["two_component_sensitivity"]["without J0737 (drop MEM ratio) n=1"]["fracB_2sig_upper"]*100 - 29.4) < 0.2 and "29 %" in reports),
+ ("X for n=1 e=3.4e-7 is 2400", abs([r for r in bs["bound_rows"] if r["n"] == 1 and abs(r["e_J"] - 3.4e-7) < 1e-9][0]["X_needed_for_1sigma"] - 2420) < 10 and "2400" in reports),
+ ("withdrawn statement present", "vedetty takaisin" in reports),
+]
 bad = [n for n, ok in checks if not ok]
 for n, ok in checks: print(f"  [{'OK' if ok else 'MISMATCH'}] {n}")
 print(f"{len(checks)-len(bad)}/{len(checks)} consistent")
