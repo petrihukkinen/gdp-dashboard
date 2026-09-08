@@ -52,38 +52,42 @@ systems = {
       src="Kramer et al. 2021 PRX 11,041050; e=0.088 and 'agreement within 0.013%' confirmed via snippet; "
           "other numbers from memory of the paper -> flagged."),
 }
-out = {}
-print(f"{'system':20s} {'e':>10s} {'f(e)':>8s} {'Pbdot_GR(PM)':>14s} {'Pbdot_GR(E)':>14s} {'published GR':>14s} {'observed':>14s} {'obs/GR':>8s}")
-for name, s in systems.items():
-    Pb = s["Pb_d"]*DAY; mp = s["mp"]*Msun; mc = s["mc"]*Msun
-    pm = pbdot_PM(Pb, mp, mc, s["e"]); er = pbdot_energy_route(Pb, mp, mc, s["e"])
-    assert abs(pm/er-1) < 1e-12, "two implementations disagree"
-    # mass-uncertainty propagation (asymmetric, simple corner evaluation)
-    lo = pbdot_PM(Pb, (s["mp"]-s["mp_err"][0])*Msun, (s["mc"]-s["mc_err"][0])*Msun, s["e"])
-    hi = pbdot_PM(Pb, (s["mp"]+s["mp_err"][1])*Msun, (s["mc"]+s["mc_err"][1])*Msun, s["e"])
-    ratio = s["obs_int"]/pm; ratio_err = s["obs_err"]/abs(pm)
-    pub = s["pub_GR"]
-    print(f"{name:20s} {s['e']:10.3e} {f_e(s['e']):8.4f} {pm:14.4e} {er:14.4e} {str(pub):>14s} {s['obs_int']:14.4e} {ratio:6.3f}±{ratio_err:.3f}")
-    out[name] = dict(e=s["e"], f_e=f_e(s["e"]), Pbdot_GR_here=pm, Pbdot_GR_here_mass_range=[hi, lo],
-                     Pbdot_GR_published=pub, Pbdot_obs_intrinsic=s["obs_int"], obs_err=s["obs_err"],
-                     ratio_obs_over_GR_here=ratio, ratio_err=ratio_err, ratio_published=s.get("ratio_pub"),
-                     source=s["src"])
-    if pub:
-        print(f"    reproduction of published GR value: here/published = {pm/pub:.4f} (mass-range {hi/pub:.4f}..{lo/pub:.4f})")
+def main():
+    out = {}
+    print(f"{'system':20s} {'e':>10s} {'f(e)':>8s} {'Pbdot_GR(PM)':>14s} {'Pbdot_GR(E)':>14s} {'published GR':>14s} {'observed':>14s} {'obs/GR':>8s}")
+    for name, s in systems.items():
+        Pb = s["Pb_d"]*DAY; mp = s["mp"]*Msun; mc = s["mc"]*Msun
+        pm = pbdot_PM(Pb, mp, mc, s["e"]); er = pbdot_energy_route(Pb, mp, mc, s["e"])
+        assert abs(pm/er-1) < 1e-12, "two implementations disagree"
+        # mass-uncertainty propagation (asymmetric, simple corner evaluation)
+        lo = pbdot_PM(Pb, (s["mp"]-s["mp_err"][0])*Msun, (s["mc"]-s["mc_err"][0])*Msun, s["e"])
+        hi = pbdot_PM(Pb, (s["mp"]+s["mp_err"][1])*Msun, (s["mc"]+s["mc_err"][1])*Msun, s["e"])
+        ratio = s["obs_int"]/pm; ratio_err = s["obs_err"]/abs(pm)
+        pub = s["pub_GR"]
+        print(f"{name:20s} {s['e']:10.3e} {f_e(s['e']):8.4f} {pm:14.4e} {er:14.4e} {str(pub):>14s} {s['obs_int']:14.4e} {ratio:6.3f}±{ratio_err:.3f}")
+        out[name] = dict(e=s["e"], f_e=f_e(s["e"]), Pbdot_GR_here=pm, Pbdot_GR_here_mass_range=[hi, lo],
+                         Pbdot_GR_published=pub, Pbdot_obs_intrinsic=s["obs_int"], obs_err=s["obs_err"],
+                         ratio_obs_over_GR_here=ratio, ratio_err=ratio_err, ratio_published=s.get("ratio_pub"),
+                         source=s["src"])
+        if pub:
+            print(f"    reproduction of published GR value: here/published = {pm/pub:.4f} (mass-range {hi/pub:.4f}..{lo/pub:.4f})")
 
-# e -> 0 limit and the constraint on any formula vanishing at e=0
-j = systems["PSR J1738+0333"]
-sig_nonzero = abs(j["obs_int"])/j["obs_err"]
-print(f"\nPSR J1738+0333: intrinsic decay is nonzero at {sig_nonzero:.1f} sigma. f(e)-1 = {f_e(j['e'])-1:.2e} -> GR decay is e-independent here.")
-print("Any decay law with dPb/dt -> 0 as e -> 0 (e.g. ∝ e^n, n>0) predicts |dPb/dt| < 1e-20 s/s for e=3.4e-7 and is excluded")
-print(f"at {sig_nonzero:.1f} sigma by this system alone; the double pulsar (e=0.088) adds an independent constraint.")
-# eccentricity dependence check at e=0.616 (B1913+16): ratio of f(e) to circular
-print(f"f(0.6171) = {f_e(0.6171):.4f}: GR decay for B1913+16 is 11.86x the circular-orbit value with the same Pb and masses.")
-# What e-scaling would be needed for a purely e-driven law to hit both B1913 and J1738?
-# If law = A e^n: B1913 fixes A e^n = 2.40e-12 ; J1738 needs 2.6e-14 -> e^n ratio = 0.0108 with e ratio 5.5e-7
-n_needed = math.log(2.59e-14/2.40e-12)/math.log(3.4e-7/0.6171)   # ignores mass/Pb differences: illustrative only
-print(f"Illustrative: a pure power law in e reproducing both would need n = {n_needed:.3f} (i.e. essentially e-independent).")
-out["constraint"] = dict(J1738_sigma_nonzero=sig_nonzero, statement="Any dPb/dt law vanishing as e->0 is excluded at >8 sigma by PSR J1738+0333.",
-                         status_eq32="EI TESTATTU sellaisenaan: artikkelin yhtälöä 32 ei voitu lukea (lähde estetty). Testi on ehdollinen: JOS yhtälö 32 -> 0 kun e -> 0, NIIN se on ristiriidassa J1738+0333:n kanssa.")
-json.dump(out, open("results/binary_decay.json","w"), indent=2)
-print("written results/binary_decay.json")
+    # e -> 0 limit and the constraint on any formula vanishing at e=0
+    j = systems["PSR J1738+0333"]
+    sig_nonzero = abs(j["obs_int"])/j["obs_err"]
+    print(f"\nPSR J1738+0333: intrinsic decay is nonzero at {sig_nonzero:.1f} sigma. f(e)-1 = {f_e(j['e'])-1:.2e} -> GR decay is e-independent here.")
+    print("Any decay law with dPb/dt -> 0 as e -> 0 (e.g. ∝ e^n, n>0) predicts |dPb/dt| < 1e-20 s/s for e=3.4e-7 and is excluded")
+    print(f"at {sig_nonzero:.1f} sigma by this system alone; the double pulsar (e=0.088) adds an independent constraint.")
+    # eccentricity dependence check at e=0.616 (B1913+16): ratio of f(e) to circular
+    print(f"f(0.6171) = {f_e(0.6171):.4f}: GR decay for B1913+16 is 11.86x the circular-orbit value with the same Pb and masses.")
+    # What e-scaling would be needed for a purely e-driven law to hit both B1913 and J1738?
+    # If law = A e^n: B1913 fixes A e^n = 2.40e-12 ; J1738 needs 2.6e-14 -> e^n ratio = 0.0108 with e ratio 5.5e-7
+    n_needed = math.log(2.59e-14/2.40e-12)/math.log(3.4e-7/0.6171)   # ignores mass/Pb differences: illustrative only
+    print(f"Illustrative: a pure power law in e reproducing both would need n = {n_needed:.3f} (i.e. essentially e-independent).")
+    out["constraint"] = dict(J1738_sigma_nonzero=sig_nonzero, statement="Any dPb/dt law vanishing as e->0 is excluded at >8 sigma by PSR J1738+0333.",
+                             status_eq32="EI TESTATTU sellaisenaan: artikkelin yhtälöä 32 ei voitu lukea (lähde estetty). Testi on ehdollinen: JOS yhtälö 32 -> 0 kun e -> 0, NIIN se on ristiriidassa J1738+0333:n kanssa.")
+    json.dump(out, open("results/binary_decay.json","w"), indent=2)
+    print("written results/binary_decay.json")
+
+if __name__ == "__main__":
+    main()

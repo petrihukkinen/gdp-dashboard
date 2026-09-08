@@ -1,0 +1,11 @@
+requirement,source_layer,must_have_for_performance_model,Improve BTS (configure/discipline),BTS + Intelligence Layer,Replace BTS,decision_data_needed
+Asset hierarchy & criticality master data,"1,3",yes,Typically achievable if fields exist and governance enforced,Not needed for this requirement,Only if master data model cannot represent criticality,Field inventory; data quality audit of criticality coding
+Time-series + WO + cost integration for baseline,"2,6",yes,Depends on existing interfaces,Layer can integrate read-only sources,If no interfaces feasible,Integration inventory; historian access
+Sensitivity/scenario modelling (P10),"3,7",yes,Offline model acceptable,Natural fit (model sits in layer),Not required,Modelling skills; assumption register process
+"Integrity red-line tracking (SCE inspections, MOC)",4,yes (refining/O&G/chem),If IDMS/RBI module exists,Layer can aggregate from IDMS,If no IDMS and none attachable,SCE list coverage; inspection data location
+Skills matrix & access management,5,yes,Usually configurable,Not needed,Not required,HR system fields
+Two-source KPI reconciliation + immutable audit trail,"9,11",yes,Rarely native; audit trail often weak,Core layer capability,If audit trail cannot be enforced at source,Audit-trail capability test; production-count access
+Intervention log & attribution analytics,8,yes,Partial (WO notes),Core layer capability,Not required,Event logging practice
+Fee/gain-share calculation from verified KPIs,10,yes,Spreadsheet acceptable if inputs verified,Layer can automate with lineage,Not required,Contract formula; KPI lineage
+Value-band dashboards with alerting,11,yes,BI on top of BTS possible,Core layer capability,Not required,BI tooling; band logic
+Handback condition & effort tracking,12,yes,WO/effort data usually present,Aggregation only,Not required,Effort logging discipline

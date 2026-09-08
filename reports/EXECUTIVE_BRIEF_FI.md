@@ -1,28 +1,45 @@
-# JOHDON TIIVISTELMÄ — DU-tutkimus ja Bilfinger Performance Outsourcing -prototyyppi
+# JOHDON TIIVISTELMÄ — DU-tutkimus ja Bilfinger Performance Outsourcing (päivitetty ulkoisesti toimitetulla näytöllä)
 
-Ajo 2026-09-08. Koodi, testit ja tulokset: `src/`, `tests/`, `results/`. Väiterekisteri: `claims/claim_register.csv` (24 väitettä). Avoimet asiat: `reports/OPEN_LOOPS.csv` (17).
+Ajo 2026-09-08. Koodi, testit, tulokset: `src/`, `tests/`, `results/`. Väiterekisteri 25 väitettä, falsifiointimatriisi 11 riviä, avoimet asiat 19.
 
-## Ydinviesti
+## Kysymys 1: Mikä on DU:n evidentiaalinen tila uusien testien jälkeen?
 
-1. **Artikkelin tekstiä ei saatu** (frontiersin.org, arxiv.org, physicsfoundations.org egress-estetty). Kaikki artikkelin yhtälöihin sidotut väitteet ovat EHDOLLISIA tai EI TESTATTU. Mikään tässä ei perustu hakukatkelmiin muuten kuin nimettynä.
-2. **Mikä laskettiin ja toistui:** laajenemishaara R4 ∝ T^{2/3}, H = 2/(3T), c0 ∝ T^{-1/3}; ikä 1/H0 nykykelloissa (ehdollinen kello-oletukselle); kerroin 0,776 geodeettisena 1/d-integraalina; α = 1/(1,1049·4π³) = 0,0072973876 ja sen 4,8·10⁻⁶ ero CODATAan täsmälleen kertoimen pyöristyksestä; Pantheon+ flat ΛCDM Ωm = 0,332 ± 0,018 (julkaistu 0,334 ± 0,018); GR:n Peters–Mathews toistaa B1913+16:n ja J1738+0333:n julkaistut arvot.
-3. **Mikä oli ristiriidassa:** (a) DU-magnitudimuoto z√(1+z) häviää ΛCDM:lle Δχ² = +82 (ΔAIC +80) Pantheon+-datalla täydellä kovarianssilla; vapaa eksponentti q = 1,25 ± 0,03 jää Δχ² = +14 jälkeen samalla parametrimäärällä ja ennustaa huonommin (χ²_test 254 vs 222). Väite "vähintään yhtä hyvä kuin ΛCDM" ei toistu millään kokeillulla muodolla. (b) K-korjaus **ei** poista kosmologista (1+z)²-laimennusta; +5 log10(1+z) on kaksoislaskenta määritelmän suhteen. (c) Capotauro on esipainoksen 2608.07461 mukaan ruskea kääpiö (ominaisliike 37,6 mas/v); ei DU-todiste. (d) Väite paikallisen laajenemisen katoamisesta koordinaattimuunnoksessa: DU-skaalauksilla LLR-etäisyys ja ratajakso atomisekunteina ajautuvat +H0·r; vain suhde on invariantti.
-4. **Uusi rajattu tulos:** globaali nollaenergiarajoite + c = dR4/dT **ei määrää** kulmakokoetäisyyttä: kaksi eksplisiittistä mallia (polun pituus vs. geodeettinen kulma) eroavat 36 % z=1:ssä; geodeettinen malli tuo antipodin z = 22,1:een ja hylätään Pantheon+:lla (Δχ² +277). Puuttuva sulkuehto on nimetty. Kaksi täydennysehdokasta kokeiltu ja molemmat epäsuotuisat.
-5. **Ehdollinen ristiriita:** jos artikkelin yhtälö 32 häviää e → 0, PSR J1738+0333 (Ṗb = −25,9 ± 3,2 fs/s, 8,1σ) hylkää sen yksin.
-6. **Epäonnistunut yritys:** kertoimen 0,991 alkuperää ei löydetty kuudesta kernelivariantista.
+**Ydinviesti:** DU:n kaksi julkaistua kvantitatiivista havaintoennustetta, jotka voitiin testata, ovat kumpikin ristiriidassa datan kanssa yli 8σ:lla. Jäljelle jäävä teoria on joko vahvassa jännitteessä tai ei vielä ennustava. Mikään testi ei tue DU:ta ΛCDM:ää paremmin. Koko teoriaa ei julisteta kumotuksi; sen **nykyisin muotoillut** ennusteet eivät kestä.
 
-## Bilfinger
+| Testi | Tulos | Status |
+|---|---|---|
+| Pantheon+ (1590 SN, STAT+SYS), julkaistun tekstimuunnoksen implikoima relaatio p = 1,5 | Δχ² = +3491 vs ΛCDM, jäännöstiltti −4,4 mag/dex, 59σ parhaasta p:stä | **FALSIFIED AS CURRENTLY FORMULATED** |
+| Pantheon+, bolometrinen DU p = 0,5 | Δχ² = +82 (0 muotoparametria), 8σ | TENSION |
+| Pantheon+, vapaa p = 0,623 ± 0,015 | Δχ² = +14 samalla parametrimäärällä; test-χ² 254 vs 222 | ei pelasta |
+| PSR J1738+0333 (Tier-1), DU-32-ONLY | ennuste 0 mittausvirheen sisällä (raja: prefaktorisuhde ≥ 1830 vaadittaisiin) vs −25,9 ± 3,2 fs/s → 8,1σ | **FALSIFIED AS CURRENTLY FORMULATED** |
+| PSR J1738+0333, DU-PLUS-QUADRUPOLE | kaksikomponenttisovitus: κ = 1,0005 ± 0,0005; yhtälö 32 ≤ 0,2–0,8 % B1913+16:sta | NOT YET PREDICTIVE (pelastus vie yhtälöltä 32 sisällön) |
+| Capotauro | Liu ym. 2026: ominaisliike 37,6 mas/v, ekstragalaktinen suljettu >6σ | tuki poistettu |
+| Kulmakoot / antipodi | postulaatit eivät määrää D_A(z); L-B hylätty SN:llä | NOT YET PREDICTIVE (antipodi säilyy ehdollisena) |
+| LLR / paikallinen laajeneminen | signaali ei katoa; erottelu LOD-taseesta | TENSION (ehdollinen) |
+| CMB, BBN, GW | ei DU-johdantoja | NOT YET PREDICTIVE |
+| Laajenemislaki, ikä 1/H0 | suuruusluokka oikea | SUPPORTED (heikosti, ei ainutlaatuinen) |
 
-- Prototyyppi on toimiva, synteettinen tilamalli (5 tilaa, 6 ohjausta, Monte Carlo 2000, 9 stressitestiä, 3 politiikkaa). Se **ei ole ROI-laskelma**.
-- Tulos: elinkaarimalli (P2) +2,6 M€ odotusarvo, mutta p10 = −3,5 M€ → ennakkoon määritelty robustisuuskriteeri **ei täyty**; siirtymäviive kääntää sen negatiiviseksi.
-- Tärkein löydös: kiinteä maksu ilman käytettävyys-/integrity-alarajaa **palkitsee lykkäämisestä** (P1: Bilfinger +6,1 M€, asiakas −29,5 M€). Sopimusrakenne on korjattava ennen pilottia.
-- **Pilotoitavaa:** hallittavuusmatriisi jokaiselle tuloslupaukselle; P10-portti Feasibilityssä; integrity-velkaindikaattori sitovana rajana; KPI-ristiintarkistus tuotantolaskureihin; handback-kunto sanktioituna.
-- **Ei siirrettävää:** fysiikan analogia, synteettiset numerot, käyrien silmämääräinen vertailu.
+K-korjaus (Hogg 2002, ulkoisesti vahvistettu määritelmä) on kaistamuunnos; se ei poista kosmologisia laimennustekijöitä. Lisätermin +2,5 log10[(1+z)²] perustelu ei pidä, ja termi tuottaa falsifioidun relaation. Mitä kirjattiin: ΛCDM:n Ωm-toisto (0,332 ± 0,018) on tehty, ei suojattu; avoin ΛCDM ei paranna merkitsevästi.
 
-## Seuraava testi, eniten tietoa per kustannus
+**Provenienssi:** artikkelin lausumat, J1738:n arvot, Liu ym. ja Hogg-määritelmä on toimitettu ulkoisesti varmennettuina; tämä ympäristö ei hakenut niitä (egress-esto). Renderöityä yhtälöä 32 tai 36 ei ole nähty; numeerinen DU-32-ONLY-arvo on UNRESOLVED, ja p = 1,5 on "tekstimuunnoksen implikoima relaatio".
 
-Artikkelin PDF käsin `sources/`-hakemistoon (tai egress-lupa). Sen jälkeen kaksi tunnin töitä: (1) yhtälöt 31/36 sijoitetaan q-perheeseen tai toteutetaan sellaisenaan ja `pantheon_fit.py` ajetaan uudelleen (7 s); (2) yhtälön 32 e → 0 -raja luetaan ja väite C14 suljetaan. Molemmat ovat erottelevia eivätkä vaadi uutta dataa.
+**Seuraava erotteleva testi per kustannus:** renderöity yhtälö 36 (onko muita termejä) ja yhtälö 32 (numeerinen J1738-ennuste). Kummankin uudelleenajo on sekunteja.
 
-## Mitä ei väitetä
+## Kysymys 2: Mitkä konkreettiset suunnitteluperiaatteet parantavat Bilfinger Performance Outsourcing 2030:a?
 
-DU:ta, ΛCDM:ää tai Bilfingerin business casea ei ole ratkaistu yksittäisellä testillä. ΛCDM:n Ωm-sovitus on toistettu, ei suojattu: avoin ΛCDM antaa Ωm=0,295, ΩΛ=0,613 ilman merkitsevää parannusta (Δχ² −0,5 yhdellä lisäparametrilla).
+Synteettisiä rahalukuja ei käytetä näyttönä. Menetelmästä siirtyy **Performance Outsourcing Decision Engine**: 12 pakollista kerrosta (järjestelmäraja, baseline/vastatilanne, hallittavuusmatriisi, HSEQ/integrity-red lines, siirtymävalmius, arvonluontimalli, P10, hyödyn attribuutio, KPI-anti-gaming, arvonjako, jatkuva validointi, uusinta/exit), kullakin INPUT / LASKENTA / OMISTAJAROOLI / NÄYTTÖ / GREEN–AMBER–RED / VIKATILA / TIETOTARVE / BTS-KYVYKKYYS, kartoitettuna Qualification → Feasibility → Due Diligence → Contracting → Transition → Operate & Improve → Renewal/Exit (`results/po_decision_engine_layers.csv`, `po_gate_mapping.csv`).
+
+Periaatteet, jotka nousivat suoraan tutkimusmenetelmästä:
+
+1. **Tuloslupaus = väite, jolla on hylkäysehto.** Sama rakenne kuin väiterekisterissä: oletukset, ajurit, mittari, testi, status.
+2. **P10-portti, ei P50-päätös.** Prototyypissä P50 oli positiivinen ja P10 negatiivinen; ilman P10-kriteeriä tämä olisi näyttänyt vihreältä.
+3. **Hallittavuus on sulkuehto.** Globaali arvolupaus ei määrää paikallista ohjausta, kuten DU:n globaali tase ei määrää havaintoa. Vastuu ilman päätösvaltaa on RED.
+4. **Mittaus ≠ tulkinta.** Jokaiselle tulos-KPI:lle kaksi riippumatonta lähdettä, audit trail, ajautumatesti. Raportoitu käytettävyys ei ole todennettu käytettävyys.
+5. **Kannustintesti lykkäyspolitiikalla** ennen allekirjoitusta: sopimusrakenne, jossa toimittaja hyötyy lykkäyksestä (kiinteä maksu ≥ toimituskustannus ilman integrity-/backlog-alarajaa), on RED riippumatta P50:stä.
+6. **Ei kaksoislaskentaa, oikea suure.** Kate ei myyntihinta; kysyntärajoite; jäännösmenetys kerran; maksu jakaa arvoa eikä luo sitä (identiteetti tarkistetaan).
+7. **Integrity-red lines sitovina rajoitteina**, eivät optimoinnin termeinä; ihmisen HSEQ-/oikeudellinen hyväksyntä.
+8. **Attribuutio vain todennetuin oletuksin** (rinnakkaistrendi pre-periodilla), muuten kuvaileva.
+9. **BTS-päätös vasta vaatimus–kyvykkyys–puute-vertailun jälkeen.** Ratkaisevat rivit: audit trail & kaksilähteinen täsmäytys, integrity-seuranta, master data. Korvaamista ei oleteta.
+10. **Avoimet asiat näkyviin** WHAT/OWNER/STATUS/NEXT/DUE/DEPENDENCY-muodossa; tuntematon omistaja merkitään tuntemattomaksi.
+
+**Pilotoitavaa heti:** hallittavuusmatriisi yhdelle olemassa olevalle kohteelle; baseline-kohinan σ vs. odotettu vaikutus; kannustintesti nykyisille sopimusmalleille. Nämä eivät vaadi uutta järjestelmää eivätkä luottamuksellista dataa ulkoisille malleille.

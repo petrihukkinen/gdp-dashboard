@@ -126,3 +126,61 @@ Huomautus tilastosta: AIC/BIC on laskettu samalle datalle, samalle Gaussin likel
 | yht. 8–17, 32–33 | ei testattu (lähde estetty) |
 
 Jokaisen kohdan lähde, kaava ja tulostiedosto: `claims/claim_register.csv`.
+
+---
+
+# PÄIVITYS 2 (2026-09-08, sama ajo): ulkoisesti toimitettu näyttö ja ratkaisevat testit
+
+**Provenienssi.** Seuraavat lausumat on toimitettu ulkoisesti varmennettuina (käyttäjä, 2026-09-08). Tämä ympäristö **ei** ole hakenut niitä; ne on kirjattu `sources/manifest.csv`:hen tunnuksella "EXTERNALLY SUPPLIED": (1) artikkeli: yhtälö 32 ennustaa hidastumista vain eksentrisille radoille, eksentrisyystekijä on nolla ympyräradalle, kvadrupolivaikutusta ei suljeta pois; (2) PSR J1738+0333: e = (3,4 ± 1,1)·10⁻⁷, Ṗb_int ≈ (−25,9 ± 3,2)·10⁻¹⁵ s/s, GR ≈ −27,7·10⁻¹⁵ (Freire ym. 2012); (3) Capotauro: Liu ym., arXiv:2608.07461 (7.8.2026), ominaisliike 37,6 (+5,5/−5,6) mas/v, ekstragalaktinen suljettu >6σ, Y-kääpiö; (4) artikkelin Pantheon-muunnos: bolometrinen D_L = z√(1+z)·R4, sitten magnitudiin +2,5 log10[(1+z)²]; (5) Hogg ym. 2002: K-korjaus on kaistamuunnos havaitun ja lepokehyksen välillä.
+
+## 14. Ratkaiseva supernovatesti (TASK A) — `src/pantheon_decisive_test.py`
+
+**Johdanto tekstimuunnoksesta.** m_bol = M + 5 log10(R4 z (1+z)^{1/2}/10 pc). Lisäys +2,5 log10[(1+z)²] = +5 log10(1+z) antaa m_cat = M + 5 log10(R4 z (1+z)^{3/2}/10 pc). Ilman muuta piilotermiä luettelomuoto on **täsmälleen** D_eff ∝ z(1+z)^{3/2}, eli p = 1,5 konventiossa D_L ∝ z(1+z)^p (= q = 3 aiemmassa `pantheon_fit.py`-konventiossa D_L ∝ z(1+z)^{q/2}; aiempi q=+1 ⇔ p = 0,5). Tämä on **julkaistun tekstimuunnoksen implikoima relaatio**, ei renderöidyn yhtälön 36 transkriptio.
+
+Sama data (1590 SN, zHD > 0,01), sama STAT+SYS-kovarianssi, sama analyyttinen M-profilointi kuin ΛCDM-toistossa:
+
+| Malli | χ² | Δχ² vs ΛCDM | k | ΔAIC | ΔBIC | test-χ² (z ≥ 0,4; opetus z < 0,4) | keskijäännös test |
+|---|---|---|---|---|---|---|---|
+| A: DU bolometrinen p = 0,5 | 1485,0 | +82,1 | 1 | +80,1 | +74,7 | 253,7 (vs 222,1) | +0,073 mag |
+| **B: DU implikoitu K-korjattu p = 1,5** | **4893,6** | **+3490,6** | 1 | +3488,6 | +3483,3 | 2947 (vs 222) | −0,665 mag |
+| C: DU vapaa p = 0,623 ± 0,015 | 1416,9 | +14,0 | 2 | +14,0 | +14,0 | 254,4 | −0,060 mag |
+| D: flat ΛCDM Ωm = 0,332 ± 0,018 | 1402,9 | 0 | 2 | 0 | 0 | 222,1 | −0,007 mag |
+
+Jäännökset z:n funktiona (`results/pantheon_decisive_residuals.png`): B:n jäännös kulkee +0,34 mag (z ≈ 0,015) → −1,97 mag (z ≈ 2): tiltti −4,41 mag/dex log10(1+z):ssä, mikä on lähes koko lisätyn 5 log10(1+z) -termin suuruus (M-profilointi kompensoi vain vakion). p = 1,5 on 59σ:n etäisyydellä parhaasta p:stä; sisäkkäinen testi B vs C: Δχ² = 3477 (1 vapausaste), p-arvo numeerisesti 0. A (p = 0,5) on 8σ:n päässä (Δχ² 68,1, p = 1,6·10⁻¹⁶).
+
+**Tulkinta.** Julkaistun tekstimuunnoksen implikoima relaatio on **falsifioitu sellaisena kuin se on muotoiltu**. K-korjauksen määritelmä (§ kcorrection_audit; ulkoisesti vahvistettu Hogg-määritelmä) ei tuota lisätermiä. Bolometrinen muoto ilman lisätermiä on vahvassa jännitteessä (Δχ² +82, ei parametreja). Paras yhden parametrin DU-muoto (p ≈ 0,62) jää Δχ² +14 ΛCDM:stä samalla parametrimäärällä eikä vastaa mitään kokonaislukuista fotonilaskentaa.
+
+## 15. Lähes ympyrärata, tasoitettu testi (TASK B) — `src/binary_decay_tiers.py`
+
+PSR J1738+0333 nostetaan **Tier-1-erottelevaksi havainnoksi** (C14). Erottelu:
+
+**DU-32-ONLY** (julkaistu eksentrisyys-/periastronimekanismi). Tarkkaa yhtälöä 32 ei ole → numeerinen ennuste **UNRESOLVED**. Rigoröösi rajalausuma: julkaistu lausuma kiinnittää F(0) = 0; jos F on analyyttinen e = 0:ssa (kaikki e:stä, √(1−e²):sta ja periastronitermeistä rakennetut suljetun muodon tekijät ovat), F = O(eⁿ), n ≥ 1. Kalibroimalla yhtälö 32 DU:lle edullisimmin B1913+16:n koko hidastumaan: |Ṗb_32(J1738)| ≤ 2,40·10⁻¹² · (e_J/e_B)ⁿ · X, missä X on massa/jakso-prefaktorien suhde. Raja saavuttaa mittausvirheen 3,2·10⁻¹⁵ vain, jos X ≥ 1830 (n = 1, e + 1σ); GR-tyyppinen prefaktori antaa X = 0,14 (J1738:n prefaktori on *pienempi*). Siis DU-32-ONLY ennustaa Ṗb(J1738) = 0 mittausvirheen sisällä; havaittu −25,9 ± 3,2 → **8,1σ ristiriita — FALSIFIED AS CURRENTLY FORMULATED**. Falsifiointia ei julisteta pelkästä kvalitatiivisesta e→0-lausumasta vaan tästä rajasta.
+
+**DU-PLUS-QUADRUPOLE** (mainittu, ei kvantifioitu). Kaksikomponenttinen fenomenologia Ṗb = κ·Ṗb_GR(e) + β·(GR:n ympyräprefaktori)·eⁿ sovitettuna J1738 (e = 3,4·10⁻⁷), J0737−3039 (0,088), B1913+16 (0,617):
+
+| n | κ | β | eksentrisyystermin osuus B1913+16:sta (2σ yläraja) | χ² (1 dof) |
+|---|---|---|---|---|
+| 1 | 0,9955 ± 0,0043 | +0,054 ± 0,051 | 0,8 % | 0,27 |
+| 2 | 1,00045 ± 0,00048 | −0,067 ± 0,065 | 0,2 % | 0,32 |
+
+Kvadrupolitermin on oltava GR:n kaltainen 0,05–0,4 %:n tarkkuudella, ja yhtälön 32 termi saa selittää enintään 0,2–0,8 % B1913+16:n hidastumisesta. **Pelastus on mahdollinen mutta se vie yhtälöltä 32 sen empiirisen sisällön.** Puuttuva teoria ennen kuin laajennus on ennuste: (i) DU:n kenttäyhtälö aikariippuville lähteille (mikä etenee, millä nopeudella c0 vs paikallinen c, mikä polarisaatiosisältö); (ii) energiahäviöfunktionaali dE/dt nollaenergiakirjanpidossa ja sen kerroin suhteessa G⁴μ²M³/(c⁵a⁵):een; (iii) eksentrisyysvahvistus g(e), jonka on toistettava Peters–Mathewsin f(e) 0,16 %:iin (e = 0,617) ja 0,006 %:iin (e = 0,088); (iv) kaksoislaskennan kielto yhtälön 32 ja kvadrupolitermin välillä; (v) post-Kepler-parametrien (γ, r, s, ω̇) DU-yhteensopiva massakartoitus. (J0737:n ja B1913:n numerot osin muistista → OPEN LOOP; J1738:n arvot ulkoisesti vahvistettu.)
+
+## 16. Falsifiointimatriisi (TASK C) — `results/falsification_matrix.csv`
+
+| TESTI | STATUS | Pelastettavissa uudella oletuksella? | Oletuksen kustannus |
+|---|---|---|---|
+| Pantheon+ implikoitu luettelorelaatio (p = 1,5) | **FALSIFIED AS CURRENTLY FORMULATED** | vain poistamalla +5 log10(1+z) → p = 0,5 (TENSION) tai uusi vuolaimennuslaki | K-korjaus ei voi antaa termiä; p ≈ 0,62 ei vastaa mekanismia |
+| Pantheon+ bolometrinen (p = 0,5) | TENSION (Δχ² +82, 8σ) | vapaa p (Δχ² +14 samalla k) | 1 parametri, ei mekanismia, huonompi ennuste |
+| PSR J1738+0333 (Tier-1) | DU-32-ONLY: **FALSIFIED**; DU-PLUS-QUADRUPOLE: NOT YET PREDICTIVE | kvadrupolitermi | κ = 1 ± 0,0005; yhtälö 32 ≤ 0,2–0,8 % |
+| PSR B1913+16 | NOT DISCRIMINATING (yksin) | — | — |
+| Capotauro | NOT DISCRIMINATING (tuki poistettu; Galaktinen Y-kääpiö) | n/a | n/a |
+| Kulmakokorelaatio | NOT YET PREDICTIVE (L-A vs L-B; L-B hylätty SN:llä) | sulkupostulaatti | 1 postulaatti, on toteutettava SN ja koot samanaikaisesti |
+| LLR / paikallinen laajeneminen | TENSION (ehdollinen LOD-budjetille) | lisäkumoutuminen kelloskaalauksessa | ristiriita ikäargumentin (1/H0) kanssa |
+| CMB TT/TE/EE | NOT YET PREDICTIVE | vaatii kenttä- ja häiriöteorian | koko häiriösektori |
+| BBN | NOT YET PREDICTIVE | ydinreaktionopeuksien skaalauslaki | uusi dimensioton laki |
+| GW-aaltomuodot | NOT YET PREDICTIVE | sama säteilysektori kuin DU-PLUS-QUADRUPOLE | sama |
+| Laajenemislaki / ikä 1/H0 | SUPPORTED (heikosti; ei DU:lle ainutlaatuinen) | — | — |
+
+Luokat: SUPPORTED 1 · NOT DISCRIMINATING 2 · TENSION 2 · FALSIFIED AS CURRENTLY FORMULATED 2 · NOT YET PREDICTIVE 5 (matriisissa 11 riviä; J1738-rivi kantaa kaksi statusta).
+
+**Evidentiaalinen tila.** DU:n kaksi julkaistua, kvantitatiivista havaintoennustetta, jotka voitiin testata (supernovien luettelorelaatio; lähes ympyräradan hidastuma yhtälöllä 32 yksin) ovat kumpikin ristiriidassa datan kanssa yli 8σ:lla. Jäljelle jäävä DU on joko (a) bolometrinen muoto vahvassa jännitteessä tai (b) laajennuksia, joilla ei vielä ole ennustetta. Mikään testi ei tue DU:ta ΛCDM:ää paremmin. Tämä ei ole väite koko teorian kumoutumisesta: se on väite, että sen **nykyisin muotoillut** havaintoennusteet eivät kestä ja että jäljellä oleva teoria ei ole vielä ennustava.

@@ -1,0 +1,8 @@
+gate,layers_required_to_be_GREEN_or_AMBER,hard_stop_if_RED,decision_output
+Qualification,"1, 3 (preliminary), 4 (screening)","1, 4",Go/no-go to feasibility; boundary charter
+Feasibility,"1, 2, 3, 4, 5, 6, 7","2, 3, 4, 7",Value case with P10; pilot design; controllability sign-off
+Due Diligence,"2 (frozen), 4 (detailed), 5, 6 (updated), 10","4, 10",Contract term sheet; red-line register
+Contracting,"3 (decision rights in contract), 8 (attribution method), 9 (KPI lineage), 10, 12 (handback terms)","9, 10, 12",Signed contract with verifiable KPIs and incentive test passed
+Transition / Day 1,"5, 9 (pipelines live), 2 (baseline signed)",5,Day-1 release; value tracking starts
+Operate & Improve,"8, 9, 11, 4 (continuous)","4, 11 (RED two quarters)",Corrective plan / re-baselining / exit trigger
+Renewal / Exit,"12, 8 (final attribution), 2 (new baseline)",12,"Renew, re-scope, or exit with handback settlement"

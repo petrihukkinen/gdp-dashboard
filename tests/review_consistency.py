@@ -35,6 +35,17 @@ checks = [
  ("Bilfinger accounting identity", J("bilfinger_prototype_meta.json")["checks"]["fee redistributes only: client_inc + bilfinger_net == joint (P2, exact identity)"]),
  ("Bilfinger p10 check recorded as FAIL in report", (not J("bilfinger_prototype_meta.json")["checks"]["P2 joint value p10 > 0 (robustness)"]) and "FAIL" in reports),
 ]
+dt = J("pantheon_decisive_test.json"); bt = J("binary_decay_tiers.json")
+checks += [
+ ("decisive B dchi2 +3491", abs(dt["table"]["B_DU_implied_Kcorr_p1.5"]["dchi2"] - 3490.6) < 0.2 and "+3491" in reports),
+ ("decisive free p 0.623", abs(dt["p_free"]["best"] - 0.623) < 0.001 and "0,623" in reports),
+ ("decisive tilt -4.41", abs(dt["residual_tilt_B_mag_per_dex"] + 4.41) < 0.01 and "−4,41" in reports),
+ ("decisive test chi2 B 2947", abs(dt["train_test"]["B"]["chi2_test"] - 2947.2) < 0.5 and "2947" in reports),
+ ("tiers X_crit 1830", abs(bt["DU_32_ONLY"]["X_critical_for_detectability"] - 1830) < 1 and "1830" in reports),
+ ("tiers kappa n=2 1.00045", abs(bt["DU_PLUS_QUADRUPOLE"]["fits"]["n=2"]["kappa"] - 1.00045) < 1e-5 and "1,00045" in reports),
+ ("tiers ecc share n=1 0.8 %", abs(bt["DU_PLUS_QUADRUPOLE"]["fits"]["n=1"]["frac_B1913_2sigma_upper"]*100 - 0.8) < 0.05 and "0,8 %" in reports),
+ ("falsification matrix rows", sum(1 for _ in open(os.path.join(root, "results", "falsification_matrix.csv"), encoding="utf-8")) >= 12),
+]
 bad = [n for n, ok in checks if not ok]
 for n, ok in checks: print(f"  [{'OK' if ok else 'MISMATCH'}] {n}")
 print(f"{len(checks)-len(bad)}/{len(checks)} consistent")

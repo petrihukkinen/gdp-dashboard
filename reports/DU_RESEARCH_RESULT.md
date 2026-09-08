@@ -69,3 +69,42 @@ Search-engine level only (arxiv/ADS blocked): no result was found treating the n
 ## Next test with best information per cost
 
 Obtain the article text (or the author's own code) and (1) place eqs. 31/36 in the q-family or state its actual form, then re-run `pantheon_fit.py` (7 s); (2) read the e→0 limit of eq. 32 and close claim C14. Both are hours of work once the source is accessible; no new data are needed.
+
+---
+
+# Update 2 — externally supplied article statements and the decisive tests
+
+Provenance: the article statements and the Liu et al. / Freire et al. numbers below were supplied by the user on 2026-09-08 as externally verified; this environment did not fetch them (`sources/manifest.csv`, rows marked EXTERNALLY SUPPLIED).
+
+## A. Derivation of the implied relation and decisive Pantheon+ run (`src/pantheon_decisive_test.py`)
+
+Published textual transformation: bolometric D_L = z√(1+z) R4, then add 2.5 log10[(1+z)²] to the magnitude.
+
+m_bol = M + 5 log10(R4 z (1+z)^{1/2}/10pc); m_cat = m_bol + 5 log10(1+z) = M + 5 log10(R4 z (1+z)^{3/2}/10pc).
+
+Absent another hidden term this is exactly D_eff ∝ z(1+z)^{3/2}, i.e. p = 1.5 in D_L ∝ z(1+z)^p (q = 3 in the earlier `pantheon_fit.py` convention). It is "the relation implied by the published textual transformation", not the rendered Eq. 36.
+
+Identical data (N = 1590), covariance, and M-profiling as the ΛCDM reproduction:
+
+| Model | χ² | Δχ² | k | ΔAIC | ΔBIC | test χ² (z≥0.4) | mean test residual |
+|---|---|---|---|---|---|---|---|
+| A raw DU p=0.5 | 1485.02 | +82.10 | 1 | +80.10 | +74.73 | 253.7 | +0.073 |
+| B implied K-corrected DU p=1.5 | 4893.55 | +3490.63 | 1 | +3488.63 | +3483.26 | 2947.2 | −0.665 |
+| C free p = 0.623 ± 0.015 | 1416.94 | +14.02 | 2 | +14.02 | +14.02 | 254.4 | −0.060 |
+| D flat ΛCDM Ωm = 0.332 ± 0.018 | 1402.92 | 0 | 2 | 0 | 0 | 222.1 | −0.007 |
+
+Residuals vs z for B run from +0.34 mag at z≈0.015 to −1.97 mag at z≈2 (tilt −4.41 mag/dex in log10(1+z)); p = 1.5 sits 59σ from the best-fit p. **B is falsified as currently formulated. A is in strong tension (8σ). C does not rescue (ΔAIC +14 at equal k, worse out of sample).** The K-correction cannot generate the extra term (definitional audit; consistent with the externally confirmed Hogg definition).
+
+## B. Tiered near-circular test (`src/binary_decay_tiers.py`)
+
+PSR J1738+0333 is now a Tier-1 discriminating observation (claim C14).
+
+*DU-32-ONLY.* Exact Eq. 32 unavailable → numerical prediction UNRESOLVED. Rigorous limit: published F(0) = 0; analytic F ⇒ F = O(eⁿ), n ≥ 1. Calibrating Eq. 32 to the whole B1913+16 decay (most favourable), |Ṗb_32(J1738)| ≤ 2.40e-12 (e_J/e_B)ⁿ X; the bound reaches the 3.2e-15 measurement error only for a prefactor ratio X ≥ 1830 (n = 1, e+1σ); a GR-like prefactor gives X = 0.14. Prediction 0 vs −25.9 ± 3.2 fs/s: 8.1σ — falsified as currently formulated, on the basis of this bound rather than the qualitative statement alone.
+
+*DU-PLUS-QUADRUPOLE.* Two-component fit Ṗb = κ Ṗb_GR(e) + β (GR circular prefactor) eⁿ to J1738 / J0737−3039 / B1913+16: κ = 0.9955 ± 0.0043 (n=1), 1.00045 ± 0.00048 (n=2); eccentricity-term share of B1913+16 ≤ 0.8 % (n=1) / 0.2 % (n=2) at 2σ. The rescue requires a GR-identical quadrupole term and strips Eq. 32 of empirical content. Missing theory before it is a prediction: DU radiative field equation (what propagates, at which speed, which polarisations); energy-loss functional in the zero-energy bookkeeping with its coefficient; eccentricity enhancement g(e) reproducing Peters–Mathews to 0.16 %/0.006 %; a no-double-counting rule; DU-consistent post-Keplerian mass mapping. (B1913 and J0737 inputs partly from memory → OPEN LOOP.)
+
+## C. Falsification matrix
+
+`results/falsification_matrix.csv` (11 rows). Counts: SUPPORTED 1 (expansion law/age, not unique to DU) · NOT DISCRIMINATING 2 (B1913+16 alone; Capotauro, support removed — Liu et al. 2026: μ = 37.6 mas/yr, extragalactic excluded >6σ) · TENSION 2 (bolometric SN form; LLR conditional) · FALSIFIED AS CURRENTLY FORMULATED 2 (implied SN catalog relation; DU-32-ONLY at J1738) · NOT YET PREDICTIVE 5 (angular sizes, CMB, BBN, GW, DU-PLUS-QUADRUPOLE).
+
+The generic antipodal double-image prediction is kept as a conditional DU prediction (model L-B), noting L-B is itself excluded by Pantheon+ (Δχ² +277); a surviving closure postulate would have to be found first.

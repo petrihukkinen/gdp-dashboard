@@ -52,3 +52,27 @@ def test_bilfinger_accounting_identity_and_checks():
     assert meta["checks"]["fee redistributes only: client_inc + bilfinger_net == joint (P2, exact identity)"]
     assert meta["checks"]["P1 shows early cost saving vs P0 (first 12 months)"]
     assert meta["checks"]["P1 ends with higher latent debt than P0"]
+
+def test_decisive_pantheon_test_consistent_with_pantheon_fit():
+    d = R("pantheon_decisive_test.json"); p = R("pantheon_fit.json")
+    t = d["table"]
+    assert abs(t["D_flat_LCDM"]["chi2"] - p["flat_LCDM"]["chi2"]) < 1e-6          # same likelihood, same result
+    assert abs(t["A_DU_bolometric_p0.5"]["chi2"] - p["DU_fixed_q"]["1"]) < 1e-6     # p=0.5 == q=1
+    assert abs(t["B_DU_implied_Kcorr_p1.5"]["chi2"] - p["DU_fixed_q"]["3"]) < 1e-6  # p=1.5 == q=3
+    assert abs(2*d["p_free"]["best"] - p["DU_q_free"]["q"]) < 1e-3
+    assert t["B_DU_implied_Kcorr_p1.5"]["dchi2"] > 3000
+
+def test_implied_relation_algebra():
+    # m_bol + 5log10(1+z) with D_L = z sqrt(1+z) R  ==  5log10(z (1+z)^1.5 R)
+    import numpy as np
+    z = np.array([0.1, 0.5, 1.0, 2.0])
+    lhs = 5*np.log10(z*np.sqrt(1+z)) + 5*np.log10(1+z)
+    rhs = 5*np.log10(z*(1+z)**1.5)
+    assert np.allclose(lhs, rhs)
+
+def test_binary_tiers_bound_and_two_component_fit():
+    b = R("binary_decay_tiers.json")
+    assert b["DU_32_ONLY"]["X_critical_for_detectability"] > 1000
+    f2 = b["DU_PLUS_QUADRUPOLE"]["fits"]["n=2"]
+    assert abs(f2["kappa"] - 1) < 3*f2["kappa_err"] and f2["kappa_err"] < 1e-3
+    assert f2["frac_B1913_2sigma_upper"] < 0.01

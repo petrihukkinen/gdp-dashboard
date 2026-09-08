@@ -1,0 +1,90 @@
+{
+  "DU_32_ONLY": {
+    "X_critical_for_detectability": 1830.0702437216196,
+    "status": "UNRESOLVED numerically (Eq. 32 not available); limiting statement rigorous under F(0)=0 + analyticity",
+    "J1738_sigma_nonzero": 8.09375,
+    "bounds": [
+      {
+        "n": 1,
+        "X": 1,
+        "bound_s_per_s": 1.3211393311663268e-18,
+        "bound_over_obs_err": 0.00041285604098947713
+      },
+      {
+        "n": 1,
+        "X": 100.0,
+        "bound_s_per_s": 1.3211393311663267e-16,
+        "bound_over_obs_err": 0.041285604098947715
+      },
+      {
+        "n": 1,
+        "X": 10000.0,
+        "bound_s_per_s": 1.3211393311663269e-14,
+        "bound_over_obs_err": 4.128560409894772
+      },
+      {
+        "n": 1,
+        "X": 1000000.0,
+        "bound_s_per_s": 1.321139331166327e-12,
+        "bound_over_obs_err": 412.85604098947715
+      },
+      {
+        "n": 2,
+        "X": 1,
+        "bound_s_per_s": 7.278603554439572e-25,
+        "bound_over_obs_err": 2.2745636107623663e-10
+      },
+      {
+        "n": 2,
+        "X": 100.0,
+        "bound_s_per_s": 7.278603554439573e-23,
+        "bound_over_obs_err": 2.2745636107623666e-08
+      },
+      {
+        "n": 2,
+        "X": 10000.0,
+        "bound_s_per_s": 7.278603554439573e-21,
+        "bound_over_obs_err": 2.2745636107623666e-06
+      },
+      {
+        "n": 2,
+        "X": 1000000.0,
+        "bound_s_per_s": 7.278603554439572e-19,
+        "bound_over_obs_err": 0.00022745636107623663
+      }
+    ],
+    "GR_prefactor_ratio_J1738_over_B1913": 0.13554787471141577,
+    "verdict": "Prediction 0 (within error) vs observation -25.9\u00b13.2e-15: excluded at 8.1 sigma. Tier-1 discriminating observation."
+  },
+  "DU_PLUS_QUADRUPOLE": {
+    "fits": {
+      "n=1": {
+        "kappa": 0.9954638366123172,
+        "kappa_err": 0.004248369035520846,
+        "beta": 0.05389875395833957,
+        "beta_err": 0.0509180704813144,
+        "chi2": 0.2741445619333645,
+        "dof": 1,
+        "frac_B1913_from_ecc_term": 0.0028053649130979573,
+        "frac_B1913_2sigma_upper": 0.008105812804020916
+      },
+      "n=2": {
+        "kappa": 1.0004533300390326,
+        "kappa_err": 0.00047982912325678523,
+        "beta": -0.06692243102759697,
+        "beta_err": 0.06458156488500544,
+        "chi2": 0.3208418393578462,
+        "dof": 1,
+        "frac_B1913_from_ecc_term": -0.0021496206149198387,
+        "frac_B1913_2sigma_upper": 0.0019992383278565487
+      }
+    },
+    "missing_theory": [
+      "A DU field equation for time-dependent sources (radiative sector): what propagates, at which speed (c0 or local c), with what polarisation content.",
+      "An energy-loss functional dE/dt[source] in the zero-energy bookkeeping: does radiated energy reduce orbital energy, and with what coefficient relative to G^4 mu^2 M^3/(c^5 a^5)?",
+      "The eccentricity enhancement g(e) of that term; empirically it must reproduce Peters\u2013Mathews f(e) to 0.16 % at e=0.617 and to 0.006 % at e=0.088.",
+      "A no-double-counting rule between Eq. 32 and the quadrupole term (their sum, not either alone, is constrained).",
+      "Post-Keplerian parameter mapping (gamma, r, s, omega-dot) so that the masses used in the prediction are DU-consistent, not GR-derived."
+    ]
+  }
+}

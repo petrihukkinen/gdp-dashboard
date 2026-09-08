@@ -100,3 +100,52 @@ Ei valintaa ilman aineistoa. Vertailukriteerit: (1) datan lineage ja KPI-laskenn
 - Fysiikan analogiaa (nollaenergia, laajeneminen) — ei ole. Siirretty on vain menetelmä.
 - Simulaation numeroita — synteettisiä.
 - "Näyttää hyvältä" -käyriä ilman kovarianssia/kohinaa: sama virhe kuin DU-vertailussa, jossa silmämääräinen samankaltaisuus ei ollut tilastollista tasavertaisuutta.
+
+---
+
+# OSA 2 — PERFORMANCE OUTSOURCING DECISION ENGINE (TASK D)
+
+Prototyypin synteettisiä rahalukuja **ei käytetä näyttönä**. Alla oleva on menetelmän muunnos toimintamallilogiikaksi: 12 pakollista kerrosta, kullekin INPUT / LASKENTA TAI HARKINTA / OMISTAJAROOLI / VAADITTU NÄYTTÖ / GREEN–AMBER–RED / VIKATILA / TIETOTARVE / BTS-KYVYKKYYS. Täysi taulukko: `results/po_decision_engine_layers.csv`. Porttikartoitus: `results/po_gate_mapping.csv`. BTS-vaatimusmatriisi: `results/po_bts_requirements.csv`. Roolit ovat rooleja, eivät nimiä tai nykyisiä valtuuksia.
+
+## Kerrokset (tiivistelmä; koko sisältö CSV:ssä)
+
+| # | Kerros | Ydinlaskenta / harkinta | GREEN-kriteeri | Tyypillinen vikatila |
+|---|---|---|---|---|
+| 1 | SYSTEM BOUNDARY | in-scope laitteet, prosessit, päätösoikeudet; eksogeeniset ajurit listattu | kaikki tulos-KPI:t kytkeytyvät rajan sisäisiin ajureihin | rajan hiipuminen, syyttely ulkoisista |
+| 2 | BASELINE / COUNTERFACTUAL | ≥24 kk normalisoitu historia, kohina σ, as-is-trajektori (ikääntyminen mukana) | σ_baseline < 0,5 × odotettu vaikutus | parannus ei erotu kohinasta; regressio keskiarvoon myydään hyötynä |
+| 3 | CONTROLLABILITY MATRIX | ajurit: Bilfinger / yhteinen / asiakas / ulkoinen, herkkyyspainot | >60 % KPI-herkkyydestä Bilfinger/yhteinen + eskalaatio | vastuu ilman valtaa (capex, ajotapa) |
+| 4 | HSEQ / ASSET-INTEGRITY RED LINES | sitovat rajoitteet, ihmisen hyväksyntä; ei vaihdettavissa arvoon | 0 myöhässä olevaa SCE-tarkastusta/MOC:ia | latentti integrity-velka KPI-fokuksen takana |
+| 5 | TRANSITION READINESS | osaamiskattavuus, datayhteydet, Day-1 | kriittinen osaaminen ≥90 %, data live ennen Day 1 | siirtymäkuoppa pidempi kuin suunniteltu |
+| 6 | VALUE CREATION MODEL | YHTEINEN ARVO = ΔPV(kate, kysyntärajattu) + ΔPV(resurssi) − PV(siirtymä) − ΔPV(jäännösmenetys); ei kaksoislaskentaa | P50 > 0 dokumentoiduin ajurein | menetys myyntihinnalla; kysynnän ylittävä käytettävyys |
+| 7 | VALUE-AT-RISK / P10 | Monte Carlo / skenaariot; stressit: lykkäys, velka, capex-viive, osaajat, data, kysyntä, siirtymä, pelaaminen, sopimuksen loppu | P10 > 0 | päätös pelkällä P50:llä |
+| 8 | BENEFIT ATTRIBUTION | normalisoitu ennen–jälkeen; kausaalinen estimaatti vain jos rinnakkaistrendi todennettu | vaikutus > 2σ ja oletukset todennettu | markkina-/kuormavaikutus luetaan palvelun ansioksi |
+| 9 | KPI ANTI-GAMING | kaksi riippumatonta lähdettä per tulos-KPI; ristiintäsmäytys; WO-otantatarkastus | raportoitu − riippumaton ≤ 2σ | raportoitu käytettävyys paisuttaa gain-sharea; kriittisyyden uudelleenkoodaus |
+| 10 | VALUE SPLIT | asiakas- ja toimittajakassavirrat erikseen; identiteetti asiakas + toimittaja = yhteinen; kannustintesti lykkäyspolitiikalla | molemmat P50 > 0 **eikä** toimittaja hyödy lykkäyksestä | kiinteä maksu ≥ toimituskustannus palkitsee lykkäämisestä |
+| 11 | CONTINUOUS VALIDATION | arvopolku vs P10/P50-kaistat; ajautumatestit; kvartaalin riippumaton todennus; BTS-puutekatselmus | P50-kaistassa, integrity GREEN | vihreä dashboard täytetyistä lomakkeista |
+| 12 | RENEWAL / EXIT | handback-kunto vs sopimus; viimeisen 12 kk panosprofiili | handback ≥ sopimus, panos tasainen | sopimuksen lopun lykkäys |
+
+## Kartoitus E2E-portteihin
+
+| Portti | Kerrokset, joiden oltava GREEN/AMBER | Hard stop, jos RED | Päätöstuotos |
+|---|---|---|---|
+| Qualification | 1, 3 (alustava), 4 (screening) | 1, 4 | go/no-go feasibilityyn; rajacharter |
+| Feasibility | 1–7 | 2, 3, 4, 7 | arvo-case P10:llä; pilottisuunnitelma; hallittavuuden hyväksyntä |
+| Due Diligence | 2 (jäädytetty), 4 (syvä), 5, 6, 10 | 4, 10 | term sheet; red-line-rekisteri |
+| Contracting | 3 (päätösoikeudet sopimuksessa), 8, 9, 10, 12 | 9, 10, 12 | sopimus todennettavin KPI:in, kannustintesti läpäisty |
+| Transition / Day 1 | 5, 9 (putket live), 2 (baseline allekirjoitettu) | 5 | Day-1-vapautus; arvonseuranta alkaa |
+| Operate & Improve | 8, 9, 11, 4 | 4; 11 (RED kaksi kvartaalia) | korjaus / re-baselining / exit-triggeri |
+| Renewal / Exit | 12, 8, 2 (uusi baseline) | 12 | uusinta, uudelleenrajaus tai exit handback-selvityksellä |
+
+## BTS-vaatimusmatriisi (Improve / + Intelligence Layer / Replace)
+
+BTS:ää **ei oleteta korvattavaksi**. Matriisi (`results/po_bts_requirements.csv`) listaa 10 vaatimusta kerroksista 1–12 ja kullekin, mitä Improve-, Intelligence Layer- ja Replace-vaihtoehto tarkoittaa sekä mikä tieto tarvitaan päätökseen. Ratkaisevat rivit: (a) kaksilähteinen KPI-täsmäytys ja muuttumaton audit trail (kerrokset 9, 11) — harvoin natiivisti BTS:ssä, Intelligence Layerin ydin, Replace vain jos audit trailia ei voi pakottaa lähteessä; (b) integrity-red-line-seuranta (kerros 4) — IDMS/RBI-moduulin olemassaolo ratkaisee; (c) master data & kriittisyys (kerrokset 1, 3) — yleensä Improve. Valinta tehdään vasta kenttäinventaarion, integraatioinventaarion ja audit-trail-testin jälkeen.
+
+## Suunnitteluperiaatteet, jotka tutkimusmenetelmä tuo Performance Outsourcing 2030:een
+
+1. **Väiterekisteri sopimukselle:** jokainen tuloslupaus = väite, jolla on oletukset, ajurit, mittari, testi ja hylkäysehto — sama rakenne kuin `claim_register.csv`.
+2. **Ennakkoon määritellyt hylkäyskriteerit** (P10, integrity-red lines, KPI-ajautuma) ennen sopimusta, ei jälkikäteen.
+3. **Mittaus erotetaan tulkinnasta:** raportoitu KPI ≠ todellinen; kaksi lähdettä; audit trail.
+4. **Ei kaksoislaskentaa eikä väärää suuretta:** kate, ei myyntihinta; kysyntärajoite; jäännösmenetys kerran.
+5. **Kannustintesti lykkäyspolitiikalla** on pakollinen portin ehto: sopimusrakenne, jossa toimittaja hyötyy lykkäyksestä, on RED.
+6. **Sulkuehto vs. globaali rajoite:** kuten DU:ssa globaali tase ei määrää paikallista havaintoa, laitostason arvolupaus ei määrää yksikkötason ohjausta — hallittavuusmatriisi on sulkuehto.
+7. **Kaikki avoimet asiat näkyvissä** (WHAT/OWNER/STATUS/NEXT/DUE/DEPENDENCY) — puuttuva omistaja merkitään tuntemattomaksi, ei piiloteta.

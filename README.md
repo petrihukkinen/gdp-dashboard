@@ -4,7 +4,9 @@ Run date 2026-09-08. This section documents the computational audit of Suntola (
 synthetic Bilfinger prototype. The original GDP-dashboard template README is preserved below unchanged.
 
 **Headline constraint:** the article itself (Frontiers HTML/PDF), arXiv and physicsfoundations.org were egress-blocked in this
-environment; see `sources/manifest.csv`. Claims tied to the article's equations are CONDITIONAL / NOT TESTED accordingly.
+environment; see `sources/manifest.csv`. Claims tied to the article's equations are CONDITIONAL / NOT TESTED accordingly. Update 2: article statements on Eq. 32 and the
+Pantheon conversion, plus Freire+2012 / Liu+2026 numbers, were supplied externally (provenance marked EXTERNALLY SUPPLIED in
+`sources/manifest.csv`) and the decisive tests were run on them.
 
 ## Layout
 ```
@@ -14,6 +16,11 @@ claims/claim_register.csv     24 claims: id, category, assumptions, derivation, 
 src/du_symbolic_checks.py     A2.1/2/4/6 + A4 construction (expansion branch, S^3 kernels, alpha, process rates, L-A vs L-B models)
 src/binary_decay.py           GR Peters–Mathews (two implementations), J1738+0333 / B1913+16 / J0737-3039, e->0 constraint
 src/pantheon_fit.py           Pantheon+ replication (flat & open LCDM) + DU magnitude family + candidates C1/C2 + prediction test
+src/pantheon_common.py        shared loader / profiled-chi2 likelihood
+src/pantheon_decisive_test.py TASK A: p=0.5 / implied p=1.5 / free p / flat LCDM, same data & likelihood; residuals; train/test
+src/binary_decay_tiers.py     TASK B: DU-32-ONLY limiting bound + DU-PLUS-QUADRUPOLE two-component fit (J1738 Tier-1)
+src/falsification_matrix.py   TASK C: results/falsification_matrix.csv
+src/po_decision_engine.py     TASK D: 12-layer decision engine, gate mapping, BTS requirements matrix (CSV)
 src/kcorrection_audit.py      Hogg K-correction from definitions: K independent of the dilution distance
 src/local_expansion_and_bh.py H0*r observables under DU scalings, LLR injection–recovery, GR ISCO/Kerr reference
 src/bilfinger_prototype.py    SYNTHETIC state-space prototype, 3 policies, Monte Carlo, 9 stress tests, value accounting
@@ -31,11 +38,15 @@ pip install -r requirements-du.txt
 bash sources/fetch_sources.sh            # Pantheon+SH0ES.dat (committed) + STAT+SYS covariance (33 MB, downloaded)
 python src/du_symbolic_checks.py
 python src/binary_decay.py
+PYTHONPATH=src python src/binary_decay_tiers.py
 python src/pantheon_fit.py               # ~7 s
+PYTHONPATH=src python src/pantheon_decisive_test.py
 python src/kcorrection_audit.py
 python src/local_expansion_and_bh.py
 python src/bilfinger_prototype.py
 python src/bilfinger_gates.py
+python src/falsification_matrix.py
+python src/po_decision_engine.py
 python -m pytest -q tests
 python tests/review_consistency.py
 ```
