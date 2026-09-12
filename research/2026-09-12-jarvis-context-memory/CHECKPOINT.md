@@ -108,3 +108,31 @@ Lisäksi: laajennettu synteettinen (ei todellinen — todellista Jarvis-tietoa e
 - `/home/user/PETRI-JARVIS-SYSTEM/`, `/home/user/PETRI-KNOWLEDGE/` — ennallaan, ei muutettu tällä kierroksella.
 - `/tmp/claude-0/-home-user-gdp-dashboard/c4bbfcf0-7753-5cf6-9046-e2f5d9521812/scratchpad/jarvis-backups-2026-09-13/` — bundlet, työpuuarkistot ja tarkistussummat. Sama pysyvyysvaroitus koskee tätäkin polkua: se on kontin sisäinen, ei GitHub eikä Petrin oma kone.
 - Ladatut kopiot: Petrin oman `SendUserFile`-vastaanoton mukaan (ei tämän istunnon tiedossa, minne käyttäjä lataa ne).
+
+---
+
+## Päivitys 2026-09-13 (kolmas kierros): pushia gdp-dashboardiin ei tehty — repo on julkinen
+
+**Tilanne palautettu checkpointista:** molemmat standalone-repot (`PETRI-JARVIS-SYSTEM` HEAD `6bc6ee3`, `PETRI-KNOWLEDGE` HEAD `2872807`) ja kaikki viisi varmistuspakettia (`jarvis-backups-2026-09-13/`) tarkistettu olemassa oleviksi tässä samassa kontissa, `sha256sum -c` uudelleenvarmennettu: kaikki neljä `OK`. Ei aloitettu mitään uudelleen.
+
+**Este, joka pysäytti työn heti alkuun — ei kierretty:** Petri antoi luvan tallentaa varmistuspaketit uudelle haaralle olemassa olevaan `gdp-dashboard`-repoon, mutta ohjeen oma turvatarkistus (kohta 2: "Varmenna GitHubista, että repo on yksityinen... Älä siirrä aineistoa, jos yksityisyyttä ei voida varmentaa") vaati tarkistamaan asian ennen pushia. Tarkistus tehtiin kahdella riippumattomalla tavalla suoraan GitHubin rajapinnasta (ei paikallisesta Git-asetuksesta, joka ei kerro näkyvyyttä):
+
+- `mcp__github__search_repositories(repo:petrihukkinen/gdp-dashboard)` → `"private": false, "visibility": "public"`.
+- `list_repos` → `"visibility": "public"`.
+
+**Tulos: `gdp-dashboard` on varmennetusti julkinen, ei yksityinen.** Tämä ei ole pelkkä "ei voitu varmentaa yksityiseksi" -tilanne vaan päinvastainen, vahvempi tulos. Petrin oman turvasäännön mukaan aineistoa ei siis siirretä tänne — varmistuspaketteja (bundlet, työpuuarkistot, Petri-KNOWLEDGE-pilottiaineisto) **ei ole pushattu**, uutta haaraa **ei ole luotu**, `gdp-dashboard`:iin ei ole koskettu mitenkään tällä kierroksella (`git status` pysyi puhtaana koko ajan).
+
+**Miksi tämä ei ollut ennalta tiedossa:** aiemmissa kierroksissa `list_repos`-tuloksessa näkyi jo `"visibility":"public"` `gdp-dashboard`:lle, mutta sitä ei tuolloin merkitty esteeksi, koska tehtävä ei silloin koskenut arkaluonteisen/pilottiaineiston siirtoa tänne. Vasta tämän kierroksen eksplisiittinen ohje ("tallenna palautuspaketit gdp-dashboardiin") teki näkyvyydestä relevantin turvakysymyksen, ja tarkistus tehtiin sen mukaisesti ennen mitään kirjoitusta.
+
+**Ei muuttunut:** kumpikaan standalone-repo, kumpikaan backup-tiedostojoukko, `gdp-dashboard`:n mikään haara (myös `main` ja oletushaara koskemattomia).
+
+**Avoinna, Petrin päätettävissä (ei arvattu, ei valittu puolesta):**
+1. Petri muuttaa `gdp-dashboard`:n yksityiseksi GitHubin asetuksista (Settings → General → Danger Zone → Change visibility) — sen jälkeen palautushaaran push tänne on turvallinen ja voidaan tehdä välittömästi.
+2. Palataan alkuperäiseen suunnitelmaan: kaksi erillistä yksityistä GitHub-repoa (`PETRI-JARVIS-SYSTEM`, `PETRI-KNOWLEDGE`) — joko Petri toimittaa niiden osoitteet (jos hän loi ne), tai GitHub-integraation "Repository access" laajennetaan kattamaan ne.
+3. Petrillä on jo yksi yksityinen repo tililtään (`nordica-operating-system`, `visibility: private`, `can_push: true` tämän istunnon kautta) — jos Petri haluaa käyttää jotain olemassa olevaa yksityistä repoa väliaikaisena kohteena, hän voi nimetä sen; sitä ei valittu automaattisesti, koska se on ilmeisesti tarkoitettu muuhun käyttöön.
+
+**Pysyvä palautuspiste: ei valmis.** Etävarmennusta ei tehty, koska pushia ei tehty. Ainoa tällä hetkellä olemassa oleva kopio on tämän kontin levyllä ja mahdollisesti Petrin omalla koneella, jos hän latasi edellisen kierroksen `SendUserFile`-toimituksen — kumpikaan ei ole tämän istunnon tiedossa varmistettavissa oleva pysyvä tallennuspaikka.
+
+**Erillisten GitHub-repojen luonti:** edelleen tekemättä, odottaa Petrin päätöstä yllä olevista vaihtoehdoista.
+
+**PETRI-KNOWLEDGEn aineiston kattavuus:** erillinen avoin tehtävä — nykyinen holvi sisältää vain 9 pilottimerkintää (Jarvis-projektin omat päätökset/faktat), ei todellista henkilökohtaista tai liiketoimintatietoa. Laajentaminen kattamaan oikeaa Jarvis-tietoa on oma, myöhempi päätös.
