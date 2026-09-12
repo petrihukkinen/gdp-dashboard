@@ -45,3 +45,11 @@ Ei mitään keskeneräistä toimeksiannon vaatiman skoopin sisällä. Mahdolline
 
 Kaikki: `/home/user/gdp-dashboard/research/2026-09-12-jarvis-context-memory/` (sama repositorio, branch `claude/jarvis-memory-context-research-0qoa07`):
 `README.md`, `RESEARCH_REPORT.md`, `SOURCE_REGISTER.md`, `ARCHITECTURE_OPTIONS.md`, `MEMORY_DESIGN.md`, `EVALUATION_PLAN.md`, `IMPLEMENTATION_BACKLOG.md`, `CHECKPOINT.md` (tämä tiedosto).
+
+---
+
+## Päivitys 2026-09-12 (myöhempi istunto): Phase 1 toteutettu
+
+`IMPLEMENTATION_BACKLOG.md`:n Vaihe 1 (vähimmäistoteutus) on toteutettu ja committoitu tälle samalle branchille, commit `64dab81`. Toteutus poikkeaa hieman tämän tutkimuksen `MEMORY_DESIGN.md`-ehdotuksesta (litteä `KNOWLEDGE/` tyyppikentällä alikansioiden sijaan, `RAW/INGEST/KNOWLEDGE/INDEX/EVALS`-nimeäminen) — jatkotehtävän oma, tarkempi kohdehakemistorakenne korvasi tämän tutkimuksen alkuperäisen ehdotuksen, periaatteet (yksi lähde, johdettu indeksi, lähdejäljitettävyys) säilyivät samoina.
+
+Sijainti: `/home/user/gdp-dashboard/PETRI-KNOWLEDGE/` (oma `README.md` selittää arkkitehtuurin, ajokomennot ja rajoitukset). Vaiheet 0.2, 2, 3, 4 (lähteiden vahvistus avoimemmalla verkkoyhteydellä, istunnon hook-kytkennät, validointiportti, evaluaatioajo oikealla datalla) ovat edelleen tekemättä — kirjattu `PETRI-KNOWLEDGE/README.md`:n "Known limitations" -kohtaan.
