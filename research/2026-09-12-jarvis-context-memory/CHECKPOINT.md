@@ -83,3 +83,28 @@ Lisäksi: laajennettu synteettinen (ei todellinen — todellista Jarvis-tietoa e
 
 **Tulostiedostojen sijainnit (tässä konttiympäristössä, ei pysyviä):**
 `/home/user/PETRI-JARVIS-SYSTEM/` ja `/home/user/PETRI-KNOWLEDGE/` — molemmat menetetään kontin kierrätyksessä, jos niitä ei pushata ennen sitä. `gdp-dashboard`-repositorio (tämä tiedosto mukaan lukien) on GitHubissa pysyvästi tallessa branchilla `claude/jarvis-memory-context-research-0qoa07`.
+
+---
+
+## Päivitys 2026-09-13 (myöhemmin samana päivänä): osoitteet puuttuvat, väliaikaiset varmistukset tehty
+
+**Este ei ratkennut:** Petri ilmoitti luoneensa molemmat GitHubin yksityiset repot, mutta viestissä olleet osoitekentät jäivät kirjaimellisesti täyttämättä (`[LISÄÄ ... OSOITE]`). Oma `list_repos`-tarkistus (suodattamatta, koko lista) ei näytä kumpaakaan uutta repoa käyttäjän tilillä tämän istunnon GitHub-integraation läpi — joko osoitteita ei ole toimitettu, tai integraatio on rajattu "valittuihin repositorioihin" ja uusia repoja ei ole lisätty sen sallittujen listaan. Kumpaa tahansa ei arvattu; push jätetty tekemättä kokonaan.
+
+**Valmis työ tällä kierroksella:**
+- Ajettu tuore salaisuus-/arkaluonteisuustarkistus molempien paikallisten repojen koko seurattuun tiedostolistaan uudelleen: puhdas (ei Bilfinger-, SharePoint-, tunniste- tai avainosumia; `INDEX/jarvis.sqlite` vahvistettu edelleen Git-seurannan ulkopuolella).
+- Luotu ja **eheystarkistettu** (`git bundle verify`) täydellinen Git bundle molemmista paikallisista repoista (`--all`, kaikki viittaukset):
+  - `PETRI-JARVIS-SYSTEM-2026-09-13.bundle` — HEAD/master `6bc6ee3`, "records a complete history".
+  - `PETRI-KNOWLEDGE-2026-09-13.bundle` — HEAD/master `2872807`, "records a complete history".
+- Luotu `git archive`-pohjaiset työpuuarkistot (`*-worktree-2026-09-13.tar.gz`) — sisältävät **vain** Git-seurannassa olevat tiedostot HEAD-commitista; varmistettu `diff`:llä täsmälleen samaksi kuin `git ls-files`, eli ei yhtään ohitettua/seuraamattomasti mukaan liukunutta tiedostoa.
+- Purettu molemmat arkistot uudelleen erilliseen tarkistushakemistoon ja ajettu salaisuustarkistus **itse arkiston sisällölle** (ei enää lähdehakemistolle): puhdas. (Ensimmäinen ajo väitti virheellisesti löytäneensä "unexpected file type" — tämä oli oman tarkistusskriptin bugi, `find`:n paluuarvo tulkittiin väärin osumaksi; korjattu tarkistus vahvisti ettei mitään löytynyt.)
+- Laskettu SHA-256-tarkistussummat kaikille neljälle tiedostolle, kirjattu `CHECKSUMS.sha256.txt`:hen, ja **varmennettu uudelleen** (`sha256sum -c`) heti kirjoituksen jälkeen — kaikki neljä `OK`.
+- Kaikki viisi tiedostoa (2 bundlea, 2 arkistoa, 1 checksum-tiedosto) tarjottu Petrille ladattavaksi `SendUserFile`-työkalulla.
+
+**Ei väitetä pysyvästi varmistetuksi:** näiden tiedostojen sijainti (`/tmp/.../scratchpad/jarvis-backups-2026-09-13/`) on tämän saman väliaikaisen kontin levyllä — täsmälleen yhtä pysyvyydeltään kuin alkuperäiset repot. Ne ovat käyttökelpoinen palautuspiste vain, jos Petri lataa ne omalle koneelleen `SendUserFile`-toimituksen kautta. GitHub-siirto on edelleen kokonaan tekemättä.
+
+**Seuraava konkreettinen työvaihe:** Petri toimittaa kummankin repon todellisen osoitteen (URL tai `omistaja/repo`), ja tarvittaessa varmistaa GitHub-integraation repo-oikeudet ("Repository access" -asetus, jos käytössä valikoiva pääsy). Vasta sen jälkeen remote lisätään ja push tehdään.
+
+**Tulostiedostojen sijainnit (päivitetty):**
+- `/home/user/PETRI-JARVIS-SYSTEM/`, `/home/user/PETRI-KNOWLEDGE/` — ennallaan, ei muutettu tällä kierroksella.
+- `/tmp/claude-0/-home-user-gdp-dashboard/c4bbfcf0-7753-5cf6-9046-e2f5d9521812/scratchpad/jarvis-backups-2026-09-13/` — bundlet, työpuuarkistot ja tarkistussummat. Sama pysyvyysvaroitus koskee tätäkin polkua: se on kontin sisäinen, ei GitHub eikä Petrin oma kone.
+- Ladatut kopiot: Petrin oman `SendUserFile`-vastaanoton mukaan (ei tämän istunnon tiedossa, minne käyttäjä lataa ne).
