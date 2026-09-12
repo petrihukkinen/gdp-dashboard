@@ -52,4 +52,14 @@ Kaikki: `/home/user/gdp-dashboard/research/2026-09-12-jarvis-context-memory/` (s
 
 `IMPLEMENTATION_BACKLOG.md`:n Vaihe 1 (vähimmäistoteutus) on toteutettu ja committoitu tälle samalle branchille, commit `64dab81`. Toteutus poikkeaa hieman tämän tutkimuksen `MEMORY_DESIGN.md`-ehdotuksesta (litteä `KNOWLEDGE/` tyyppikentällä alikansioiden sijaan, `RAW/INGEST/KNOWLEDGE/INDEX/EVALS`-nimeäminen) — jatkotehtävän oma, tarkempi kohdehakemistorakenne korvasi tämän tutkimuksen alkuperäisen ehdotuksen, periaatteet (yksi lähde, johdettu indeksi, lähdejäljitettävyys) säilyivät samoina.
 
-Sijainti: `/home/user/gdp-dashboard/PETRI-KNOWLEDGE/` (oma `README.md` selittää arkkitehtuurin, ajokomennot ja rajoitukset). Vaiheet 0.2, 2, 3, 4 (lähteiden vahvistus avoimemmalla verkkoyhteydellä, istunnon hook-kytkennät, validointiportti, evaluaatioajo oikealla datalla) ovat edelleen tekemättä — kirjattu `PETRI-KNOWLEDGE/README.md`:n "Known limitations" -kohtaan.
+Sijainti: `/home/user/gdp-dashboard/PETRI-JARVIS-SYSTEM/` (oma `README.md` selittää arkkitehtuurin, ajokomennot ja rajoitukset). Vaiheet 0.2, 2, 3, 4 (lähteiden vahvistus avoimemmalla verkkoyhteydellä, istunnon hook-kytkennät, validointiportti, evaluaatioajo oikealla datalla) ovat edelleen tekemättä — kirjattu `PETRI-JARVIS-SYSTEM/README.md`:n "Known limitations" -kohtaan.
+
+---
+
+## Päivitys 2026-09-12 (Phase 1.1 kovennustarkistus)
+
+Kovennustarkistus paljasti ja korjasi rajaongelman: `PETRI-KNOWLEDGE/`-hakemisto sekoitti järjestelmän (skriptit, testit) ja kanonisen tiedon paikan (RAW/INGEST/KNOWLEDGE-kansiot) samaan puuhun, samalla nimellä kuin itse tietovarasto. `list_repos`-tarkistus vahvisti: käyttäjän GitHub-tilillä ei ole erillistä `PETRI-KNOWLEDGE`- tai `PETRI-JARVIS-SYSTEM`-repositoriota — molemmat ovat vasta suunnitelmatasolla.
+
+Korjaus: hakemisto nimettiin uudelleen `PETRI-JARVIS-SYSTEM`:ksi, ja siitä poistettiin RAW/INGEST/KNOWLEDGE/INDEX-kansiot kokonaan (skeema siirrettiin puhtaaksi dokumentaatioksi `docs/KNOWLEDGE_FORMAT.md`:hen). Skriptit vaativat nyt eksplisiittisen `--root`-parametrin tai `PETRI_JARVIS_KNOWLEDGE_ROOT`-ympäristömuuttujan — ei enää oletusarvoa omaan hakemistoonsa. Todellista erillistä holvia ei luotu (Petrin oma päätös, ei tehty tässä tarkistuksessa).
+
+Lisäksi: laajennettu synteettinen (ei todellinen — todellista Jarvis-tietoa ei ollut saatavilla) arviointikorpus 16 kysymyksellä, joista mitattiin suomen kielen taipumuksen käyttäytyminen suoraan (ei arvailtu) — tulokset ja rajat kirjattu `PETRI-JARVIS-SYSTEM/README.md`:n "Finnish search: measured, not assumed" -kohtaan. Kaikki 26 testiä (10 Phase 1 + 16 Phase 1.1) menivät läpi.

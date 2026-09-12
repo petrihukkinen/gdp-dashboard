@@ -4,7 +4,7 @@ These are REAL tests against a real (synthetic) fixture corpus and a real
 SQLite index built by the actual build_index.py / search.py scripts —
 not a mock, and no result here is fabricated. Run with:
 
-    python3 -m pytest PETRI-KNOWLEDGE/EVALS/memory_tests -v
+    python3 -m pytest PETRI-JARVIS-SYSTEM/EVALS/memory_tests -v
 
 Each test function maps to one of the required eval categories from the
 Phase 1 task (see the docstring above each test). Two extra tests check

@@ -16,11 +16,43 @@ from __future__ import annotations
 import datetime
 import hashlib
 import json
+import os
 import re
 import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
+
+# Environment variable naming the default knowledge root, so build_index.py
+# and search.py don't need --root on every call once it's set once in your
+# shell profile. See resolve_knowledge_root() below and ../README.md
+# "Repository boundary" for why there is no in-repo default any more.
+KNOWLEDGE_ROOT_ENV_VAR = "PETRI_JARVIS_KNOWLEDGE_ROOT"
+
+
+class KnowledgeRootNotConfigured(RuntimeError):
+    pass
+
+
+def resolve_knowledge_root(explicit: Optional[Path]) -> Path:
+    """Resolve the knowledge root to scan/search, with no silent fallback
+    to "this repository" — see docs/KNOWLEDGE_FORMAT.md. Precedence:
+    1. an explicit --root argument, if given
+    2. the PETRI_JARVIS_KNOWLEDGE_ROOT environment variable
+    Raises KnowledgeRootNotConfigured with a clear message otherwise.
+    """
+    if explicit is not None:
+        return explicit
+    env_value = os.environ.get(KNOWLEDGE_ROOT_ENV_VAR)
+    if env_value:
+        return Path(env_value)
+    raise KnowledgeRootNotConfigured(
+        "No knowledge root specified. This repository (the Jarvis system) "
+        "does not contain your actual RAW/INGEST/KNOWLEDGE data — pass "
+        f"--root /path/to/your/knowledge/vault, or set {KNOWLEDGE_ROOT_ENV_VAR} "
+        "so you don't have to pass it every time. See docs/KNOWLEDGE_FORMAT.md."
+    )
+
 
 # Directories under a knowledge root that are scanned for canonical content.
 # The directory name becomes the "layer" value stored in the index.

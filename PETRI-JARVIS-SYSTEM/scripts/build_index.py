@@ -11,10 +11,19 @@
     back with no loss of canonical information.
 
 Usage:
-    python3 build_index.py [--root PATH] [--db PATH]
+    python3 build_index.py --root /path/to/your/knowledge/vault [--db PATH]
+
+    # or, once set, no --root needed:
+    export PETRI_JARVIS_KNOWLEDGE_ROOT=/path/to/your/knowledge/vault
+    python3 build_index.py
+
+This repository is the Jarvis *system* (code, schema, tests) — it does
+not contain your actual knowledge. See ../README.md "Repository boundary"
+and docs/KNOWLEDGE_FORMAT.md for what --root should point at.
 
 Exit code is 0 if every file indexed cleanly, 1 if any file raised a parse
-error (skipped files that are simply not .md are not treated as errors).
+error (skipped files that are simply not .md are not treated as errors),
+or if no knowledge root could be resolved at all.
 """
 from __future__ import annotations
 
@@ -26,8 +35,6 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 import common
-
-DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 
 
 @dataclass
@@ -81,17 +88,26 @@ def rebuild(root: Path, db_path: Path) -> BuildReport:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--root", type=Path, default=DEFAULT_ROOT,
-        help="Knowledge root containing RAW/ INGEST/ KNOWLEDGE/ (default: %(default)s)",
+        "--root", type=Path, default=None,
+        help=(
+            "Knowledge root containing RAW/ INGEST/ KNOWLEDGE/. Falls back to "
+            f"the {common.KNOWLEDGE_ROOT_ENV_VAR} environment variable if not given."
+        ),
     )
     parser.add_argument(
         "--db", type=Path, default=None,
         help="Output SQLite path (default: <root>/INDEX/jarvis.sqlite)",
     )
     args = parser.parse_args(argv)
-    db_path = args.db or (args.root / "INDEX" / "jarvis.sqlite")
 
-    report = rebuild(args.root, db_path)
+    try:
+        root = common.resolve_knowledge_root(args.root)
+    except common.KnowledgeRootNotConfigured as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
+    db_path = args.db or (root / "INDEX" / "jarvis.sqlite")
+
+    report = rebuild(root, db_path)
 
     print(f"Indexed: {report.indexed}")
     print(f"Skipped: {len(report.skipped)}")

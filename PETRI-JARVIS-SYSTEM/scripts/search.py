@@ -11,8 +11,13 @@ frontmatter as `meta`), never a substitute for reading it — the index
 holds nothing that is not also in that file.
 
 Usage:
+    python3 search.py "some query" --root /path/to/your/knowledge/vault
+    python3 search.py "some query" --db /path/to/vault/INDEX/jarvis.sqlite
     python3 search.py "some query" [--limit N] [--layer RAW|INGEST|KNOWLEDGE]
-                       [--type decision] [--json] [--root PATH] [--db PATH]
+                       [--type decision] [--json]
+
+Falls back to the PETRI_JARVIS_KNOWLEDGE_ROOT environment variable if
+--root/--db are both omitted — see ../README.md "Repository boundary".
 """
 from __future__ import annotations
 
@@ -23,7 +28,7 @@ import sqlite3
 import sys
 from pathlib import Path
 
-DEFAULT_ROOT = Path(__file__).resolve().parent.parent
+import common
 
 # Column weights for bm25(): title matches matter far more than an
 # incidental word buried in a tag or the body. This is the one "ranking"
@@ -114,12 +119,20 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--limit", type=int, default=10)
     parser.add_argument("--layer", choices=["RAW", "INGEST", "KNOWLEDGE"])
     parser.add_argument("--type", dest="doc_type", help="filter by frontmatter 'type' field")
-    parser.add_argument("--root", type=Path, default=DEFAULT_ROOT)
+    parser.add_argument("--root", type=Path, default=None)
     parser.add_argument("--db", type=Path, default=None)
     parser.add_argument("--json", action="store_true", help="machine-readable output")
     args = parser.parse_args(argv)
 
-    db_path = args.db or (args.root / "INDEX" / "jarvis.sqlite")
+    if args.db is not None:
+        db_path = args.db
+    else:
+        try:
+            db_path = common.resolve_knowledge_root(args.root) / "INDEX" / "jarvis.sqlite"
+        except common.KnowledgeRootNotConfigured as exc:
+            print(f"Error: {exc}", file=sys.stderr)
+            return 1
+
     try:
         results = search(db_path, args.query, args.limit, args.layer, args.doc_type)
     except FileNotFoundError as exc:
