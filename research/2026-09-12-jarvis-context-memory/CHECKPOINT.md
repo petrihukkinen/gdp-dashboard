@@ -63,3 +63,23 @@ Kovennustarkistus paljasti ja korjasi rajaongelman: `PETRI-KNOWLEDGE/`-hakemisto
 Korjaus: hakemisto nimettiin uudelleen `PETRI-JARVIS-SYSTEM`:ksi, ja siitä poistettiin RAW/INGEST/KNOWLEDGE/INDEX-kansiot kokonaan (skeema siirrettiin puhtaaksi dokumentaatioksi `docs/KNOWLEDGE_FORMAT.md`:hen). Skriptit vaativat nyt eksplisiittisen `--root`-parametrin tai `PETRI_JARVIS_KNOWLEDGE_ROOT`-ympäristömuuttujan — ei enää oletusarvoa omaan hakemistoonsa. Todellista erillistä holvia ei luotu (Petrin oma päätös, ei tehty tässä tarkistuksessa).
 
 Lisäksi: laajennettu synteettinen (ei todellinen — todellista Jarvis-tietoa ei ollut saatavilla) arviointikorpus 16 kysymyksellä, joista mitattiin suomen kielen taipumuksen käyttäytyminen suoraan (ei arvailtu) — tulokset ja rajat kirjattu `PETRI-JARVIS-SYSTEM/README.md`:n "Finnish search: measured, not assumed" -kohtaan. Kaikki 26 testiä (10 Phase 1 + 16 Phase 1.1) menivät läpi.
+
+---
+
+## Päivitys 2026-09-13: repositorioiden erottelu ja pysyvyystarkistus
+
+**Valmis työ:**
+- Auditoitu `gdp-dashboard`: Jarvis-työ osoittautui täysin erilliseksi alkuperäisestä dashboard-sovelluksesta (ei yhtään yhteistä tiedostoa `main`-haaran kanssa).
+- Luotu paikallisesti kaksi erillistä Git-repositoriota tämän konttiympäristön levylle: `/home/user/PETRI-JARVIS-SYSTEM` (koodi, skeema, testit, tutkimus — commit `6bc6ee3`) ja `/home/user/PETRI-KNOWLEDGE` (RAW/INGEST/KNOWLEDGE/INDEX-holvi, 9 aidon mutta ei-arkaluontoisen pilottimerkinnän kanssa, commitit `b636f48` ja `2872807`).
+- Vahvistettu mittauksin (`hostname`, `mount`, `df`, ympäristömuuttujat `CLAUDE_CODE_REMOTE=true` ym.), että tämä istunto ajaa pilvipohjaisessa, väliaikaisessa VM-hiekkalaatikossa, ei Petrin omalla koneella — kumpikaan uusi paikallinen repo ei säily kontin uudelleenkäynnistyksen yli, koska niillä ei ole Git-remotea.
+- Loppuauditointi salaisuuksista/Bilfinger-sisällöstä molemmissa uusissa repoissa: puhdas.
+
+**Keskeneräinen työ / esteet:**
+- GitHub-repositorioiden luonti (`PETRI-JARVIS-SYSTEM`, `PETRI-KNOWLEDGE`) epäonnistui: `mcp__github__create_repository` palautti `403 Resource not accessible by integration` molemmille. Tämä on istunnon GitHub-integraation oikeusrajoitus (repositorion *luontiin*, ei push-oikeuteen olemassa oleviin repoihin — `gdp-dashboard`-push toimii edelleen normaalisti). Ei yritetty kiertää.
+- Kumpaakaan uutta repoa **ei ole pushattu minnekään** — ne ovat toistaiseksi vain tämän väliaikaisen kontin levyllä.
+- Petrille annettu kaksi vaihtoehtoa: (a) hän luo tyhjät yksityiset repot itse GitHubissa, jonka jälkeen push onnistuu suoraan, tai (b) GitHub-yhteys yhdistetään uudelleen laajemmin oikeuksin (claude.ai → Settings → Connectors).
+
+**Seuraava konkreettinen työvaihe:** odotetaan Petrin päätöstä yllä olevista vaihtoehdoista (a)/(b). Kun repo(t) on luotu, push on yhden komennon toimenpide (remote lisätty, historia valmiina paikallisesti).
+
+**Tulostiedostojen sijainnit (tässä konttiympäristössä, ei pysyviä):**
+`/home/user/PETRI-JARVIS-SYSTEM/` ja `/home/user/PETRI-KNOWLEDGE/` — molemmat menetetään kontin kierrätyksessä, jos niitä ei pushata ennen sitä. `gdp-dashboard`-repositorio (tämä tiedosto mukaan lukien) on GitHubissa pysyvästi tallessa branchilla `claude/jarvis-memory-context-research-0qoa07`.
