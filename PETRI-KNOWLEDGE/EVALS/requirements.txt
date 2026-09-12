@@ -1,0 +1,4 @@
+# Only needed to run the eval suite (python3 -m pytest EVALS/memory_tests).
+# build_index.py and search.py themselves use only the Python standard
+# library — no dependency is required to build the index or search it.
+pytest>=7
