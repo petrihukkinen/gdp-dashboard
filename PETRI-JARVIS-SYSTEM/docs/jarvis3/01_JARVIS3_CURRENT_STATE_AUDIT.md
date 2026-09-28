@@ -17,7 +17,7 @@ Käytännön seuraukset:
 | F1 | Execution-kerrosta (orchestrator/planner/workers) ei ole | Moduulit 01–07 ovat **greenfield-rakennusta**, eivät muutoksia. "Älä riko toimivaa" -vaatimus koskee käytännössä vain muistikerrosta, jota JARVIS 3 ei tarvitse muuttaa lainkaan. |
 | F2 | JARVIS-koodi elää **mergeämättömällä haaralla** repossa `gdp-dashboard`, joka on Streamlit-BKT-demo | Koti-repo on väärä. Oma tutkimusdokumentti (`IMPLEMENTATION_BACKLOG.md` 0.3) toteaa saman. |
 | F3 | `petrihukkinen/gdp-dashboard` on **julkinen** repo | Kaikki tänne pushattu JARVIS 3 -koodi, -politiikat ja -turvamalli ovat julkisia. Riskiluokituspolitiikan julkaiseminen paljastaa hyökkääjälle, mitkä toiminnot ovat RED/AMBER. |
-| F4 | Samassa repossa on haaroja, joiden nimet viittaavat Bilfingeriin | Merge-/rebase-operaatio väärältä haaralta toisi Bilfinger-sisältöä JARVIS 3 -haaraan. Vaatii eksplisiittisen haarakurin (ks. §8). |
+| F4 | Samassa repossa on haaroja, joiden nimet viittaavat Bilfingeriin, sekä moniselitteisesti nimettyjä haaroja | Kaikki ovat karanteenissa (§2.3). Merge, rebase, diff tai cherry-pick niistä on kielletty. JARVIS 3 -haara perustuu vain `main`iin. |
 | F5 | Ei LLM-runtime-integraatiota missään | "Model node" tarvitsee adapter-rajapinnan; testit ajetaan deterministisillä stub-workereilla. Todellinen Claude-integraatio on erillinen, myöhempi vaihe. |
 | F6 | Ei baseline-mittausdataa | Onnistumiskriteeri #10 ("vähemmän babysittingiä") ei ole todennettavissa ilman ensimmäisiä JARVIS 3 -ajoja. Mittaristo (Moduuli 07) luo baselinen, ei vertaa siihen. |
 
@@ -41,10 +41,35 @@ Käytännön seuraukset:
 | Haara `claude/bilfinger-asset-performance-2030-eijndc` | Nimi viittaa Bilfingeriin | Ei fetchattu, ei avattu |
 | Haara `claude/du-research-bilfinger-audit-8l1xov` | Nimi viittaa Bilfingeriin | Ei fetchattu, ei avattu |
 | Haarat `claude/amor-2030-strategy-3zdqjy`, `claude/dora-gebauer-research-xg43vf` | Sisältö tuntematon; ei JARVIS-nimeä; mahdollinen Bilfinger-kytkös | Ei fetchattu, ei avattu (varovaisuusperiaate) |
-| `research/2026-09-12-jarvis-context-memory/CHECKPOINT.md` | Sisältää sanan "Bilfinger" (tunnistettu `grep -l`, vain tiedostonimi tulostettu) | **Ei avattu.** Ei käytetty tässä auditoinnissa. |
-| Repot `nordica-operating-system`, `control-tower-app`, `app.py` | Eivät kuulu session scopeen; sisältö tuntematon | Ei avattu. **Mahdollinen puuttuva orchestrator voi olla näissä** — vaatii Petrin vahvistuksen (§9, D1). |
+| `research/2026-09-12-jarvis-context-memory/CHECKPOINT.md` | RESTRICTED (ks. 2.4) | **Ei avattu.** Ei käytetty. |
+| Repot `nordica-operating-system`, `control-tower-app`, `app.py` | Eivät kuulu session scopeen; sisältö tuntematon → RESTRICTED | Ei avattu. **Mahdollinen puuttuva orchestrator voi olla näissä** — vaatii Petrin vahvistuksen ja task-kohtaisen valtuutuksen (§9, D1). |
 
-Screening-menetelmä: `grep -ril bilfinger` JARVIS-haaran worktreessä ennen minkään tiedoston lukemista; vain osumattomat tiedostot luettiin.
+### 2.3 Voimassa oleva karanteenipolitiikka (asetettu 2026-09-28)
+
+```
+BILFINGER_DATA_ACCESS = DENY_BY_DEFAULT
+```
+
+- Kielletty ilman eksplisiittistä, task- ja scope-kohtaista valtuutusta: open, read, grep/search contents, index, embed, parse, summarize, diff, copy, materialize, test against, derive from, use as context.
+- Sallittu: **vain metatieto** (repo-, haara-, hakemisto- ja tiedostonimet) ja vain karanteenin valvontaan.
+- Tuntematon tai moniselitteinen materiaali = RESTRICTED.
+- Valtuutus ei periydy seuraaviin taskeihin.
+
+**Luokittelusääntö (metadata-only):** RESTRICTED, jos nimi viittaa Bilfingeriin, TAI nimen perusteella aihe on tuntematon/moniselitteinen, TAI kohde on aiemmin merkitty RESTRICTED-tilaan. ALLOWED vain, jos nimi yksiselitteisesti osoittaa ei-Bilfinger-aiheen (esim. `streamlit_app.py`, `gdp_data.csv`, synteettiset fixture-nimet).
+
+### 2.4 Poikkeamailmoitus: Phase 0:n screening-menetelmä
+
+Phase 0 tehtiin ennen yllä olevaa politiikkaa. Silloin haaran `jarvis-memory-context-research-0qoa07` tiedostoista etsittiin sisältöhaulla (`grep -ril bilfinger`) ennen lukemista. Menetelmä tulosti vain tiedostonimet eikä yhtään sisältöriviä, mutta **se oli tiedostosisällön hakua, jonka politiikka 2.3 kieltää.** Korjaavat toimenpiteet:
+
+| Toimenpide | Tila |
+|---|---|
+| Sisältöhakua ei käytetä enää karanteenin valvontaan; tilalle metadata-only-luokittelu (2.3) | Voimassa |
+| `CHECKPOINT.md` pysyy RESTRICTED-tilassa; hakutuloksesta johdettua tietoa ei käytetä muuhun kuin tähän luokitukseen | Voimassa |
+| Haaran git-oliot poistettu paikallisesta kontista (`update-ref -d` + `gc --prune=now`); scratch-worktree poistettu | Tehty |
+| Haaran `research/`-hakemisto luokiteltu RESTRICTED-tilaan (sisältää RESTRICTED-tiedoston) | Voimassa |
+| Haaran `PETRI-JARVIS-SYSTEM/`-alipuu: nimet ovat geneerisiä, mutta alipuu syntyi samassa sessiossa kuin RESTRICTED-tiedosto → **moniselitteinen → RESTRICTED**, kunnes Petri luokittelee sen eksplisiittisesti (§9 D0) | Odottaa päätöstä |
+
+Tämän auditoinnin §3–§6 perustuvat jo luettuun `PETRI-JARVIS-SYSTEM/`-koodiin ja `research/`-hakemiston suunnitteludokumentteihin (pl. `CHECKPOINT.md`). Jos Petri luokittelee kyseiset kohteet RESTRICTED-tilaan, niihin perustuvat kohdat on poistettava ja JARVIS 3 suunniteltava ilman niitä.
 
 ---
 
@@ -241,7 +266,7 @@ S = < 300 r, M = 300–800 r (koodi + testit). Kokonaisarvio: ~3 000–4 500 riv
 | # | Riski | Tod.näk. | Vaikutus | Mitigaatio |
 |---|---|---|---|---|
 | R1 | JARVIS 3 -turvapolitiikka julkaistaan julkisessa repossa (F3) | Varma, jos jatketaan tässä repossa | Keskitaso: paljastaa gating-logiikan | Siirto private-repoon ennen Phase 5:tä (§9 D2) |
-| R2 | Bilfinger-sisältö vuotaa haaroja yhdistettäessä (F4) | Matala, jos kuri pidetään | Korkea (ehdoton rajoite) | JARVIS 3 -haara perustuu `main`iin; muistikerros tuodaan vain `git checkout <ref> -- PETRI-JARVIS-SYSTEM/` -polkurajatusti, **ei** koko haaran mergellä (joka toisi `CHECKPOINT.md`:n) |
+| R2 | Karanteenissa olevaa sisältöä päätyy JARVIS 3:een (F4) | Matala, jos kuri pidetään | Korkea (ehdoton rajoite) | JARVIS 3 -haara perustuu vain `main`iin. Mitään ei tuoda karanteenissa olevista haaroista. Muistikerros tuodaan vain, jos D0 luokittelee sen ALLOWED-tilaan. JARVIS 3:een rakennetaan deterministinen **quarantine gate** (Moduulit 03/04), joka hylkää RED-tilaan kaikki polku-, haara- ja repoviittaukset, jotka täsmäävät deny-listaan tai ovat moniselitteisiä, avaamatta sisältöä |
 | R3 | "Upgrade"-kehys johtaa ylimitoitettuun rakenteeseen, koska korvattavaa ei ole | Keskitaso | Keskitaso | Pidä runner kirjastona + CLI:nä, ei palveluna |
 | R4 | ModelWorker-adapteri ilman oikeaa LLM:ää → testit todentavat vain kontrollilogiikan, eivät mallin laatua | Varma | Keskitaso | Eksplisiittinen rajaus build reportissa; oikea integraatio erillisenä vaiheena |
 | R5 | Planner luokittelee oman toimintonsa alempaan laneen | Keskitaso ilman kontrollia | Korkea | Anti-downgrade: efektiivinen luokka = max(declared, policy); testi E + erillinen negatiivitesti |
@@ -256,12 +281,12 @@ S = < 300 r, M = 300–800 r (koodi + testit). Kokonaisarvio: ~3 000–4 500 riv
 
 | Vaihe | Sisältö | Tuotokset | Portti seuraavaan |
 |---|---|---|---|
-| **0.5** | Repo-/haarapäätös (§9) + muistikerroksen polkurajattu tuonti tälle haaralle (valinnainen) | Päätös kirjattu | Petrin hyväksyntä |
+| **0.5** | Päätökset D0–D5 (§9) | Päätökset kirjattu | Petrin hyväksyntä |
 | **1** | Skeemat + rajapinnat: `task_graph`, `node`, `gate_result`, `return_path`, `constraint`, `receipt`, `metrics`; Python-dataclassit + validointi | `schemas/*.json`, `execution/models.py`, docs 02 + 05 | Skeema/dataclass-yhdenmukaisuustesti vihreä |
 | **2** | Task graph engine: rakentaminen, syklintarkistus, reuna-artefaktisääntö, topologinen rinnakkainen runner (ready-set) | `execution/graph.py`, `runner.py`; **Testi A** | A vihreä + muistitestit 26/26 |
 | **3** | Node loops + gates: PRODUCE→CHECK→CORRECT, retry_limit 3, gate-kirjasto, CodeWorker vs. ModelWorker(stub) | `execution/loop.py`, `gates.py`, `workers.py`; **Testit C, D** | C, D vihreä |
 | **4** | Return paths + replanning: vain epäonnistunut yksikkö, scope-valvonta, planner-eskalaatio | `execution/return_path.py`, `planner.py`; **Testit B, G** | B, G vihreä |
-| **5** | Risk & approval: policy layer, lanet, anti-downgrade, approval request/resume, simuloitu RED-executor | `execution/risk.py`, `approval.py`, `policy/risk_policy.json`; doc 04; **Testi E** + downgrade-negatiivitesti | E vihreä; **R1 ratkaistu** |
+| **5** | Risk & approval: policy layer, lanet, anti-downgrade, approval request/resume, simuloitu RED-executor, **quarantine gate** (metadata-only deny-by-default) | `execution/risk.py`, `approval.py`, `policy/risk_policy.json`, `policy/data_quarantine.json`; doc 04; **Testi E** + downgrade-negatiivitesti + **Testi H: karanteeniin osuva polku hylätään ilman tiedoston avaamista** | E vihreä; **R1 ratkaistu** |
 | **6** | Learning constraints: johtaminen, store, planner-integraatio (muuttaa graafia, ei promptia) | `execution/learning.py`; **Testi F** | F vihreä |
 | **7** | Metrics + observability: `runs/<id>/`-trace, 16 mittaria, run summary, CLI | `execution/trace.py`, `metrics.py`, `cli.py`; doc 06 | Jokainen testiajo tuottaa validin receiptin + metricsin |
 | **8** | Integraatiotestit A–G end-to-end, docs 03 + 07, `JARVIS3_BUILD_REPORT.md` | Kaikki deliverablet | Koko suite vihreä |
@@ -274,9 +299,10 @@ Jokaisen vaiheen jälkeen: testiajo, muutetut tiedostot, tunnetut rajoitteet, ba
 
 | # | Päätös | Vaihtoehdot | Suositus |
 |---|---|---|---|
+| **D0** | Luokitellaanko haaran `jarvis-memory-context-research-0qoa07` alipuu `PETRI-JARVIS-SYSTEM/` (koodi + synteettiset fixturet) ALLOWED-tilaan JARVIS 3 -taskia varten? `research/` pysyy RESTRICTED-tilassa. | ALLOWED (task: JARVIS 3, scope: vain tuo alipuu) · RESTRICTED | Petrin päätös. Jos RESTRICTED, JARVIS 3 rakennetaan täysin itsenäisesti ja §3–§6 poistetaan. |
 | **D1** | Onko olemassa JARVIS-orchestrator/planner-koodia jossain muualla (esim. `nordica-operating-system`, `control-tower-app`, paikallinen kone)? | Kyllä → anna repo, auditoin sen (Bilfinger-screening ensin) · Ei → greenfield | Vahvista. Jos kyllä, tämä auditointi on puutteellinen. |
 | **D2** | Missä JARVIS 3 rakennetaan? | (a) Tässä julkisessa repossa, tällä haaralla · (b) Uusi private-repo (esim. `petri-jarvis-system`) · (c) Olemassa oleva private-repo | **(b)**. Phase 1–4 voidaan tehdä tässä, mutta siirto ennen Phase 5:tä (risk policy). Uuden repon luonti on sinun toimenpiteesi / hyväksyntäsi. |
-| **D3** | Tuodaanko Phase 1 -muistikerros tälle haaralle? | (a) Polkurajattu tuonti `PETRI-JARVIS-SYSTEM/` (ilman `research/`-kansiota → `CHECKPOINT.md` ei tule mukaan) · (b) Ei tuoda; JARVIS 3 itsenäinen paketti, integraatio myöhemmin | **(a)** — mahdollistaa regressioajon samassa puussa. `research/`-kansio jätetään pois. |
+| **D3** | Tuodaanko Phase 1 -muistikerros tälle haaralle? (Vain jos D0 = ALLOWED.) | (a) Polkurajattu tuonti vain `PETRI-JARVIS-SYSTEM/` · (b) Ei tuoda; JARVIS 3 itsenäinen paketti | **(b)** karanteenipolitiikan vuoksi: JARVIS 3 ei tarvitse muistikerrosta. Integraatio tehdään myöhemmin erillisellä valtuutuksella. |
 | **D4** | Runtime-riippuvuudet | stdlib-only · `jsonschema` sallittu | **stdlib-only runtime**, `jsonschema` vain testeissä |
 | **D5** | Oikea LLM-integraatio Phase 1–8:n aikana? | Ei (stub-workerit) · Kyllä (Claude API, vaatii API-avaimen ja kustannukset) | **Ei.** Kontrollilogiikka ensin; mallintegraatio erillisenä vaiheena. |
 
@@ -286,4 +312,5 @@ Jokaisen vaiheen jälkeen: testiajo, muutetut tiedostot, tunnetut rajoitteet, ba
 
 - **Lisätty:** `PETRI-JARVIS-SYSTEM/docs/jarvis3/01_JARVIS3_CURRENT_STATE_AUDIT.md` (tämä dokumentti).
 - **Muutettu:** ei mitään.
+- **Revisio 2 (2026-09-28):** karanteenipolitiikka (§2.3), poikkeamailmoitus (§2.4), päätös D0, F4/R2/D3 ja Phase 5 päivitetty.
 - **Koodi:** ei muutoksia.
